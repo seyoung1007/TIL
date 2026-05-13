@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체</title>
+  </head>
+  <body>
+    <script>
+      //자바스크립트 표준 내장 객체
+      // 1.String 2.Array 3.Date 4.Math
+      // 1.String
+      const str = "Hello World";
+      console.log(str);
+      console.log(str.length); //문자의 길이를 알수 있는 속성
+      console.log(str.toUpperCase()); //대문자로 변경하는 메서드
+      console.log(str.includes("World")); // 해당하는 내용이 있는지 없는지 확인하는 메서드
+      //   2.Array 내장객체
+      const arr = [1, 2, 3, 4];
+      console.log(arr);
+      console.log(arr.length);
+      console.log(arr.push(5));
+      console.log(arr);//[1, 2, 3, 4,5]
+      console.log(arr.join("/"));
+    //   3.Date객체
+    const today = new Date()
+    console.log(today);
+    console.log(today.toDateString());//현재 날짜
+    console.log(today.getFullYear());//연도
+    console.log(today.getMonth() + 1);//월(0부터 출력하기 때문에  + 1)
+    // Math 객체
+    console.log(Math.PI);//3.141592653589793
+    console.log(Math.max(10,23,100));
+    console.log(Math.min(10,23,100));
+    console.log(Math.random());//0~1사이 난수
+    
+    
+    
+    
+      
+    </script>
+  </body>
+</html>

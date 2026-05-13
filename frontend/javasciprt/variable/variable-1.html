@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>변수 - 1</title>
+  </head>
+  <body>
+    <script>
+      // 변수 : 데이터를 담는 상자
+      // 변수 선언과 할당
+      let name = "하경미";
+      console.log(name);
+      let age = 25;
+      console.log(age);
+      age = 31;
+      console.log(age);
+      const age2 = 40;
+      console.log(age2);
+      //   age2 = 50; //const 재 할당 X
+      //   let age = 10
+      let userName = prompt("이름을 입력하세요.");
+      console.log(userName);
+      document.write(
+        `<p>${userName} 님 나이는 ${age} 입니다. 만나서 반갑습니다.</p>`,
+      );
+    </script>
+  </body>
+</html>

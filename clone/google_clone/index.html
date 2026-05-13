@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google</title>
+    <!-- 폰트어썸 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- nav -->
+    <nav>
+      <a href="#" id="mail">Gmail</a>
+      <a href="#" id="imgs">이미지</a>
+      <div class="navIcon">
+        <a href="#" class="navICon-a" aria-label="Search Labs">
+          <svg
+            class="gb_E"
+            focusable="false"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+          >
+            <path
+              d="M209-120q-42 0-70.5-28.5T110-217q0-14 3-25.5t9-21.5l228-341q10-14 15-31t5-34v-110h-20q-13 0-21.5-8.5T320-810q0-13 8.5-21.5T350-840h260q13 0 21.5 8.5T640-810q0 13-8.5 21.5T610-780h-20v110q0 17 5 34t15 31l227 341q6 9 9.5 20.5T850-217q0 41-28 69t-69 28H209Zm221-660v110q0 26-7.5 50.5T401-573L276-385q-6 8-8.5 16t-2.5 16q0 23 17 39.5t42 16.5q28 0 56-12t80-47q69-45 103.5-62.5T633-443q4-1 5.5-4.5t-.5-7.5l-78-117q-15-21-22.5-46t-7.5-52v-110H430Z"
+            ></path>
+          </svg>
+        </a>
+        <a href="#" class="navICon-a" aria-label="Goggle 앱">
+          <svg class="gb_F" focusable="false" viewBox="0 0 24 24">
+            <path
+              d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"
+            ></path>
+            <image
+              src="https://ssl.gstatic.com/gb/images/bar/al-icon.png"
+              alt=""
+              height="24"
+              width="24"
+              style="border: none; display: none \9"
+            ></image>
+          </svg>
+        </a>
+        <!-- 로그인 -->
+        <a href="#">
+          <button id="login" onclick="window.open('login.html')">로그인</button>
+        </a>
+      </div>
+    </nav>
+    <!-- main -->
+    <main class="main-wrap">
+      <!-- 로고 -->
+      <div class="g-logo"></div>
+      <!-- 검색 입력창 -->
+      <div class="search_bar">
+        <!-- left -->
+        <div class="left">
+          <!-- 아이콘 -->
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <!-- 검색 입력창 -->
+          <input type="text" placeholder="Google 검색 또는 URL 입력" />
+        </div>
+        <!-- rigth - 아이콘 -->
+        <div class="right">
+          <a href="#"><img src="images/Frame.png" alt="검색" /></a>
+          <a href="#"
+            ><img src="images/googlemic_color_24dp.png" alt="음성"
+          /></a>
+          <button class="ai-btn" title="Google 검색의 AI 모드에서 질문하기">
+            <img src="images/search_spark.svg" alt="서치" /> AI 모드
+          </button>
+        </div>
+      </div>
+      <!-- 검색 리스트 -->
+      <div class="search-plus">
+        <ul>
+          <li>
+            <a href="https://www.naver.com/">
+              <div class="roundBox">
+                <img src="images/naver.png" alt="네이버아이콘" />
+              </div>
+              <p>NAVER</p>
+            </a>
+            <div class="more">
+              <img src="images/icon_more_vert.svg" alt="더보기" />
+            </div>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/">
+              <div class="roundBox">
+                <img src="images/인스타그램.png" alt="인스타그램아이콘" />
+              </div>
+              <p>Instagram</p>
+            </a>
+            <div class="more">
+              <img src="images/icon_more_vert.svg" alt="더보기" />
+            </div>
+          </li>
+          <li>
+            <a href="https://www.notion.com/ko">
+              <div class="roundBox">
+                <img id="notion" src="images/노션.png" alt="노션아이콘" />
+              </div>
+              <p>Notion</p>
+            </a>
+            <div class="more">
+              <img src="images/icon_more_vert.svg" alt="더보기" />
+            </div>
+          </li>
+          <li>
+            <a href="https://kr.pinterest.com/">
+              <div class="roundBox">
+                <img
+                  id="pinterest"
+                  src="images/핀터레스트.png"
+                  alt="핀터레스트아이콘"
+                />
+              </div>
+              <p>Pinterest</p>
+            </a>
+            <div class="more">
+              <img src="images/icon_more_vert.svg" alt="더보기" />
+            </div>
+          </li>
+          <li>
+            <a href="https://chatgpt.com/">
+              <div class="roundBox">
+                <img id="chat" src="images/챗.png" alt="챗지피티아이콘" />
+              </div>
+              <p>ChatGPT</p>
+            </a>
+            <div class="more">
+              <img src="images/icon_more_vert.svg" alt="더보기" />
+            </div>
+          </li>
+          <li>
+            <a href="https://www.figma.com/">
+              <div class="roundBox">
+                <img id="pigma" src="images/피그마.png" alt="피그마아이콘" />
+              </div>
+              <p>Pigma</p>
+            </a>
+            <div class="more">
+              <img src="images/icon_more_vert.svg" alt="더보기" />
+            </div>
+          </li>
+          <li>
+            <a href="https://github.com/">
+              <div class="roundBox">
+                <img id="git" src="images/깃허브.png" alt="깃허브아이콘" />
+              </div>
+              <p>Github</p>
+            </a>
+            <div class="more">
+              <img src="images/icon_more_vert.svg" alt="더보기" />
+            </div>
+          </li>
+          <li>
+            <a href="#">
+              <div class="roundBox" id="plus"><span>+</span></div>
+              <p>바로가기 추가</p>
+            </a>
+            <div class="more">
+              <img src="images/icon_more_vert.svg" alt="더보기" />
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- 검색 버튼 -->
+       <div class="search-btn">
+        <button>Google 검색</button>
+        <button>I'm Felling lucky</button>
+       </div>
+    </main>
+  </body>
+</html>

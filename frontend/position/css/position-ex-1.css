@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 카드영역 */
+.contents{
+    position: relative;
+    width: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 50px auto;
+    background-color: aqua;
+}
+/* 이미지 */
+.contents img{
+    width: 100%;
+    display: block;
+}
+/* 상품 설명 */
+.products{
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    padding: 10px;
+    transform: translateY(-50%);
+    background-color: rgba(255,255,255,0.8);
+}
+.text1{
+    color: red;
+}
+.text3{
+    font-size: 13px;
+    margin: 10px 0;
+    opacity: 0.8;
+}
+/* 금액 */
+.price{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.text4{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    font-size: 13px;
+    text-align: center;
+    color: #fff;
+}
+.text5{
+    color: red;
+    margin-bottom: 2px;
+}

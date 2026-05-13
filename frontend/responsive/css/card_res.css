@@ -1,0 +1,56 @@
+@import url("reset.css");
+.flex-box {
+  width: 100%;
+  margin: auto;
+  max-width: 800px;
+  min-width: 290px;
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 2%; */
+  row-gap: 20px;
+  column-gap: 2%;
+  background-color: aqua;
+}
+.flex-box li {
+  width: calc((100% - 6%) / 4);
+  background-color: aliceblue;
+  margin-bottom: 2%;
+}
+.flex-box li a img {
+  width: 100%;
+  display: block;
+}
+.txt{
+    padding: 5%;
+}
+.txt-title{
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+}
+/* 반응형 */
+@media (max-width: 768px) {
+  .flex-box li {
+    width: calc((100% - 4%) / 3);
+  }
+}
+@media (max-width: 480px) {
+    .flex-box{
+        row-gap: 10px;
+    }
+  .flex-box li {
+    width: calc((100% - 2%) / 2);
+  }
+  .txt-title{
+    font-size: 18px;
+    color: blue
+  }
+}
+@media (max-width: 390px) {
+  .flex-box {
+    width: 90%;
+  }
+  .flex-box li {
+    width: 100%;
+  }
+}

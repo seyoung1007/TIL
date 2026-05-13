@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul,
+li{
+    list-style: none;
+}
+li.new::after{
+    content: "new";
+    font-size: 12px;
+    background-color: red;
+    color: #fff;
+    border-radius: 5px;
+    padding: 2px 4px;
+    margin-left: 10px;
+}
+/* li.new::before{
+    content: "new";
+} */
+h1::before{
+    content: "😂";
+    font-size: 12px;
+    background-color: blue;
+}
+h1::after{
+    content: "😂";
+    font-size: 12px;
+    background-color: blue;
+}

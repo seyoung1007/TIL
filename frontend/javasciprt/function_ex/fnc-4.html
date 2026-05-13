@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수 예제4</title>
+  </head>
+  <body>
+    <input type="text" id="nameInput" placeholder="이름 입력" />
+    <button id="showBtn">확인</button>
+    <p id="result">
+      <!-- js출력 -->
+    </p>
+    <script>
+      const nameInput = document.querySelector("#nameInput");
+      const result = document.querySelector("#result");
+      const showBtn = document.querySelector("#showBtn");
+      function showName(name) {
+        result.textContent = `안녕하세요 , ${name}님 반갑습니다.~`;
+      }
+      // 확인 버튼을 클릭시 input사용자 이름을 출력하겠다.
+      showBtn.addEventListener("click", () => {
+        let userName = nameInput.value;
+        // console.log(userName);
+        showName(userName)
+        // input초기화
+        nameInput.value = ""
+      });
+    </script>
+  </body>
+</html>

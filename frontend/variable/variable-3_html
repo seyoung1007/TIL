@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수 - 3</title>
+</head>
+<body>
+    <script>
+        // 1. banana 변수선언하고 금액을 할당하세요.
+        let banana = 10;
+        // 2. apple 변수선언하고 금액을 할당하세요.
+        let apple = 20;
+        // 3. mango 변수선언하고 금액을 할당하세요.
+        let mango = 30;
+        // 4 . total 변수선언하고 banana apple mango 다 더한 식을 할당하세요
+        let total = (banana * bananaCount) + (apple * appleCount) + (mango * mangoCount);
+        console.log(total);
+        document.write(`<p> banana와 apple과 mango을 더한 금액은 <span> ${total} </span> 입니다. </p>`);
+        let bananaCount = 3
+        let appleCount = 2
+        let mangoCount = 5
+        // 화면에 바나나 사과 망고를 다 더한 금액은 ... 입니다.
+    </script>
+</body>
+</html>

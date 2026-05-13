@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+h1 {
+  margin-bottom: 20px;
+  width: 200px;
+  background-color: antiquewhite;
+}
+h1::before {
+  content: "befor";
+  display: block;
+  color: red;
+  font-size: 14px;
+}
+/* 더보기 버튼 화살표 추가 */
+.link {
+  background-color: aqua;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.link::after {
+  content: "→";
+  margin-left: 10px;
+}
+.link:hover {
+  color: #fff;
+  background-color: rgb(0, 145, 145);
+}
+/* 메뉴에 호버했을때 밑줄 */
+.content {
+  width: 200px;
+  margin: 50px auto;
+  background-color: antiquewhite;
+}
+.link_hover {
+  position: relative;
+  color: red;
+}
+.link_hover::after {
+  display: block;
+  content: "";
+  width: 0px;
+  height: 2px;
+  margin-top: 5px;
+  background-color: blue;
+  transition: all 0.3s;
+}
+.link_hover:hover::after {
+  width: 40px;
+}
+/* 메뉴가 오버했을때 밑줄(예제) */
+.linked {
+    width: 200px;
+    margin: 50px auto;
+    background-color: antiquewhite;
+}
+.linked_hover {
+  position: relative;
+  color: red;
+}
+.linked:hover::after {
+    display: block;
+    content: "";
+    width: 0px;
+    height: 20px;
+    margin-top: 5px;
+    background-color: rgb(255, 0, 208);
+    transition: all 0.3s;
+}
+.linked_hover:hover::after {
+    width: 40px;
+}
+.footer ul{
+    display: flex;
+}
+.footer ul li a:hover{
+    text-decoration: underline;
+}
+.footer ul li a::after{
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    margin: 0 20px;
+    background-color: red;
+}
+.footer ul li:last-child a::after{
+    /* content: none; */
+    width: 0;
+}
+/* 이미지 어둡게 오버레이 */
+.banner{
+    margin: 50px auto;
+    position: relative;
+    width: 500px;
+    height: 400px;
+    background: url("../image/pi.jpg");
+}
+.banner::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0,0.5);
+    z-index: 1;
+}
+.banner h2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    font-size: 30px;
+    color: #fff;
+    z-index: 2;
+    cursor: pointer;
+}
+.banner h2::after{
+    content: "";
+    display: block;
+    background-color: #fff;
+    width: 0;
+    height: 2px;
+    margin-top: 5px;
+    transition: all 0.3s;
+
+}
+.banner h2:hover::after{
+    width: 100%;
+}
+/* 이미지 어둡게 오버레이 */
+.banner-2{
+    margin: 50px auto;
+    position: relative;
+    width: 500px;
+    height: 400px;
+    background: url("../image/pi.jpg");
+}
+.banner-2::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0.0.0.0.5);
+    z-index: 1;
+}
+.banner-2 h3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    font-size: 30px;
+    color: #fff;
+    z-index: 2;
+    cursor: pointer;
+}
+.banner-2.h3::after{
+    content: "";
+    display: block;
+    background-color: #fff;
+    width: 0;
+    height: 2px;
+    margin: 5px;
+    transition: all 0.3s;
+}
+.banner-2 h2:hover::after{
+    width: 100%;
+}

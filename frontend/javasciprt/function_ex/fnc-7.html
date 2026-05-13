@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수 예제 - 메뉴 토글</title>
+    <style>
+      .submenu {
+        display: none;
+      }
+      .submenu.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <button class="menu">메뉴 1</button>
+        <ul class="submenu">
+          <li>서브1</li>
+          <li>서브2</li>
+        </ul>
+      </li>
+    </ul>
+    <script>
+      const menu = document.querySelector(".menu");
+      const submenu = document.querySelector(".submenu");
+      // toggle
+      function toggleSubmenu() {
+        submenu.classList.toggle("active");
+      }
+      menu.addEventListener("click", toggleSubmenu);
+    </script>
+  </body>
+</html>

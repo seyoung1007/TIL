@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array 비파괴 메서드</title>
+  </head>
+  <body>
+    <script>
+      const arr = [1, 2, 3, 4, 5];
+      //   1. map() : 각 요소에 함수 적용후 새 배열 반환
+      console.log(
+        `map : ${arr.map((x) => {
+          return x * 2; // 2,4,6,8,10
+        })}`,
+      );
+      //   2. filter() : 조건에 만족하는 요소만 모아 새 배열 반환
+      console.log(
+        `filter : ${arr.filter((x) => {
+          return x > 2;
+        })}`,
+      );
+      //   3.find() :조건 만족 첫번째 요소 반환
+      console.log(
+        `find : ${arr.find((n) => {
+          return n > 3;
+        })}`,
+      );
+      // 4. indexOf() : 특정 요소 위치 반환
+      console.log(`indexOf : ${arr.indexOf(4)}`);
+
+      // 5.includes() :특정 요소 포함 여부 반환
+      console.log(`includes : ${arr.includes(100)}`); // false
+      // 6.join()
+      console.log(`join : ${arr.join("//")}`);
+     
+      //   7. forEach() :돌리는 용 (map : 결과 만들기 )
+      arr.forEach((a) => {
+        console.log(a * 3);
+      });
+       console.log(arr);
+    </script>
+  </body>
+</html>

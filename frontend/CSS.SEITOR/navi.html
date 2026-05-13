@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul,li{
+            list-style: none;
+        }
+        a{
+            color: #333;
+            text-decoration: none;
+        }
+        .container{
+            width: 960px;
+            margin: 0 auto;
+            background-color: aquamarine;
+        }
+        .navi > ul{
+            display: flex;
+        }
+        .navi > ul > li{
+            width: calc(100% / 4);
+        }
+        .navi > ul > li > a{
+            display: block;
+            text-align: center;
+            color: #fff;
+            padding: 10px;
+            background-color: violet;
+        }
+        .navi > ul > li > a:hover{
+            background-color: burlywood;
+            color: chocolate;
+        }
+        .navi > ul > li > a:focus{
+            background-color: #333;
+        }
+        .navi > ul > li > a:visited{
+            color: red;
+            text-decoration: underline;
+        }
+        .navi > ul > li >a:active{
+            background-color: blue;
+        }        
+    </style>
+  
+</head>
+<body>
+    <div class="container">
+        <nav class="navi">
+            <ul>
+                <li><a href="#">이용안내</a></li>
+                <li><a href="#">객실 소개</a></li>
+                <li><a href="#">예약 방법 및 요금</a></li>
+                <li><a href="#">예약하기</a></li>    
+            </ul>
+            
+        </nav>
+    </div>
+</body>
+</html>

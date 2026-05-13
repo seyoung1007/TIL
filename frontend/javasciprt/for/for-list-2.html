@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for 문 배열</title>
+  </head>
+  <body>
+    <h1>상품리스트</h1>
+    <ul id="list">
+      <!-- js출력 -->
+      <!-- <li>사과</li>
+      <li>바나나</li>
+      <li>딸기</li> -->
+    </ul>
+  
+
+<ul id="list1"></ul>
+    <script>
+      const products = ["사과", "바나나", "딸기","포도"];
+      //  console.log(products);
+      // console.log(products.length);
+      const proList = document.querySelector("#list")
+
+      for (let i = 0; i < products.length; i++) {
+        // console.log(i);
+        // console.log(products[3]);
+        
+        proList.innerHTML += `<li>${products[i]}</li>`
+      }
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+/* 전체 메뉴 영역 */
+.gnb {
+    padding: 20px;
+    padding-bottom: 0;
+  background-color: aqua;
+}
+/* 메인메뉴 */
+.main-menu {
+  width: 400px;
+  display: flex;
+  margin-left: auto;
+  background-color: beige;
+}
+.main-menu > li {
+    position: relative;
+  width: calc(100% / 4);
+  text-align: center;
+
+  background-color: burlywood;
+}
+.main-menu > li > a{
+    display: block;
+    padding: 10px 0;
+    background-color: rgb(114, 161, 161);
+}
+/* 서브메뉴 */
+.sub-menu{
+    width: 100%;
+    position: absolute;
+    top: 42px;
+    left: 0;
+    background-color: red;
+    display: none;
+}
+.sub-menu > li > a{
+    display: block;
+    padding: 10px 0;
+    background-color: aliceblue;
+}
+/* 호버시 서브메뉴 나오게 */
+.main-menu > li:hover .sub-menu{
+    display: block;
+}
+/* .main-menu:hover .sub-menu{
+    display: block;
+} */
+ .main-menu > li:hover > a{
+    background-color: red;
+ }
+ .sub-menu > li:hover > a{
+    background-color: red;
+ }

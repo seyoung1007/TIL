@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수 예제 - 메뉴 토글</title>
+    <style>
+      .todo {
+        margin: 10px 0;
+        cursor: pointer;
+      }
+      .completed {
+        text-decoration: line-through;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>📑오늘 할 일</h2>
+    <ul>
+      <li class="todo"><input type="checkbox" />청소하기</li>
+      <li class="todo"><input type="checkbox" />장보기</li>
+      <li class="todo"><input type="checkbox" />운동하기</li>
+      <li class="todo"><input type="checkbox" />코딩 공부하기</li>
+    </ul>
+    <script>
+      const todos = document.querySelectorAll(".todo");
+      console.log(todos);
+      todos.forEach(function (todo) {
+        // console.log(todo);
+        const checkbox = todo.querySelector("input");
+        console.log(checkbox.checked);
+
+        checkbox.addEventListener("change", function () {
+          console.log(checkbox.checked);
+          if (checkbox.checked) {
+            todo.classList.add("completed");
+          } else {
+            todo.classList.remove("completed");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

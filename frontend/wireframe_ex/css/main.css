@@ -1,0 +1,257 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  display: block;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+/* 전체레이아웃 */
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+  background-color: antiquewhite;
+}
+/* 상단 */
+.header {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background-color: aquamarine;
+}
+/* 로고 */
+.logo {
+  width: 200px;
+  height: 100%;
+  background-color: rgb(238, 220, 255);
+  padding: 30px 10px;
+}
+.logo img {
+  width: 100%;
+}
+/* 메뉴 */
+.menu {
+  position: relative;
+
+  width: calc(100% - 200px);
+  background-color: rgb(129, 192, 247);
+}
+.navi {
+  width: 500px;
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  display: flex;
+  background-color: rgb(224, 192, 255);
+}
+.navi > li {
+  position: relative;
+  width: calc(100% / 4);
+  text-align: center;
+}
+.navi > li > a {
+  padding: 10px 0;
+}
+.navi > li:hover > a {
+  background-color: rgb(190, 135, 245);
+}
+/* 서브메뉴 */
+.submenu {
+  width: 100%;
+  position: absolute;
+  top: 44px;
+  left: 0;
+  display: none;
+  background-color: cadetblue;
+  z-index: 1;
+}
+.submenu > li > a {
+  padding: 10px 0;
+}
+.submenu > li:hover > a {
+  background-color: rgb(54, 121, 123);
+}
+/* 메인메뉴 호버시 서브메뉴 보임 */
+.navi > li:hover .submenu {
+  display: block;
+}
+/* 메인 */
+.main {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+/* 이미지 슬라이드 */
+.img-slide {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-color: aqua;
+}
+.img-slide a {
+  position: relative;
+}
+.img-slide a img {
+  width: 100%;
+}
+.img-slide span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 20px;
+  font-size: 24px;
+}
+/* contents */
+.contents {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 200px;
+  background-color: burlywood;
+}
+/* tabmenu */
+.tabmenu {
+  position: relative;
+  display: flex;
+  width: 400px;
+  height: 100%;
+  padding: 10px 0;
+  background-color: aqua;
+}
+.tabmenu > li {
+  position: absolute;
+  width: 100%;
+}
+.tabmenu > li > a {
+  position: relative;
+  width: 100px;
+  padding: 5px 0;
+  background-color: #fff;
+  text-align: center;
+}
+.tabmenu > li:last-child > a {
+  /* position: absolute;  */
+  left: 100px;
+  background-color: cadetblue;
+}
+.tabmenu > li > div {
+  position: absolute;
+  top: 33px;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  display: none;
+  background-color: rgb(237, 210, 103);
+}
+.tabmenu > li.active > div {
+  display: block;
+}
+/* 공지사항 */
+.notice li:hover {
+  font-weight: bold;
+  /* display: flex; */
+}
+.notice li a {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+.notice li:nth-child(even) a {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+/* 갤러리 */
+.gallery > ul {
+  display: flex;
+  gap: 5px;
+  /* justify-content: space-between; */
+}
+.gallery > ul > li {
+  width: calc(100% / 3);
+  background-color: red;
+}
+.gallery img {
+  width: 100%;
+}
+/* banner */
+.banner {
+  position: relative;
+  width: 400px;
+  height: 100%;
+  background-color: rgb(0, 255, 89);
+}
+.banner a,
+.shortcut a {
+  width: 100%;
+  height: 190px;
+  padding: 10px;
+  overflow: hidden;
+}
+.banner a img,
+.shortcut a img {
+  width: 100%;
+}
+.banner span,
+.shortcut span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+/* shortcut */
+.shortcut {
+  position: relative;
+  width: 400px;
+  height: 100%;
+  background-color: rgb(208, 255, 0);
+}
+/* 하단 */
+footer {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background-color: #eee;
+}
+.footer-logo {
+  width: 200px;
+  padding: 30px 10px;
+  background-color: #333;
+}
+.footer-logo img{
+    width: 100%;
+}
+/* 하단메뉴 */
+.bt-menu{
+    text-align: center;
+    width: 1000px;
+    background-color: #eee;
+}
+.btmenu-list{
+      text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    height: 50px;
+    background-color: rgb(138, 138, 138)
+}
+.copy{
+    line-height: 50px;
+}

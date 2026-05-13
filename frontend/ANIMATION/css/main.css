@@ -1,0 +1,73 @@
+#container {
+  width: 500px;
+  margin: 50px auto;
+  background-color: antiquewhite;
+  display: flex;
+  gap: 50px;
+  padding: 30px;
+}
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: aquamarine;
+}
+.box1 {
+  background-color: blueviolet;
+  border: 2px solid transparent;
+  animation-name: shape; /* 애니메이션 이름 지정*/
+  animation-duration: 3s; /* 애니메이션 실행시간 지정*/
+  animation-timing-function: ease-in; /* 애니메이션 실행시간 지정*/
+  animation-direction: alternate; /* 홀수 번째는 normal 짝수는 reverse로 진행*/
+
+  animation-iteration-count: infinite; /* 애니메이션 무한 반복*/
+}
+.box2 {
+  background-color: rgb(180, 226, 43);
+  border: 1px solid transparent;
+  animation-name: rotate;
+  animation-duration: 5s;
+  animation-iteration-count: infinite; /* 애니메이션 무한 반복*/
+}
+/* shape 애니메이션 정의 */
+@keyframes shape {
+  from {
+    border: 2px solid transparent;
+  }
+  to {
+    border: 4px dotted #333;
+    border-radius: 50%;
+  }
+}
+/* rotate */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+/* box3 */
+.box3{
+    animation: ani-rotate 1.5s infinite , bg-color 1.5s infinite alternate ;
+    /* background-color: red; */
+
+}
+@keyframes ani-rotate {
+    form{
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    }
+    50%{
+        transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+    }
+    to{transform: perspective(120px) rotateX(0deg) rotateY(-180deg);}
+}
+@keyframes bg-color{
+    from{
+        background-color: red;
+    }
+    50%{
+        background-color: green;
+    }
+    to{background-color: blue;}
+}

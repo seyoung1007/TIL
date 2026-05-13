@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>forEach()</title>
+    <style>
+      .red{
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="productList">
+      <!-- js출력 -->
+      
+    </ul>
+    <script>
+      const proList = document.querySelector("#productList")
+      const products = [
+        { name: "티셔츠", price: 15000 , desc:"이쁜 티셔츠"},
+        { name: "청바지", price: 25000 , desc:"이쁜 청바지"},
+        { name: "운동화", price: 20000 , desc:"이쁜 운동화"},
+        
+      ];
+      console.log(products);
+      products.forEach(function (item) {
+        console.log(item);
+
+        console.log(item.name);
+        console.log(item.price);
+        proList.innerHTML += `
+        <li>
+        <h3>${item.name}</h3>
+        <p> 설명:   </p>
+        <p class="red">${item.price.toLocaleString()}원</p>
+       </li>
+        `
+
+      });
+    </script>
+  </body>
+</html>

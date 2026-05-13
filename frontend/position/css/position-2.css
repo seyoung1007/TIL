@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#contents{
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background: url(../images/city.jpg);
+    background-size: cover;
+    border: 1px solid #333;
+    margin: 100px auto;
+
+}
+.name1{
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#contents .name2{
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+ top: 0;
+    right: 0;
+}
+#contents .name3{
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+   
+}
+#contents .name4{
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.name5{
+     color: #fff;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+}

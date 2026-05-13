@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 객체</title>
+</head>
+<body>
+    <script>
+        // 1.length 속성
+        const str = "Hollo, JavaScript"
+        console.log(`1.length :${str.length}`);
+        // console.log("1.length :", str.length);
+        // 2.toUpperCase()toLowerCase()
+        const text = "Hello"
+        console.log(`2.toUpperCase()대문자 :${text.toUpperCase()}`);
+        console.log(`2.toLowerCase()소문자 :${text.toLowerCase()}`);
+        // 3.inclues()
+        const email = "user@example.com"
+        console.log(`3.@ 포함여부 : ${email.includes("@")}`);
+        // 4.trim() 공백제거
+        const input = " He llo "
+        console.log(input.length);//6
+        console.log(input.trim().length);//5
+        // 5.slice()
+        const str2 = "JavaScript"
+        // slice(시작인덱스(포함),끝인덱스(미포함,바로앞까지만 자름))
+        console.log(`부분 문자열 :${str2.slice(4,10)} `);
+        // 6.replace()
+        const sentence = "I like Java"
+        console.log(`6.문자열 교체:${sentence.replace("Java" , "JavaScript")} `);
+        // 7.split()
+        const data = "apple,banana,orange"
+        console.log(`7.문자열 분리 : ${data.split("")}`);
+        
+    </script>
+</body>
+</html>

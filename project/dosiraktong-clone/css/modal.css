@@ -1,0 +1,99 @@
+/* modal */
+.modal-wrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+}
+.modal-box {
+  width: 500px;
+  padding: 120px 0 30px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  border-radius: 30px;
+  text-align: center;
+}
+.modalLogo {
+  position: absolute;
+  top: -85px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 196px;
+  height: 168px;
+  border-radius: 50%;
+  border: 6px solid #eee;
+  background: url("../images/sirak_phone.png") no-repeat center #fff;
+}
+.modalNotice {
+  line-height: 1.7;
+}
+.modalNotice strong {
+  color: #f00;
+  background: linear-gradient(to top, rgb(255, 210, 210) 50%, transparent 50%);
+}
+.modalNotice span {
+  font-size: 14px;
+  font-weight: 300;
+}
+.modalClose i {
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.quick {
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 999;
+  /* background-color: red; */
+}
+#chat span {
+  position: absolute;
+  top: 34px;
+  left: -180px;
+  background-color: #fff;
+  padding: 8px 15px;
+  border-radius: 23px;
+  text-align: center;
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+#chat:hover span {
+  opacity: 1;
+  visibility: visible;
+}
+#shop {
+  width: 55px;
+  line-height: 55px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.2);
+}
+#gotop {
+  width: 55px;
+  line-height: 55px;
+  border-radius: 50%;
+  background-color: #ed1c24;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.2);
+  display: none;
+}

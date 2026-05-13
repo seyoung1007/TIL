@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+i {
+  color: #777;
+  display: block;
+}
+/* 전체 레이아웃 */
+.container{
+    width: 50%;
+    max-width: 400px;
+    min-width: 300px;
+    margin: 150px auto;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px #ddd;
+}
+button{
+    width: 100%;
+    padding: 8px;
+    border: 0;
+    border-radius: 3px;
+}
+button:hover{
+    cursor: pointer;
+    filter: brightness(90%);
+}
+button img{
+    width: 24px;
+}
+form{
+    width: 100%;
+}
+.input-gr{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.input-gr input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c5c3c3;
+    border-radius: 3px;
+    outline: none;
+}
+.input-gr input::placeholder{
+    color: #c5c3c3;
+}
+button[type="submit"]{
+    font-size: 18px;
+    color: #fff;
+    background-color: #6294ff;
+}
+#otherLogin{
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    background-color: #ededed;
+    align-items: center;
+    color: #555;
+}

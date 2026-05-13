@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수 예제 - 메뉴 재사용</title>
+  </head>
+  <body>
+    <button id="menuBtn">메뉴 1</button>
+    <button id="menuBtn2">메뉴 2</button>
+    <button id="menuBtn3">메뉴 3</button>
+    <div id="menu1" style="display: none">메뉴 내용1</div>
+    <div id="menu2" style="display: none">메뉴 내용2</div>
+    <div id="menu3" style="display: none">메뉴 내용3</div>
+    <script>
+      // 메뉴 보이게 하는 함수
+      function toggleMenu(id) {
+        let menu = document.getElementById(id);
+        console.log(menu);
+        console.log(id);
+        
+
+        if (menu.style.display === "none") {
+          menu.style.display = "block";
+        } else {
+          menu.style.display = "none";
+        }
+      }
+      const menuBtn = document.getElementById("menuBtn");
+      const menuBtn2 = document.getElementById("menuBtn2");
+      const menuBtn3 = document.getElementById("menuBtn3");
+      // menuBtn.addEventListener("click", toggleMenu);
+      // 함수재사용
+      menuBtn.addEventListener("click", function () {
+        toggleMenu("menu1");
+      });
+      menuBtn2.addEventListener("click" , function(){
+        toggleMenu("menu2")
+      })
+      menuBtn3.addEventListener("click" , function(){
+        toggleMenu("menu3")
+      })
+    </script>
+  </body>
+</html>

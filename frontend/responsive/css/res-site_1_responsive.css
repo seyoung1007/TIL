@@ -1,0 +1,21 @@
+/* 768px */
+@media (max-width:768px){
+    .gnb{
+        display: none;
+    }
+    .menu-btn{
+        display: block;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    /* 상품 */
+    .product-list li{
+        width: calc((100% - 40px) / 3);
+    }
+    .tablet-img{
+        display: block;
+    }
+    .pc-img{
+        display: none;
+    }
+}

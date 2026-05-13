@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* 공통영역 */
+p {
+  width: 500px;
+  height: 200px;
+  background-color: #eee;
+  border: 1px;
+  solid: #ccc;
+}
+#static {
+  /* 문서의 흐름에 맞춰 배치한다 - 기본값 */
+  position: static;
+}
+#relative-1 {
+  position: relative;
+  /* 위치값 지정 */
+  top: 0;
+  left: 400px;
+}
+#relative-2{
+  position: relative;
+  top: 20px;
+  bottom: 300px;
+}
+#fixed{
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+}

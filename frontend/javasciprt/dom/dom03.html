@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Event 객체</title>
+    <style>
+        #cover2{
+           width: 100px;
+           height: 100px;
+           border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="images/easys-1.jpg" alt="이미지" id="cover">
+    </div>
+    <script>
+        const cover = document.querySelector("#cover")
+        cover.addEventListener("mouseover" , (e)=>{
+            cover.src = "images/easys-2.jpg"
+            cover.id = "cover2"
+            console.log(e.target);
+            
+        })
+        cover.addEventListener("mouseout" , ()=>{
+            cover.src = "images/easys-1.jpg"
+            cover.id = "cover"
+        })
+
+    </script>
+</body>
+</html>

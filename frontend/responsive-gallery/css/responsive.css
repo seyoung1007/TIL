@@ -1,0 +1,74 @@
+/* 1200미만 */
+@media (max-width: 1200px) {
+  header {
+    position: relative;
+    width: 100%;
+    height: 80px;
+  }
+  header h1 {
+    font-size: 24px;
+    line-height: 1;
+    transform: translateY(-50%);
+  }
+  header h1::after,
+  header h1::before {
+    display: none;
+  }
+  header ul {
+    left: 83%;
+    bottom: 25px;
+  }
+  header ul li {
+    margin-right: 20px;
+  }
+  header ul li a {
+    font-size: 20px;
+  }
+  header ul li a span{
+    display: none;
+  }
+  main {
+    width: 100%;
+    margin-left: 0;
+  }
+  main section article{
+    width: 25%;
+  }
+}
+/* 900미만 */
+@media (max-width: 900px){
+main section article{
+    width: calc(100% / 3);
+  }
+}
+/* 900미만 */
+@media (max-width: 680px){
+    header ul {
+    left: 75%;
+   
+  }
+main section article{
+    width: calc(100% / 2);
+  }
+}
+/* 480미만 */
+@media (max-width: 480px){
+    header h1{
+        font-size: 18px;
+    }
+    header ul {
+    left: 71%;
+    gap: 0;
+    bottom: 28px;
+   
+  }
+  main ul{
+    justify-content: center;
+  }
+main section article{
+    width: 100%;
+  }
+  header ul li a {
+    font-size: 16px;
+  }
+}

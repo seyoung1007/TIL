@@ -1,0 +1,56 @@
+@import url("main.css");
+/* 예약하기 */
+#singUp {
+  width: 400px;
+  background-color: white;
+  margin: 50px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#singUp fieldset {
+  padding: 20px;
+}
+#singUp fieldset legend {
+  font-size: 12px;
+  padding: 0 10px;
+}
+.user li,
+.room li {
+  gap: 10px;
+  padding: 10px 0;
+  display: flex;
+  /* background-color: red; */
+}
+.user label {
+  width: 60px;
+}
+.user input {
+  padding-left: 10px;
+}
+.user input::placeholder {
+  color: #999;
+  font-size: 12px;
+}
+/* 예약 버튼 영역 */
+.btn-area {
+  text-align: center;
+}
+.notice {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 10px;
+}
+/* 예약 버튼 */
+.btn-area button {
+  padding: 10px;
+  width: 100%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  background-color: red;
+}
+.btn-area button:hover {
+  background-color: rgb(188, 0, 0);
+}

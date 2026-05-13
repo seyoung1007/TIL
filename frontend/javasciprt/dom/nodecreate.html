@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>노드 추가하기</h1>
+      <p>공부할 내용을 기록해 주세요</p>
+      <p>공부가 끝난 것은 클릭해서 삭제 할 수 있습니다.</p>
+      <form>
+        <input type="text" id="subject" />
+        <button class="btn">추가</button>
+      </form>
+      <hr />
+      <ul id="itemList">
+        <!-- js 출력 -->
+      </ul>
+    </div>
+    <script>
+      const btn = document.querySelector(".btn");
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        // input 가져오기
+        const subject = document.querySelector("#subject");
+        console.log(subject.value);
+        // =====공백검사===
+        if (subject.value.trim() === "") {
+          alert("공부할 내용을 입력하세요.");
+          return;
+        }
+
+        // li만들기
+        const newLi = document.createElement("li");
+        console.log(newLi);
+        // 텍스트 만들기
+        const newText = document.createTextNode(subject.value);
+        console.log(newText);
+        // li태그에 텍스트 넣기
+        newLi.appendChild(newText);
+        // ul가져오기
+        const itemList = document.querySelector("#itemList");
+        // input초기화
+        subject.value = "";
+        // ul에 li넣기
+        // itemList.appendChild(newLi)
+        // 맨 위 추가
+        //부모.insertBefore(새요소 , 기존요소)
+        itemList.insertBefore(newLi, itemList.firstChild);
+        // 노드 지우기 ====
+        const itemLi = document.querySelectorAll("#itemList li");
+        // console.log(itemLi);
+        itemLi.forEach((item) => {
+          console.log(item);
+          //  일반 fuction(){} - this가 자신을 가르친다
+          // item.addEventListener("click" , function(){
+          //     // console.log(this);
+          //     this.remove()
+
+          // })
+          item.addEventListener("click", (e) => {
+            e.target.remove();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+.wrap {
+  width: 80%;
+  margin: auto;
+  display: flex;
+}
+
+.swiper-button-prev {
+  position: absolute;
+  color: red;
+  /* top: 500px !important; */
+  /* left: 500px !; */
+  /* left: 50% !important;
+
+  top: 200px !important; */
+}
+.swiper-button-next{
+position: absolute;
+  color: red;
+  /* top: 500px !important; */
+  /* left: 500px !; */
+
+  /* right: 667.219px !important;
+  top: 200px !important; */
+}
+.mySwiper {
+  bottom: -500px;
+  margin-bottom: 50px;
+}
+.navigation{
+    position: absolute;
+    top: 400px;
+    right: 700px;
+    width: 100px;
+    height: 50px;
+    background-color: yellow;
+}

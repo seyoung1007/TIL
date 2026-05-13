@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+.wrap {
+  width: 1200px;
+  margin: auto;
+}
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  padding-right: 20px;
+  background-color: antiquewhite;
+}
+/* 로고 */
+.logo {
+  width: 200px;
+  background-color: aquamarine;
+}
+/* 메뉴 */
+.nav {
+  padding-top: 57px;
+  width: 500px;
+  background-color: cadetblue;
+}
+.gnb {
+  display: flex;
+}
+.gnb > li {
+  position: relative;
+  width: calc(100% / 4);
+  text-align: center;
+  background-color: aliceblue;
+}
+.gnb > li > a {
+  display: block;
+  padding: 10px 0;
+  background-color: red;
+}
+.gnb > li:hover > a {
+  background-color: chocolate;
+  color: #fff;
+}
+/* 헤더 전체배경 메뉴 */
+.submenu-bg {
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  background-color: rgb(153, 153, 153);
+  width: 1200px;
+  height: 200px;
+}
+.depth2 {
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: 43px;
+  left: 0;
+  z-index: 1;
+  background-color: azure;
+}
+.depth2 > li {
+  width: 100%;
+}
+.depth2 > li > a {
+  width: 100%;
+  padding: 10px 0;
+  display: block;
+}
+.depth2 > li:hover > a {
+  background-color: blueviolet;
+  color: #fff;
+}
+/* 호버했을때 서브 메뉴 나오기 */
+.gnb:hover .depth2 , .gnb:hover + .submenu-bg{
+  display: block;
+}

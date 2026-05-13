@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setInterval() 배너/슬라이드 자동 넘김</title>
+  </head>
+  <body>
+    <!-- <div id="banner">1번 배너</div> -->
+    <img id="banner" src="images/1.jpg" alt="" />
+
+    <script>
+      const bannerList = ["images/1.jpg", "images/2.jpg", "images/3.jpg"];
+      let index = 0;
+      const banner = document.getElementById("banner");
+      //    console.log(index);
+    //   console.log((index + 1) % bannerList.length);
+      //    index + 1 => 1,2,3 %(나머지 값 ) 1 % 3 => 1 /2 % 3 => 2 /  3 % 3 => 0
+      setInterval(() => {
+        index = (index + 1) % bannerList.length;
+        // console.log(index);
+        // banner.textContent = bannerList[index]
+        banner.src = bannerList[index];
+      }, 2000);
+    </script>
+  </body>
+</html>

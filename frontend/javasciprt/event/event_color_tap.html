@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      a {
+        color: #333;
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+        width: 500px;
+        margin: 200px auto 20px;
+        /* background-color: red; */
+        padding: 10px 20px;
+        text-align: center;
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+      }
+      ul li {
+        width: calc(100% / 3);
+      }
+      ul li a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: aliceblue;
+      }
+      #result {
+        width: 500px;
+        height: 300px;
+        background-color: #fff;
+        border: 2px solid #eaeaea;
+        margin: auto;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="#" onclick="changeBg('green')">Green</a></li>
+      <li><a href="#" onclick="changeBg('orange')">Orange</a></li>
+      <li><a href="#" onclick="changeBg('purple')">Purple</a></li>
+      <li><a href="#" onclick="changeBg('pink')">Pink</a></li>
+    </ul>
+    <div id="result">
+      <!-- js출력 -->
+    </div>
+    <script>
+      const result = document.querySelector("#result");
+      function changeBg(color) {
+        // console.log(color);
+        result.style.backgroundColor = color
+      }
+    </script>
+  </body>
+</html>

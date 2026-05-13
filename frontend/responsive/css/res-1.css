@@ -1,0 +1,39 @@
+.box1 {
+  width: 500px;
+  /* height: 500px; */
+  margin: auto;
+  background-color: red;
+}
+.box1 img {
+  width: 100%;
+  display: block;
+}
+.box2 {
+  width: 100%;
+  max-width: 500px;
+  min-width: 200px;
+  /* height: 500px; */
+  background-color: pink;
+  margin: auto;
+}
+.box2 img {
+  width: 100%;
+  display: block;
+}
+@media (max-width: 480px) {
+  .box1 {
+    width: 400px;
+    background-color: blueviolet;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .box2 {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}
+@media (max-width: 390px) {
+  .box1 {
+    width: 200px;
+  }
+}

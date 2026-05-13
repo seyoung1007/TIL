@@ -1,0 +1,23 @@
+@import url("reset.css");
+.wrap{
+    width: 100%;
+}
+a{
+    color: #fff;
+}
+.inner{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+/* header */
+.header{
+    background-color: #0bec22;
+    color: #fff;
+    padding: 20px 0;
+}
+.header .inner{
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+}

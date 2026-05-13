@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#contents{
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background: url(../images/city.jpg) no-repeat;
+    background-size: cover;
+    border: 1px solid #333;
+    margin: 100px auto; 
+}
+#contents h2{
+    font-size: 120px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% -50%);
+
+}

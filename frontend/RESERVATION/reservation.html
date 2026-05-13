@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>예약하기</title>
+    <link rel="stylesheet" href="css/reservation.css" />
+  </head>
+  <body>
+    <!-- 전체 레이아웃 -->
+    <div class="wrap">
+      <!-- 메뉴 -->
+      <nav class="navi">
+        <ul>
+          <li><a href="index.html#intro">이용안내</a></li>
+          <li><a href="index.html#room">객실소개</a></li>
+          <li><a href="index.html#reservation">예약 방법 및 요금</a></li>
+          <li><a href="#">예약하기</a></li>
+        </ul>
+      </nav>
+      <!-- 예약하기 -->
+      <form id="singUp">
+        <!-- 개인정보 -->
+        <fieldset>
+            <legend>개인정보</legend>
+            <ul class="user">
+                <li>
+                    <label for="fullName">이름</label>
+                    <input type="text" id="fullName" placeholder="이름을 입력하세요" required>
+                </li>
+                <li>
+                    <label for="tel">연락처</label>
+                    <input type="tel" id="tel" placeholder="010-0000-0000" required>
+                </li>
+            </ul>
+        </fieldset>
+        <!-- 객실 형태 -->
+         <fieldset>
+            <legend>객실 형태</legend>
+            <ul class="room">
+                <li>
+                    <input type="radio" id="room" name="roomSelect">
+                    <label for="room">기본형(최대 2인)</label required>
+                </li>
+                <li>
+                    <input type="radio" id="family" name="roomSelect">
+                    <label for="family">가족형(최대 4인)</label required> 
+                </li>
+            </ul>
+        </fieldset>
+        <!-- 예약 버튼 -->
+         <div class="btn-area">
+            <p class="notice">정보를 확인한 후 예약하기 버튼을 눌러주세요</p>
+            <button type="submit">예약하기</button>
+         </div>
+      </form>
+    </div>
+  </body>
+</html>

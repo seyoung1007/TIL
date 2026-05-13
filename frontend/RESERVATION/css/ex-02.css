@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+/* 전체 레이아웃 */
+.wrap {
+  width: 960px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  /* background-color: aqua; */
+}
+/* 메뉴 */
+.menu {
+  width: 900px;
+  padding: 10px;
+  background-color: burlywood;
+}
+.menu > ul {
+    display: flex;
+}
+.menu > ul > h2 {
+  width: 150px;
+  color: #fff;
+  background-color: rgb(76, 168, 76);
+}
+.menu > ul > li {
+    width: calc(100% / 4);
+}
+.menu > ul > li > a {
+}
+.container1{
+    padding: 20px;
+}
+.container1 img{
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.imgcontainer {
+    display: flex;
+}
+.imgcontainer p{
+    padding: 10px;
+}
+.desc {
+    padding: 20px;
+}
+.btnmenu {
+    width: 900px;
+    background-color: plum;
+}
+.btnmenu ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    width: calc(100% / 4);
+}
