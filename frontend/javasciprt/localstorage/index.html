@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로컬스토리지</title>
+  </head>
+  <body>
+    <button id="save">저장</button>
+    <button id="load">불러오기</button>
+    <button id="remove">삭제하기</button>
+    <p class="text">
+      <!-- js출력 -->
+    </p>
+    <hr />
+    <!-- 입력창내용 저장하기 -->
+    <input type="text" id="input" />
+    <button class="signup">회원가입</button>
+    <h2 class="result">
+      <!-- js출력 -->
+    </h2>
+    <script>
+      const save = document.querySelector("#save");
+      const load = document.querySelector("#load");
+      const remove = document.querySelector("#remove");
+      const text = document.querySelector(".text");
+      save.addEventListener("click", () => {
+        // localStorage.setItem("key" , "value")
+        // 로컰토리지에 저장하기
+        localStorage.setItem("name", "세영");
+      });
+      // 로컬스토리지에 저장된 값을 꺼내기
+      load.addEventListener("click", () => {
+        const data = localStorage.getItem("name");
+        // document.write(data)
+        // document.querySelector(".text").innerText = data;
+        text.innerText = data;
+      });
+      // 로컬스토리지에 삭제하기
+      remove.addEventListener("click", () => {
+        localStorage.removeItem("name");
+        text.innerText = "";
+      });
+      // ============
+      // 입력창에 이름 저장하기
+      const input = document.querySelector("#input");
+      const signup = document.querySelector(".signup");
+      const result = document.querySelector(".result");
+      signup.addEventListener("click", () => {
+        localStorage.setItem("signup", input.value);
+      });
+      // 페이지 시작하면 자동 출력
+      const username = localStorage.getItem("signup");
+      result.innerHTML = `<h1>안녕하세요! ${username}님!</h1>`
+    </script>
+  </body>
+</html>
