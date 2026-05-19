@@ -48,10 +48,10 @@
           btn.classList.add("dark");
         });
         // 글자 변경
-        darkBtn.textContent = "🌞라이트모드 변경";
-      } else {
+        darkBtn.textContent = "🌞라이트모드 변경"
+      }else{
         // 글자 변경
-        darkBtn.textContent = "🌙다크모드 변경";
+        darkBtn.textContent = "🌙다크모드 변경"
       }
       // 다크모드 변경 버튼 클릭시
       darkBtn.addEventListener("click", () => {
@@ -60,15 +60,16 @@
         // 모든 버튼 dark 토글
         buttons.forEach((btn) => {
           btn.classList.toggle("dark");
+
         });
         // localStorage저장
         if (document.body.classList.contains("dark")) {
           localStorage.setItem("theme", "dark");
-          //   버튼 글자 변경
-          darkBtn.textContent = "🌞라이트모드 변경";
+        //   버튼 글자 변경
+        darkBtn.textContent = "🌞라이트모드 변경"
         } else {
           localStorage.setItem("theme", "light");
-          darkBtn.textContent = "🌙다크모드 변경";
+          darkBtn.textContent = "🌙다크모드 변경"
         }
       });
       // todo배열

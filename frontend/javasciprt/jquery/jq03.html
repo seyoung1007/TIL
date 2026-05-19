@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+      }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <h1 id="hi">하이</h1>
+    <div class="box"></div>
+    <script>
+      function hi() {
+        console.log("하이");
+      }
+      hi();
+      function changText() {
+        $("#hi").text("안녕");
+      }
+      changText();
+      function hideBox() {
+        $(".box").show()
+      }
+      hideBox();
+    </script>
+  </body>
+</html>

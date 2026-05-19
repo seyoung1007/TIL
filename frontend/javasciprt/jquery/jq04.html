@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 150px;
+        height: 150px;
+        border: 1px solid #333;
+        margin-bottom: 10px;
+        background-color: pink;
+      }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <!-- click() -->
+    <button id="clickBtn">클릭</button>
+    <div class="box clickBox">클릭박스</div>
+    <!-- dbclick() -->
+    <div class="box dblBox">더블클릭</div>
+    <!-- mouseenter / mouseleave -->
+    <div class="box hoverBox">호버박스</div>
+    <!-- focus / blur -->
+    <div class="form">
+      <input type="text" class="focusInput" placeholder="입력하세요" />
+      <div class="msg"></div>
+    </div>
+    <script>
+      $("#clickBtn").click(() => {
+        $(".clickBox").css({
+          width: "250px",
+          height: "250px",
+          backgroundColor: "red",
+        });
+      });
+      //   더블클릭 (this)
+      // $(".dblBox").dblclick((e)=>{
+      //     // console.log(this);
+      //     console.log(e.target);
+
+      // })
+      $(".dblBox").dblclick(function () {
+        console.log(this);
+        $(this).css({
+          width: "100px",
+          height: "100px",
+          color: "#fff",
+          backgroundColor: "purple",
+        });
+        $(this).text("더블클릭 성공!!!");
+      });
+      //   mouseenter / mouseleave
+      //   $(".hoverBox").mouseenter(function () {
+      //     $(this).css({
+      //       backgroundColor: "orange",
+      //       transform: "scale(1.2)",
+      //     });
+      //   });
+      //   $(".hoverBox").mouseleave(function(){
+      //     $(this).css({
+      //       backgroundColor: "pink",
+      //       transform: "scale(1)",
+      //     });
+      //   })
+      $(".hoverBox").hover(
+        function () {
+          $(this).css({
+            backgroundColor: "orange",
+            transform: "scale(1.2)",
+          });
+        },
+        function () {
+          $(this).css({
+            backgroundColor: "pink",
+            transform: "scale(1)",
+          });
+        },
+      );
+      //   focus / blur
+      $(".focusInput").focus(function () {
+        $(this).css({
+          backgroundColor: "yellow",
+          border: "3px solid red",
+        });
+        $(".msg").text("입력중.....");
+      });
+      $(".focusInput").blur(function () {
+        $(this).css({
+          backgroundColor: "#fff",
+          border: "1px solid #333",
+        });
+        $(".msg").text("입력 종료");
+      });
+    </script>
+  </body>
+</html>

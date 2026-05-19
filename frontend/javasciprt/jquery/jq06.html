@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/allevent.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      BODY{
+        padding: 10%;
+      }
+      .container {
+        height: 400px;
+      }
+      .box {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        margin-bottom: 30px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: white;
+        font-size: 24px;
+      }
+      button {
+        padding: 10px 20px;
+        margin: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">BOX</div>
+    </div>
+    <button class="slideDown">slideDown</button>
+    <button class="slideUp">slideUp</button>
+    <button class="slideToggle">slideToggle</button>
+
+    <button class="fadeIn">fadeIn</button>
+    <button class="fadeOut">fadeOut</button>
+    <button class="fadeToggle">fadeToggle</button>
+
+    <button class="hide">hide</button>
+    <button class="show">show</button>
+    <button class="toggle">toggle</button>
+  </body>
+</html>

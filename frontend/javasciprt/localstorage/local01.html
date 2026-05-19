@@ -1,4 +1,4 @@
-`<!doctype html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -13,33 +13,33 @@
     <script>
       const apple = document.querySelector("#apple");
       const cart = document.querySelector("#cart");
-      // 만약 저장된 데이터가 없으면 [] 빈 배열 사용
+      //   만약 저장된 데이터가 없으면 [] 빈 배열 사용
       // 다시 배열처럼 사용할려면 JSON.parse()
       let items = JSON.parse(localStorage.getItem("cart")) || [];
       // 상품 담기
       apple.addEventListener("click", () => {
-        // 배열에 사과를 추가
+        // 배열레 사과를 추가
         items.push("사과");
         // 로컬스토리지는 문자열만 저장 가능하다
         // 꼭 stringfy 사용해야한다.
         localStorage.setItem("cart", JSON.stringify(items));
         render();
       });
-      // 출력 함수
+      //   출력 함수
       function render() {
         cart.innerText = items.join("*");
       }
-      render();
-      // JSON.parse()
-      // 문자열(string)을 배열(array)이나 객체로 변환하는 기능
-      // ex
-      // 문자열
-      let data = `["사과" , "바나나" , "포도"]`;
-      console.log(typeof data);
-      // JSON.parse로 배열로 변환
-      let result = JSON.parse(data)
-      console.log(typeof result);
-      
+      render()
+    //   JSON.parse()
+    // 문자열(string)을 배열(array)이나 객체로 변환하는 기능
+    // ex 
+    // 문자열
+    let data = '["사과" , "바나나" ,"포도"]'
+    console.log(typeof data);
+    // JOSN.parse로 배열로 변환
+    let result = JSON.parse(data)
+    console.log(typeof result);
+    
     </script>
   </body>
 </html>
