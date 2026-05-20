@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-size: 16px;
+  background-color: #fff;
+  color: #666;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: #666;
+}
+/* modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99;
+  display: none;
+}
+.modal.active{
+    display: block;
+}
+.modal-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  padding: 20px;
+  background-color: #fff;
+}
+.modal-btn {
+  text-align: right;
+  font-weight: bold;
+  cursor: pointer;
+}
+.container {
+  max-width: 1200px;
+  margin: 100px auto;
+}
+/* 탭메뉴 영역*/
+.tabmenu {
+  position: relative;
+  height: 200px;
+}
+
+.tabmenu > li {
+  position: absolute;
+}
+.tabmenu > li > a {
+  background-color: aqua;
+  width: 100px;
+  line-height: 40px;
+  text-align: center;
+}
+.tabmenu > li.active > a {
+  background-color: #333;
+  color: #fff;
+}
+.tabmenu > li:last-child > a {
+  position: absolute;
+  left: 100px;
+}
+/* 탭메뉴 내용 영역 */
+.tabmenu > li > div {
+  width: 500px;
+  display: none;
+  padding: 20px;
+  background-color: rgb(240, 224, 202);
+}
+.tabmenu > li.active > div {
+  display: block;
+}
+/* 공지사항 */
+.notice a {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+.notice > ul > li:nth-child(even) > a {
+  background-color: #aaa;
+}
+/* 갤러리 */
+.gallery {
+  position: absolute;
+  top: 40px;
+}
+.gallery ul {
+  display: flex;
+  gap: 20px;
+}
