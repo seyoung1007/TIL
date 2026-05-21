@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+h2 {
+  text-align: center;
+}
+.slide-wrap {
+  width: 600px;
+  margin: 100px auto;
+  overflow: hidden;
+}
+/* 좌우 슬라이드 */
+.slide-list {
+  display: flex;
+}
+.slide-list li {
+  /* flex-grow : 0 ; 여분공간을 늘리지않음 */
+  /* flex-shrink: 0; 공간이 부족해도 줄어들지 안음 */
+  /* flex-basis: 1000px; 아이템의 기본크기 */
+  flex: 0 0 1000px;
+}
+/* 위로 슬라이드 */
+.slide-up-box {
+  width: 600px;
+  height: 400px;
+  overflow: hidden;
+  background-color: aliceblue;
+}
+.slide-list-up li {
+  height: 400px;
+}
+/* 3. 페이드인 / 페이드아웃 */
+.slide-fade{
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+.slide-fade li{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
