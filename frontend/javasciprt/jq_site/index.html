@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/site.css" />
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/site.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="logo">SHOP</h1>
+      <ul class="menu">
+        <li>NEW</li>
+        <li>BEST</li>
+        <li>SALE</li>
+        <li>EVENT</li>
+      </ul>
+      <div class="mobile-btn">☰</div>
+    </header>
+    <!-- 모바일 메뉴 -->
+    <div class="mobile-menu">
+      <ul>
+        <li>NEW</li>
+        <li>BEST</li>
+        <li>SALE</li>
+        <li>EVENT</li>
+      </ul>
+    </div>
+    <section class="visual">
+      <h1>SUMMER COLLECTION</h1>
+      <p>GREEN 쇼핑몰</p>
+    </section>
+    <section class="search-wrap">
+      <input type="text" class="search-input" placeholder="상품 검색" />
+      <div class="tab-menu">
+        <div class="tab-btn active" data-category="all">전체</div>
+        <div class="tab-btn" data-category="shoes">신발</div>
+        <div class="tab-btn" data-category="bag">가방</div>
+        <div class="tab-btn" data-category="cap">모자</div>
+      </div>
+    </section>
+    <section class="product-wrap">
+      <!-- js 출력 -->
+      <div class="product">
+        <!-- 상품 이미지 -->
+        <img src="" alt="" />
+        <div class="product-content">
+          <!-- 상품 이름 -->
+          <h3>러닝화</h3>
+          <!-- 상품 가격 -->
+          <p class="price">129000 원</p>
+          <!-- 버튼들 -->
+          <div class="btn-wrap">
+            <!-- 장바구니 버튼 -->
+            <button class="cart-btn">장바구니</button>
+            <button class="like-btn">❤</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
