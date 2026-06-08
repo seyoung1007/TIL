@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      img {
+        width: 100%;
+        display: block;
+      }
+      #catlist {
+        display: flex;
+        gap: 10px;
+        margin: auto;
+        width: 1000px;
+        justify-content: space-between;
+      }
+      .cat-card {
+        /* flex: 1; */
+        width: calc(30% - 20px);
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+        margin: auto;
+        background-color: antiquewhite;
+      }
+      .cat-image {
+        height: 300px;
+        object-fit: cover;
+      }
+      .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 10px;
+      }
+      .page-link {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 20px;
+        font-weight: bold;
+      }
+      .page-link.active {
+        background-color: #29b96a;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="catlist">
+      <!-- js출력 -->
+    </div>
+    <!-- 페이지네이션 -->
+    <div class="pagination" id="pagination">
+      <!-- js출력 -->
+    </div>
+
+    <script>
+      // 화면에 몇개 보여질건지 설정
+      const itmesPerPage = 3;
+      let currntPage = 1;
+      const catListDive = document.querySelector("#catlist");
+      const paginationDive = document.querySelector("#pagination");
+      const prevBtn = document.createElement("a");
+      const nextBtn = document.createElement("a");
+      //   고양이 정보를 가져와서 화면에 출력하는 함수
+      function displayCatInfo(page) {
+        catListDive.innerHTML = ""; //기존 카드 삭제
+        // console.log(page); // 1
+        fetch("cat_list.json")
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            // 페이지네이션 계산
+            // 처음보여지는 인텍스번호
+            const startIndex = (page - 1) * itmesPerPage;
+            // console.log(startIndex); // 0
+            // 마지막 인텍스번호
+            const endIndex = startIndex + itmesPerPage;
+            // console.log(endIndex); //3
+            const catsOnPage = data.slice(startIndex, endIndex); // 0,1,2
+            // console.log(catsOnPage);
+            catsOnPage.forEach((cat) => {
+              console.log(cat);
+              const catCard = document.createElement("div");
+              console.log(catCard);
+              catCard.className = "cat-card";
+              catCard.innerHTML = `
+                 <a href="#">
+        <img src="${cat.url}" alt="${cat.title}" class="cat-image">
+        <h2>${cat.title}</h2>
+        <p>고양이 특징:${cat.description}</p>
+       </a>
+                `;
+              catListDive.appendChild(catCard);
+            });
+            pagination(data.length);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+      //   페이지네이션 생성
+      function pagination(totalItems) {
+        // console.log(totalItems); // 10
+        paginationDive.innerHTML = "";
+        const totalPage = Math.ceil(totalItems / itmesPerPage); // ceil()올림 함수
+        // console.log(totalPage); //4
+        for (let i = 1; i <= totalPage; i++) {
+          // console.log(i); // 1~4
+          const pageLink = document.createElement("a");
+          pageLink.className = "page-link";
+          //   console.log(pageLink);
+          pageLink.href = `?page=${i}`;
+          //   console.log(pageLink);
+          pageLink.textContent = i;
+          if (i === currntPage) {
+            pageLink.classList.add("active");
+          }
+          pageLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            currntPage = i;
+            displayCatInfo(currntPage);
+          });
+          paginationDive.appendChild(pageLink);
+        }
+      }
+      displayCatInfo(currntPage);
+    </script>
+  </body>
+</html>
