@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>페이지네이션-고양이 정보 리스트</title>
     <style>
       a {
         text-decoration: none;
@@ -15,10 +15,10 @@
       }
       #catlist {
         display: flex;
-        gap: 10px;
         margin: auto;
         width: 1000px;
         justify-content: space-between;
+        gap: 10px;
       }
       .cat-card {
         /* flex: 1; */
@@ -40,14 +40,17 @@
         gap: 10px;
       }
       .page-link {
-        background-color: #3498db;
+        background-color: #cf9bff;
         color: #fff;
         padding: 10px 15px;
         border-radius: 20px;
         font-weight: bold;
       }
       .page-link.active {
-        background-color: #29b96a;
+        background-color: #8400ff;
+      }
+      .page-link.disabled {
+        background-color: #ccc;
       }
     </style>
   </head>
@@ -61,43 +64,46 @@
     </div>
 
     <script>
-      // 화면에 몇개 보여질건지 설정
-      const itmesPerPage = 3;
-      let currntPage = 1;
-      const catListDive = document.querySelector("#catlist");
-      const paginationDive = document.querySelector("#pagination");
+      const itemsPerPage = 3; // 하나의 화면에 보여지는 개수 설정
+      let currentPage = 1;
+      const catListDiv = document.querySelector("#catlist");
+      const paginationDiv = document.querySelector("#pagination");
       const prevBtn = document.createElement("a");
       const nextBtn = document.createElement("a");
-      //   고양이 정보를 가져와서 화면에 출력하는 함수
+
+      // 고양이 정보를 가져와서 화면에 출력하는 함수
       function displayCatInfo(page) {
-        catListDive.innerHTML = ""; //기존 카드 삭제
+        catListDiv.innerHTML = ""; // 기존 카드 삭제
         // console.log(page); // 1
         fetch("cat_list.json")
           .then((response) => response.json())
           .then((data) => {
             console.log(data);
             // 페이지네이션 계산
-            // 처음보여지는 인텍스번호
-            const startIndex = (page - 1) * itmesPerPage;
+
+            // 처음 보여지는 인덱스 번호 = 0
+            const startIndex = (page - 1) * itemsPerPage;
             // console.log(startIndex); // 0
-            // 마지막 인텍스번호
-            const endIndex = startIndex + itmesPerPage;
-            // console.log(endIndex); //3
-            const catsOnPage = data.slice(startIndex, endIndex); // 0,1,2
-            // console.log(catsOnPage);
+
+            // 마지막 인덱스 번호
+            const endIndex = startIndex + itemsPerPage;
+            // console.log(endIndex); // 3
+
+            const catsOnPage = data.slice(startIndex, endIndex);
+            // console.log(catsOnPage); // 0,1,2
             catsOnPage.forEach((cat) => {
               console.log(cat);
               const catCard = document.createElement("div");
               console.log(catCard);
               catCard.className = "cat-card";
               catCard.innerHTML = `
-                 <a href="#">
-        <img src="${cat.url}" alt="${cat.title}" class="cat-image">
-        <h2>${cat.title}</h2>
-        <p>고양이 특징:${cat.description}</p>
-       </a>
+                  <a href="cat_cate.html?id=${cat.id}">
+                  <img src="${cat.url}" alt="${cat.title}" class="cat-image">
+                  <h2>${cat.title}</h2>
+                  <p>고양이 특징: ${cat.description}</p>
+                </a>
                 `;
-              catListDive.appendChild(catCard);
+              catListDiv.appendChild(catCard);
             });
             pagination(data.length);
           })
@@ -105,32 +111,63 @@
             console.log(error);
           });
       }
-      //   페이지네이션 생성
+      // 페이지네이션 생성
       function pagination(totalItems) {
         // console.log(totalItems); // 10
-        paginationDive.innerHTML = "";
-        const totalPage = Math.ceil(totalItems / itmesPerPage); // ceil()올림 함수
-        // console.log(totalPage); //4
+        paginationDiv.innerHTML = "";
+        const totalPage = Math.ceil(totalItems / itemsPerPage); // ceil()올림 함수
+        // console.log(totalPage); // 4
         for (let i = 1; i <= totalPage; i++) {
-          // console.log(i); // 1~4
+          console.log(i); // 1 ~ 4
           const pageLink = document.createElement("a");
           pageLink.className = "page-link";
-          //   console.log(pageLink);
+          // console.log(pageLink);
           pageLink.href = `?page=${i}`;
-          //   console.log(pageLink);
+          console.log(pageLink);
           pageLink.textContent = i;
-          if (i === currntPage) {
+          if (i === currentPage) {
             pageLink.classList.add("active");
           }
           pageLink.addEventListener("click", (e) => {
             e.preventDefault();
-            currntPage = i;
-            displayCatInfo(currntPage);
+            currentPage = i;
+            displayCatInfo(currentPage);
           });
-          paginationDive.appendChild(pageLink);
+          paginationDiv.appendChild(pageLink);
         }
+        // 이전 버튼
+        prevBtn.className = "page-link";
+        prevBtn.textContent = "이전";
+        paginationDiv.insertBefore(prevBtn, paginationDiv.firstChild);
+        // 1번 페이지일 때 이전 버튼 비활성화
+        if (currentPage === 1) {
+          prevBtn.classList.add("disabled");
+        }
+
+        // 이전 버튼 클릭시
+        prevBtn.onclick = () => {
+          if (currentPage > 1) {
+            currentPage--;
+            displayCatInfo(currentPage);
+          }
+        };
+
+        // 다음 버튼
+        nextBtn.className = "page-link";
+        nextBtn.textContent = "다음";
+        paginationDiv.appendChild(nextBtn);
+        // 마지막 페이지일 때 다음 버튼 비활성화
+        if (currentPage === totalPage) {
+          nextBtn.classList.add("disabled");
+        }
+        nextBtn.onclick = () => {
+          if (currentPage < totalPage) {
+            currentPage++;
+            displayCatInfo(currentPage);
+          }
+        };
       }
-      displayCatInfo(currntPage);
+      displayCatInfo(currentPage);
     </script>
   </body>
 </html>
