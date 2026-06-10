@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      img {
+        width: 100%;
+        display: block;
+      }
+      #list {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+      #list li {
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      #list li img {
+        height: 250px;
+        object-fit: contain;
+      }
+      h3 {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>상품리스트</h1>
+    <ul id="list">
+      <!-- js -->
+    </ul>
+    <script>
+      // async = 이 함수 안에서 기다릴 수 있어
+      //   await = 결과 나올때 까지 기다려!
+      // try / catch = 성공하면 try , 실패하면 catch
+      //   finally = 무조건 마지막에 실행
+      async function getProducts() {
+        try {
+          const res = await fetch("https://fakestoreapi.com/products?limit=10");
+          const data = await res.json();
+          //   console.log(data);
+          const ulE = document.querySelector("#list");
+          data.forEach((item) => {
+            // console.log(item);
+
+            ulE.innerHTML += `
+             <li>
+        <img src="${item.image}" alt="${item.category}" >
+        <h3>${item.title}</h3>
+        <p>가격 :$${item.price} </p>
+        <p>카테고리 : ${item.category}</p>
+        <p>평점 : ${item.rating.rate} / 리뷰 :${item.rating.count} </p>
+        
+       </li>
+            `;
+          });
+        } catch (e) {
+          console.log("에러:", e);
+        } finally {
+          console.log("데이터 불러오기 완료!");
+        }
+      }
+      getProducts();
+    </script>
+  </body>
+</html>
