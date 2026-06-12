@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif;
+        background: #f5f5f5;
+        padding: 30px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .search {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      input {
+        flex: 1;
+        padding: 12px;
+      }
+
+      button {
+        padding: 12px 20px;
+        cursor: pointer;
+      }
+
+      .current-weather {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+
+      .forecast {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: #fff;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+      }
+
+      .card img {
+        width: 80px;
+      }
+      h3 {
+        padding: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="search">
+        <input
+          type="text"
+          id="city"
+          placeholder="도시명을 입력하세요. (ex)Daegu"
+        />
+        <button id="searchBtn">검색</button>
+      </div>
+      <!-- 도시 날씨 -->
+      <div id="currentWeather">
+        <!-- js -->
+      </div>
+      <!-- 5일까지 날씨 -->
+      <h3>5일 일기 예보</h3>
+      <div id="forecast" class="forecast">
+        <!-- js -->
+      </div>
+    </div>
+    <script>
+      const apiKey = "98baa4a1aa5fb1cd7d67cac262e0f524";
+      const currentWeather = document.querySelector("#currentWeather");
+      const forecast = document.querySelector("#forecast");
+      // 현재 날씨
+      async function getCurrentWeather(city) {
+        const res = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=kr`,
+        );
+        const data = await res.json();
+        console.log(data);
+        currentWeather.innerHTML = `
+        <div class="current-Weather">
+          <h2>도시명 :${data.name} </h2>
+          <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="${data.weather[0].icon}" />
+           <p>날씨 : ${data.weather[0].description} </p>
+         <p>기온 : ${data.main.temp} °C</p>
+         <p>체감온도 : ${data.main.feels_like}</p>
+         <p>습도 : ${data.main.humidity}%</p>
+         <p>풍속 : ${data.wind.speed}m/s</p>
+        </div>
+        `;
+      }
+      // 5일 날씨
+      async function getForecast(city) {
+        const res = await fetch(
+          `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric&lang=kr`,
+        );
+        const data = await res.json();
+        console.log(data);
+        // 5일 예보는 3시간마다 날씨 정보 제공
+        // data.list = [
+        //   { dt_txt: "2026-06-12 00:00:00" },
+        //   { dt_txt: "2026-06-12 03:00:00" },
+        //   { dt_txt: "2026-06-12 06:00:00" },
+        //   { dt_txt: "2026-06-12 09:00:00" },
+        //   { dt_txt: "2026-06-12 12:00:00" },
+        //   { dt_txt: "2026-06-12 15:00:00" }
+        // ];
+        const daily = data.list.filter((item) => {
+          return item.dt_txt.includes("12:00:00");
+        });
+        console.log(daily);
+
+        daily.forEach((day) => {
+          console.log(day);
+          const date = new Date(day.dt_txt);
+          console.log(date);
+          forecast.innerHTML += `
+            <div class="card">
+            <h3>날짜 ${date.toLocaleDateString()}</h3>
+            <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="${day.weather[0].icon}">
+            <p>오늘의 날씨 :${day.weather[0].description} </p>
+            <p>온도 :${day.main.temp} </p>
+         </div>
+            `;
+        });
+      }
+      // 도시 검색되는 기능
+      async function searchWeather() {
+        // 검색창에 입력하는 도시
+        const city = document.querySelector("#city").value;
+        console.log(city);
+        if (!city) {
+          alert("도시명을 입력하세요.");
+          return;
+        }
+
+        await getCurrentWeather(city);
+        await getForecast(city);
+      }
+      //   검색클릭하면 실행되는 기능
+      const searchBtn = document.querySelector("#searchBtn");
+      const cityInput = document.querySelector("#city");
+      searchBtn.addEventListener("click", searchWeather);
+      //  엔터키 검색 기능
+      cityInput.addEventListener("keydown", (e) => {
+        console.log(e.key);
+        if (e.key === "Enter") {
+          searchWeather();
+        }
+      });
+      //   화면 로드되면 대구 표시
+      getCurrentWeather("Daegu");
+      getForecast("Daegu");
+    </script>
+  </body>
+</html>
