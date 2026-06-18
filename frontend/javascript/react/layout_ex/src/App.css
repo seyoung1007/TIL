@@ -1,0 +1,23 @@
+.heading{
+  background-color: bisque;
+  padding: 20px;
+}
+.desc{
+  color: aqua;
+}
+/* 비주얼 */
+.visual{
+  background-color: rgb(179, 240, 219);
+}
+.visual-sw .swiper-slide{
+padding: 50px 0;
+background-color: cornsilk;
+}
+/* content */
+.content{
+  background-color: rgb(255, 211, 157);
+}
+/* footer */
+.footer{
+  background-color: rgb(210, 248, 171);
+}
