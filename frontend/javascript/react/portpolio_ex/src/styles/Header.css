@@ -1,0 +1,14 @@
+/*  상단 */
+.header {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding:  50px 10%; */
+  padding: 0 10%;
+  background-color: red;
+  z-index: 999;
+}

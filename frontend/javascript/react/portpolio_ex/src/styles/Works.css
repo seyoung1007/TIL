@@ -1,0 +1,42 @@
+#works h2 {
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+.card-wrap {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 30px;
+}
+
+.card {
+  background: white;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  transition: 0.3s;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 20px 20px 10px;
+}
+
+.card p {
+  padding: 0 20px 20px;
+  color: #666;
+}

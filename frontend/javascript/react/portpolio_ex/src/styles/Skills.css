@@ -1,0 +1,19 @@
+/* skills */
+#skills h2 {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+#skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+#skills li {
+  padding: 12px 24px;
+  border-radius: 999px;
+
+  background: white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
