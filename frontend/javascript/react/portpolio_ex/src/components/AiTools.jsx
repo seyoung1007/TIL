@@ -1,16 +1,16 @@
+import aiTools from "../data/AiToolsdata";
 import "../styles/AiTools.css";
 function AiTools() {
   return (
     <>
       <section id="ai">
         <h2>AI 활용</h2>
-
-        <ul>
-          <li>ChatGPT - 코드 디버깅</li>
-          <li>Claude - UX Writing</li>
-          <li>Figma AI - 레이아웃 생성</li>
-          <li>FigJam AI - 아이디어 정리</li>
-        </ul>
+    <div className="tab-list">
+      {aiTools.map((tab)=>(
+        console.log(tab)
+        
+      ))}
+    </div>
       </section>
     </>
   );
