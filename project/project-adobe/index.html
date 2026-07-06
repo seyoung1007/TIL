@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adobe.com</title>
+    <!-- favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="asset/favicon/favicon/apple-touch-icon.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="asset/favicon/favicon/favicon.svg"
+    />
+    <link rel="shortcut icon" href="asset/favicon/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="asset/favicon/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="asset/favicon/favicon/site.webmanifest" />
+    <!-- SEO -->
+    <title>페이지 제목 | 사이트명</title>
+    <meta name="description" content="페이지 내용을 간략하게 설명하는 문장" />
+    <meta name="keywords" content="키워드1, 키워드2, 키워드3" />
+    <meta name="author" content="사이트명 또는 작성자" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph (SNS 공유용) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="페이지 제목" />
+    <meta property="og:description" content="페이지 설명" />
+    <meta property="og:image" content="https://example.com/image.jpg" />
+    <meta property="og:url" content="https://example.com" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="페이지 제목" />
+    <meta name="twitter:description" content="페이지 설명" />
+    <meta name="twitter:image" content="https://example.com/image.jpg" />
+
+    <!-- font aswome CDN-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- AOS CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- font -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+    </style>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+
+    <!-- JS -->
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="overlay"></div>
+      <!-- HEADER -->
+      <header class="header">
+        <div class="header-inner">
+          <div class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="logo">
+            <a href="index.html"> <span class="adobe-logo">Adobe</span></a>
+          </div>
+          <nav class="gnb">
+            <ul>
+              <li><a href="subpage1.html">크리에이티브 클라우드</a></li>
+              <li><a href="#">제품</a></li>
+              <li><a href="plan.html">플랜 및 가격</a></li>
+              <li><a href="#">리소스</a></li>
+              <li><a href="#">비지니스</a></li>
+              <li><a href="#">지원</a></li>
+            </ul>
+          </nav>
+          <div class="header-btns">
+            <a href="#" class="btn-login">로그인</a>
+            <a href="#" class="btn-join">회원가입</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-bg">
+          <video
+            src="asset/mainpage/main-visual.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+          ></video>
+        </div>
+        <div class="hero-content">
+          <p class="hero-sub">ADOBE CREATIVE CLOUD</p>
+          <h1 class="hero-title">상상은 자유롭게,<br />창작은 더 강력하게.</h1>
+          <p class="hero-desc">
+            모든 앱 40% 이상 할인 혜택으로<br />지금바로 Creative Cloud를
+            시작하세요.
+          </p>
+          <div class="hero-btns">
+            <a href="#" class="btn-primary">무료 체험하기</a>
+            <a href="#" class="btn-play"
+              ><span class="play-icon">▶</span> 영상보기</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- HERO - FIREFLY -->
+      <div class="hero-firefly">
+        <div class="firefly-label">
+          <strong>PIRELFY AI</strong>
+          <p>상상한 이미지를<br />몇초만에 생성</p>
+          <span class="arrow">→</span>
+        </div>
+        <div class="firefly-imgs">
+          <span class="fi-img fi1"
+            ><img src="asset/mainpage/img/headerAi-1.png" alt=""
+          /></span>
+          <span class="fi-img fi2"
+            ><img src="asset/mainpage/img/headerAi-2.png" alt=""
+          /></span>
+          <span class="fi-img fi3"
+            ><img src="asset/mainpage/img/headerAi-3.png" alt=""
+          /></span>
+          <span class="fi-img fi4"
+            ><img src="asset/mainpage/img/headerAi-4.png" alt=""
+          /></span>
+        </div>
+      </div>
+
+      <!-- 툴 소개 -->
+      <section class="solution">
+        <div class="h-inner">
+          <!-- 툴 소개 - 타이틀 -->
+          <div class="solution-title">
+            <h2>
+              창의적인<br />
+              크리에이터를 <br />위한 솔루션
+            </h2>
+
+            <p>
+              전 세계 크리에이터들이<br />
+              믿고 사용하는 최고의 앱을<br />
+              모두 만나보세요.
+            </p>
+
+            <div class="solution-btn">
+              <a href="#">모든 앱 보기</a>
+            </div>
+          </div>
+
+          <!-- 카드 출력 -->
+          <div class="solution-cards" id="solCards"></div>
+
+          <!-- 오른쪽 버튼 -->
+          <div class="solution-category">
+            <a href="#" class="content1-button active" data-filter="image">
+              <span
+                ><img src="asset/mainpage/icon/button-photo.png" alt=""
+              /></span>
+              이미지
+            </a>
+
+            <a href="#" class="content1-button" data-filter="video">
+              <span
+                ><img src="asset/mainpage/icon/button-video.png" alt=""
+              /></span>
+              영상
+            </a>
+
+            <a href="#" class="content1-button" data-filter="design">
+              <span
+                ><img src="asset/mainpage/icon/button-design.png" alt=""
+              /></span>
+              디자인
+            </a>
+
+            <a href="#" class="content1-button" data-filter="3d">
+              <span
+                ><img src="asset/mainpage/icon/button-3d.png" alt=""
+              /></span>
+              3D 및 AR
+            </a>
+
+            <a href="#" class="content1-button" data-filter="document">
+              <span
+                ><img src="asset/mainpage/icon/button-docu.png" alt=""
+              /></span>
+              문서 및 PDF
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION : Firefly AI -->
+      <section class="firefly">
+        <div class="h-inner">
+          <!-- 왼쪽 -->
+          <div class="firefly-left">
+            <video autoplay muted loop playsinline class="bg-video">
+              <source src="asset/mainpage/MainButterF.mp4" type="video/mp4" />
+            </video>
+
+            <div class="firefly-content">
+              <h2>
+                아이디어가 <br />
+                현실이 되는 순간
+              </h2>
+
+              <p>
+                전 세계의 크리에이터를 <br />
+                Creative Cloud로 <br />
+                무한한 가능성을 만들고 있습니다.
+              </p>
+
+              <a href="#" class="detail-btn">자세히 보기</a>
+            </div>
+          </div>
+
+          <!-- 오른쪽 -->
+          <div class="firefly-right">
+            <div class="right-top">
+              <h3>AI로 더 빠르게, 더 창의적으로</h3>
+              <p>Adobe Firefly와 함께 아이디어를 구현해 보세요</p>
+            </div>
+
+            <div class="firefly-card-wrap">
+              <div class="firefly-card">
+                <img src="asset/mainpage/img/mainAi-1.jpg" alt="" />
+                <h4>텍스트를 이미지로</h4>
+                <p>
+                  텍스트 설명만으로 <br />
+                  멋진 이미지 생성
+                </p>
+              </div>
+
+              <div class="firefly-card">
+                <img src="asset/mainpage/img/mainAi-2.jpg" alt="" />
+                <h4>생성형 채우기</h4>
+                <p>
+                  이미지의 빈 부분을 <br />
+                  새로운 요소로 추가
+                </p>
+              </div>
+
+              <div class="firefly-card">
+                <img src="asset/mainpage/img/mainAi-3.jpg" alt="" />
+                <h4>텍스트 효과</h4>
+                <p>원하는 스타일의 텍스트를 <br />쉽게 만들기</p>
+              </div>
+            </div>
+
+            <a href="#" class="firefly-btn">Firefly 자세히 보기</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION : plan -->
+      <section class="plan">
+        <div class="plan-inner h-inner">
+          <!-- 왼쪽 텍스트 -->
+          <div class="plan-title">
+            <h2>
+              나에게 맞는 <br />
+              플랜을 <br />
+              선택하세요
+            </h2>
+
+            <p>
+              모든 플랜에 Adobe의 프리미엄<br />
+              크리에이티브 기능이 포함됩니다
+            </p>
+          </div>
+
+          <!-- 카드 영역 -->
+          <div class="plan-container">
+            <!-- 카드 1 -->
+            <div class="plan-list">
+              <span class="plan-type">개인</span>
+
+              <h3>모든 앱</h3>
+
+              <div class="home-price">
+                <p class="price-w">₩39,000</p>
+                <span>/ 월</span>
+              </div>
+
+              <p class="plan-listP">
+                모든 Creative Cloud 앱 사용 <br />
+                Adobe Firefly 포함 <br />
+                100GB 클라우드 저장소
+              </p>
+
+              <a href="#" class="plan-btn">구매하기</a>
+            </div>
+
+            <!-- 카드 2 -->
+            <div class="plan-list active">
+              <span class="best">추천</span>
+
+              <span class="plan-type">학생 및 교사</span>
+
+              <h3>모든 앱</h3>
+
+              <div class="price">
+                <p class="price-w">₩26,400</p>
+                <span>/ 월</span>
+              </div>
+
+              <p class="plan-listP">
+                모든 Creative Cloud 앱 사용 <br />
+                Adobe Firefly 포함 <br />
+                Adobe Fonts 무료
+              </p>
+
+              <a href="#" class="plan-btn">구매하기</a>
+            </div>
+
+            <!-- 카드 3 -->
+            <div class="plan-list">
+              <span class="plan-type">기업</span>
+
+              <h3>팀용 Creative Cloud Pro</h3>
+
+              <div class="price">
+                <p class="price-w">₩72,800</p>
+                <span>/ 월</span>
+              </div>
+
+              <p class="plan-listP">
+                모든 Creative Cloud 앱 사용 <br />
+                Adobe Firefly 포함 <br />
+                Adobe Express 포함
+              </p>
+
+              <a href="#" class="plan-btn">구매하기</a>
+            </div>
+          </div>
+
+          <!-- 더보기 -->
+          <div class="plan-more">
+            <a href="#">
+              더 알아보기
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- footer -->
+
+    <!-- 세영 -->
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <!-- 상단 배너 영역 -->
+      <div class="footer__banner">
+        <div class="footer__banner-inner inner">
+          <div class="footer__banner-logo">
+            <img
+              src="/asset/mainpage/cloud-logo.svg"
+              alt="Adobe Creative Cloud 로고"
+            />
+          </div>
+          <div class="footer__banner-text">
+            <strong class="footer__banner-title contents-title">
+              지금 Creative Cloud를 시작하세요
+            </strong>
+            <p class="footer__banner-desc contents-des">
+              7일 무료 체험 후, 나에게 맞는 플랜을 선택할 수 있습니다.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 하단 링크 영역 -->
+      <div class="footer__bottom">
+        <div class="footer__bottom-inner inner">
+          <!-- 메뉴 그룹 -->
+          <nav class="footer__nav">
+            <div class="footer__nav-group">
+              <h3 class="footer__nav-title card-title">제품</h3>
+              <ul class="footer__nav-list">
+                <li>
+                  <a href="#" class="footer__nav-link card-des">Photoshop</a>
+                </li>
+                <li>
+                  <a href="#" class="footer__nav-link card-des">Illustrator</a>
+                </li>
+                <li>
+                  <a href="#" class="footer__nav-link card-des">Premier Pro</a>
+                </li>
+                <li>
+                  <a href="#" class="footer__nav-link card-des"
+                    >After Effects</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="footer__nav-link card-des"
+                    >모든 제품 보기</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer__nav-group">
+              <h3 class="footer__nav-title card-title">리소스</h3>
+              <ul class="footer__nav-list">
+                <li>
+                  <a href="#" class="footer__nav-link card-des">튜토리얼</a>
+                </li>
+                <li>
+                  <a href="#" class="footer__nav-link card-des">블로그</a>
+                </li>
+                <li>
+                  <a href="#" class="footer__nav-link card-des">커뮤니티</a>
+                </li>
+                <li>
+                  <a href="#" class="footer__nav-link card-des">다운로드</a>
+                </li>
+                <li>
+                  <a href="#" class="footer__nav-link card-des"
+                    >교육 및 이벤트</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer__nav-group">
+              <h3 class="footer__nav-title card-title">지원</h3>
+              <ul class="footer__nav-list">
+                <li>
+                  <a href="#" class="footer__nav-link card-des">도움말 센터</a>
+                </li>
+                <li>
+                  <a href="#" class="footer__nav-link card-des">계정 관리</a>
+                </li>
+                <li>
+                  <a href="#" class="footer__nav-link card-des">청구 및 결제</a>
+                </li>
+                <li>
+                  <a href="#" class="footer__nav-link card-des">뉴스룸</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer__nav-group">
+              <h3 class="footer__nav-title card-title">회사</h3>
+              <ul class="footer__nav-list">
+                <li>
+                  <a href="#" class="footer__nav-link card-des">Adobe 소개</a>
+                </li>
+                <li>
+                  <a href="#" class="footer__nav-link card-des">채용 정보</a>
+                </li>
+                <li>
+                  <a href="#" class="footer__nav-link card-des">뉴스룸</a>
+                </li>
+                <li>
+                  <a href="#" class="footer__nav-link card-des">투자자 정보</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer__nav-group">
+              <h3 class="footer__nav-title card-title">구매</h3>
+              <ul class="footer__nav-list">
+                <li>
+                  <a href="#" class="footer__nav-link card-des">플랜 및 가격</a>
+                </li>
+                <li>
+                  <a href="#" class="footer__nav-link card-des"
+                    >기업용 솔루션</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="footer__nav-link card-des">학생 할인</a>
+                </li>
+                <li>
+                  <a href="#" class="footer__nav-link card-des">공공기관용</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+          <!-- 우측: 로고 + SNS + 저작권 -->
+          <div class="footer__right">
+            <div class="footer__brand">
+              <span class="footer__brand-icon">
+                <!-- Adobe A 아이콘 SVG -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 30 26"
+                  width="30"
+                  height="26"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="#FF0000"
+                    d="M19.5 0h10.5v26L19.5 0zM10.5 0H0v26L10.5 0zM15 9.6l5.4 16.4h-3.6l-1.6-4.8H9.7L15 9.6z"
+                  />
+                </svg>
+              </span>
+              <span class="footer__brand-name card-title">Adobe</span>
+            </div>
+
+            <ul class="footer__sns">
+              <li>
+                <a href="#" class="footer__sns-link" aria-label="Facebook">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="footer__sns-link" aria-label="Instagram">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="footer__sns-link" aria-label="X(Twitter)">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="footer__sns-link" aria-label="LinkedIn">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"
+                    />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="footer__sns-link" aria-label="YouTube">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                    />
+                    <polygon
+                      points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"
+                      fill="#fff"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+
+            <div class="footer__legal">
+              <ul class="footer__legal-list">
+                <li>
+                  <a href="#" class="footer__legal-link card-des"
+                    >개인정보 보호</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="footer__legal-link card-des">사용 약관</a>
+                </li>
+                <li>
+                  <a href="#" class="footer__legal-link card-des"
+                    >쿠키 환경 설정</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="footer__legal-link card-des">회사 약관</a>
+                </li>
+              </ul>
+              <p class="footer__copyright card-des">
+                Copyright © 2026 Adobe. All rights reserved.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 세영 - 끝 -->
+  </body>
+</html>

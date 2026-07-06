@@ -1,0 +1,1918 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitMatch — Find Your Trainer</title>
+
+    <!-- Favicon (SVG inline data URI) -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111'/%3E%3Ctext x='5' y='23' font-family='Georgia' font-size='18' font-weight='900' fill='%23FF385C'%3EF%3C/text%3E%3Ctext x='16' y='23' font-family='Georgia' font-size='18' font-weight='900' fill='white'%3EM%3C/text%3E%3C/svg%3E"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@400;500;700&family=Barlow+Condensed:wght@600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/components.css" />
+  </head>
+  <body>
+    <!-- ══════════════════════
+     NAV
+══════════════════════ -->
+    <nav class="nav" id="main-nav">
+      <!-- SVG 로고 마크 + 텍스트 -->
+      <div class="nav-logo" onclick="goHome()">
+        
+        <span>FitMatch</span>
+      </div>
+
+      <!-- 데스크톱 링크 -->
+      <div class="nav-links">
+        <button class="nav-link active" onclick="showPage('home', this)">
+          홈
+        </button>
+        <button class="nav-link" onclick="showPage('ai', this)">AI 추천</button>
+        <button class="nav-link" onclick="showPage('trainers', this)">
+          트레이너
+        </button>
+        <button class="nav-link" onclick="showPage('mypage', this)">
+          내 예약
+          <span class="nav-badge">0</span>
+        </button>
+      </div>
+      <button
+        class="nav-cta nav-ai-cta"
+        onclick="showPage('ai', document.querySelectorAll('.nav-link')[1])"
+      >
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0">
+          <circle cx="7" cy="7" r="3" fill="currentColor"/>
+          <circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 2"/>
+        </svg>
+        AI 매칭 시작
+      </button>
+
+      <!-- 모바일 AI 매칭 CTA (햄버거 옆, 드로어 밖) -->
+      <button
+        class="mobile-ai-cta"
+        onclick="showPage('ai', document.querySelectorAll('.nav-link')[1])"
+        aria-label="AI 매칭 시작"
+      >
+        <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+          <circle cx="7" cy="7" r="3" fill="currentColor"/>
+          <circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 2"/>
+        </svg>
+        <span>AI 매칭</span>
+      </button>
+
+      <!-- 햄버거 -->
+      <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+      </button>
+    </nav>
+
+    <!-- 드로어 오버레이 -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+
+    <!-- 모바일 드로어 -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <!-- ★ X 닫기 버튼 -->
+      <button
+        class="drawer-close-btn"
+        onclick="closeDrawer()"
+        aria-label="메뉴 닫기"
+      >
+        ✕
+      </button>
+
+      <!-- 드로어 상단 로고 -->
+      <div class="drawer-brand">
+        <svg width="28" height="28" viewBox="0 0 30 30" fill="none">
+          <rect width="30" height="30" rx="8" fill="#111111" />
+          <rect x="4" y="13" width="4" height="4" rx="1.5" fill="#FF385C" />
+          <rect x="22" y="13" width="4" height="4" rx="1.5" fill="#FF385C" />
+          <rect x="7" y="11" width="3" height="8" rx="1" fill="#FF385C" />
+          <rect x="20" y="11" width="3" height="8" rx="1" fill="#FF385C" />
+          <rect
+            x="9"
+            y="14"
+            width="12"
+            height="2"
+            rx="1"
+            fill="white"
+            opacity="0.9"
+          />
+        </svg>
+        <span class="drawer-brand-text">Fit<span>Match</span></span>
+      </div>
+
+      <div class="drawer-links">
+        <button class="drawer-link active" onclick="showPage('home', this)">
+          홈
+        </button>
+        <button class="drawer-link" onclick="showPage('ai', this)">
+          AI 추천
+        </button>
+        <button class="drawer-link" onclick="showPage('trainers', this)">
+          트레이너
+        </button>
+        <button class="drawer-link" onclick="showPage('mypage', this)">
+          내 예약
+          <span
+            class="nav-badge"
+            style="position: relative; top: 0; right: 0; margin-left: 6px"
+            >0</span
+          >
+        </button>
+      </div>
+      <hr class="drawer-divider" />
+      <div class="drawer-socials">
+        <a class="drawer-soc" href="#">in</a>
+        <a class="drawer-soc" href="#">ig</a>
+        <a class="drawer-soc" href="#">yt</a>
+        <a class="drawer-soc" href="#">tw</a>
+      </div>
+    </div>
+
+    <!-- ══════════════════════
+     HOME
+══════════════════════ -->
+    <div id="page-home" class="page active">
+      <!-- ★ 스토리 슬라이더 히어로 -->
+      <div class="hero">
+        <div class="hero-slide-bg" id="hero-slide-bg"></div>
+        <div class="h`ero-content">
+          <span class="slide-tag" id="slide-tag">AI-Powered PT Matching</span>
+          <h1 id="slide-head">FIND<br />YOUR<br /><em>TRAINER</em></h1>
+          <p id="slide-sub">
+            목표, 예산, 스타일에 딱 맞는 트레이너를<br />AI가 투명하게
+            연결해드립니다.
+          </p>
+
+          <!-- 슬라이드 컨트롤 -->
+          <div class="slide-controls">
+            <div class="slide-counter">
+              <span class="slide-cur" id="slide-cur">01</span>
+              <span class="slide-sep">/</span>
+              <span class="slide-total">04</span>
+            </div>
+            <div class="slide-progress-track">
+              <div class="slide-progress-bar" id="slide-progress-bar"></div>
+            </div>
+            <div class="slide-dots">
+              <button class="slide-dot active" aria-label="슬라이드 1"></button>
+              <button class="slide-dot" aria-label="슬라이드 2"></button>
+              <button class="slide-dot" aria-label="슬라이드 3"></button>
+              <button class="slide-dot" aria-label="슬라이드 4"></button>
+            </div>
+          </div>
+
+          <div class="hero-stats">
+            <div>
+              <span class="hs-num">247</span
+              ><span class="hs-label">등록 트레이너</span>
+            </div>
+            <div>
+              <span class="hs-num">4.9</span
+              ><span class="hs-label">평균 평점</span>
+            </div>
+            <div>
+              <span class="hs-num">32K</span
+              ><span class="hs-label">완료 세션</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 바디프로필 갤러리 -->
+      <div class="section">
+        <div class="gallery-intro">
+          <div>
+            <div class="label-tag">바디프로필</div>
+            <h2 class="big-title">REAL<br /><em>RESULTS</em></h2>
+          </div>
+          <p class="sec-desc">
+            우리 트레이너들과 함께한 실제 수강생의 변화 스토리입니다.
+          </p>
+        </div>
+        <div class="gallery-scroll">
+          <div class="g-card">
+            <img
+              src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=520&q=80"
+              alt="바디프로필"
+            /><span class="g-badge">바디프로필</span>
+            <div class="g-card-info">
+              <div class="g-card-name">이민준 트레이너</div>
+              <div class="g-card-tag">다이어트 · 체형교정 · 6개월</div>
+            </div>
+          </div>
+          <div class="g-card">
+            <img
+              src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=520&q=80"
+              alt="근력"
+            /><span class="g-badge">근력 강화</span>
+            <div class="g-card-info">
+              <div class="g-card-name">정태양 트레이너</div>
+              <div class="g-card-tag">파워리프팅 · 근비대 · 3개월</div>
+            </div>
+          </div>
+          <div class="g-card">
+            <img
+              src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=520&q=80"
+              alt="필라테스"
+            /><span class="g-badge">재활·필라테스</span>
+            <div class="g-card-info">
+              <div class="g-card-name">박정호 트레이너</div>
+              <div class="g-card-tag">재활 · 기능성 운동 · 4개월</div>
+            </div>
+          </div>
+          <div class="g-card">
+            <img
+              src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=520&q=80"
+              alt="바디프로필2"
+            /><span class="g-badge">바디프로필</span>
+            <div class="g-card-info">
+              <div class="g-card-name">한소희 트레이너</div>
+              <div class="g-card-tag">식단관리 · 바디프로필 · 5개월</div>
+            </div>
+          </div>
+          <div class="g-card">
+            <img
+              src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=520&q=80"
+              alt="다이어트"
+            /><span class="g-badge">다이어트</span>
+            <div class="g-card-info">
+              <div class="g-card-name">최은지 트레이너</div>
+              <div class="g-card-tag">다이어트 · 필라테스 · 3개월</div>
+            </div>
+          </div>
+          <div class="g-card">
+            <img
+              src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=520&q=80"
+              alt="바디빌딩"
+            /><span class="g-badge">바디프로필</span>
+            <div class="g-card-info">
+              <div class="g-card-name">김수아 트레이너</div>
+              <div class="g-card-tag">근력 · 바디프로필 · 6개월</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- ★ 스크롤형 프로모 섹션 (팝업 대체) -->
+      <div class="promo-scroll-section reveal">
+        <div class="promo-scroll-inner">
+          <div class="promo-scroll-left">
+            <span class="promo-scroll-badge">🎁 신규 회원 한정 혜택</span>
+            <h2 class="promo-scroll-title">
+              첫 PT 세션<br /><em>30% 할인</em>
+            </h2>
+            <p class="promo-scroll-desc">
+              지금 AI 매칭으로 트레이너를 찾고,<br />
+              첫 세션 30% 할인 쿠폰을 바로 받아보세요.
+            </p>
+            <div class="promo-scroll-perks">
+              <div class="promo-scroll-perk">
+                <span class="promo-perk-check">✓</span>첫 세션 30% 할인 즉시
+                지급
+              </div>
+              <div class="promo-scroll-perk">
+                <span class="promo-perk-check">✓</span>무료 체형 분석 상담 1회
+              </div>
+              <div class="promo-scroll-perk">
+                <span class="promo-perk-check">✓</span>AI 트레이너 매칭 무제한
+              </div>
+            </div>
+            <div class="promo-scroll-timer-row">
+              <span class="promo-scroll-timer-label">⏱ 오늘 한정 종료까지</span>
+              <div class="promo-scroll-timer">
+                <span class="pst-unit" id="ps-h">23</span>
+                <span class="pst-sep">:</span>
+                <span class="pst-unit" id="ps-m">59</span>
+                <span class="pst-sep">:</span>
+                <span class="pst-unit" id="ps-s">59</span>
+              </div>
+            </div>
+            <button
+              class="promo-scroll-cta"
+              onclick="
+                showPage('ai', document.querySelectorAll('.nav-link')[1])
+              "
+            >
+              지금 AI 매칭으로 할인받기 →
+            </button>
+          </div>
+          <div class="promo-scroll-right">
+            <div class="promo-scroll-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80"
+                alt="프로모션"
+              />
+              <div class="promo-scroll-img-badge">
+                <span class="psib-num">30%</span>
+                <span class="psib-label">할인</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- HOW IT WORKS -->
+      <div class="section">
+        <div class="label-tag">How It Works</div>
+        <h2 class="big-title">3 STEPS<br />TO <em>MATCH</em></h2>
+        <br />
+        <div class="how-grid">
+          <div class="how-item">
+            <div class="how-num">01</div>
+            <div class="how-title">목표 & 예산 입력</div>
+            <div class="how-desc">
+              운동 목표, 경험 수준, 원하는 예산을 입력하면 AI가 분석을
+              시작합니다.
+            </div>
+          </div>
+          <div class="how-item">
+            <div class="how-num">02</div>
+            <div class="how-title">AI 맞춤 추천</div>
+            <div class="how-desc">
+              수백 명의 트레이너 데이터를 분석해 나에게 최적화된 트레이너를
+              추천합니다.
+            </div>
+          </div>
+          <div class="how-item">
+            <div class="how-num">03</div>
+            <div class="how-title">즉시 예약 · 투명 결제</div>
+            <div class="how-desc">
+              숨겨진 수수료 없이 표시된 가격 그대로 예약하고 바로 PT를
+              시작하세요.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- CATEGORIES -->
+      <div class="section">
+        <div class="label-tag">Categories</div>
+        <h2 class="big-title">EXPLORE<br /><em>SPECIALTIES</em></h2>
+        <br />
+        <div class="cat-grid">
+          <div class="cat-item" onclick="goFilter('다이어트')">
+            <img
+              src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&q=80"
+              alt="다이어트"
+            />
+            <div class="cat-overlay"></div>
+            <div class="cat-body">
+              <span class="cat-name">다이어트</span>
+              <div class="cat-count">82명의 트레이너</div>
+            </div>
+          </div>
+          <div class="cat-item" onclick="goFilter('근력')">
+            <img
+              src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&q=80"
+              alt="근력"
+            />
+            <div class="cat-overlay"></div>
+            <div class="cat-body">
+              <span class="cat-name">근력 강화</span>
+              <div class="cat-count">67명의 트레이너</div>
+            </div>
+          </div>
+          <div class="cat-item" onclick="goFilter('재활')">
+            <img
+              src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&q=80"
+              alt="재활"
+            />
+            <div class="cat-overlay"></div>
+            <div class="cat-body">
+              <span class="cat-name">재활·필라테스</span>
+              <div class="cat-count">54명의 트레이너</div>
+            </div>
+          </div>
+          <div class="cat-item" onclick="goFilter('바디프로필')">
+            <img
+              src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&q=80"
+              alt="바디프로필"
+            />
+            <div class="cat-overlay"></div>
+            <div class="cat-body">
+              <span class="cat-name">바디프로필</span>
+              <div class="cat-count">44명의 트레이너</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- REVIEWS -->
+      <div class="section">
+        <div class="label-tag">Reviews</div>
+        <h2 class="big-title">WHAT THEY<br /><em>SAY</em></h2>
+        <br />
+        <div class="review-scroll">
+          <div class="rev-card">
+            <div class="rev-stars">★★★★★</div>
+            <div class="rev-text">
+              "3개월 만에 바디프로필 촬영 성공! 트레이너님이 가격 대비 너무
+              훌륭하고 식단까지 꼼꼼하게 챙겨주셨어요."
+            </div>
+            <div class="rev-author">
+              <img
+                class="rev-avatar"
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&q=80"
+                alt=""
+              />
+              <div>
+                <div class="rev-name">김지연</div>
+                <div class="rev-info">한소희 트레이너 · 5개월</div>
+              </div>
+            </div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-stars">★★★★★</div>
+            <div class="rev-text">
+              "이전에 부상으로 PT를 포기했는데, 재활 전문 트레이너 덕분에
+              완벽하게 회복했어요."
+            </div>
+            <div class="rev-author">
+              <img
+                class="rev-avatar"
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80"
+                alt=""
+              />
+              <div>
+                <div class="rev-name">박성민</div>
+                <div class="rev-info">박정호 트레이너 · 4개월</div>
+              </div>
+            </div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-stars">★★★★★</div>
+            <div class="rev-text">
+              "AI 추천이 정말 신기해요. 예산 8만원대로 검색했는데 딱 맞는
+              트레이너를 바로 연결해줬어요."
+            </div>
+            <div class="rev-author">
+              <img
+                class="rev-avatar"
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80"
+                alt=""
+              />
+              <div>
+                <div class="rev-name">이서현</div>
+                <div class="rev-info">이민준 트레이너 · 6개월</div>
+              </div>
+            </div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-stars">★★★★☆</div>
+            <div class="rev-text">
+              "헬스장 PT보다 가격이 훨씬 투명하고 예약도 정말 편해요."
+            </div>
+            <div class="rev-author">
+              <img
+                class="rev-avatar"
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&q=80"
+                alt=""
+              />
+              <div>
+                <div class="rev-name">최동현</div>
+                <div class="rev-info">정태양 트레이너 · 3개월</div>
+              </div>
+            </div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-stars">★★★★★</div>
+            <div class="rev-text">
+              "다이어트 목표였는데 체형까지 잡혔어요. 매 세션마다 체크해주셔서
+              동기부여가 확실했습니다."
+            </div>
+            <div class="rev-author">
+              <img
+                class="rev-avatar"
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&q=80"
+                alt=""
+              />
+              <div>
+                <div class="rev-name">오유진</div>
+                <div class="rev-info">최은지 트레이너 · 4개월</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PARTNERS -->
+      <div class="partners">
+        <div class="p-label">공식 파트너</div>
+        <div class="p-logos">
+
+          <!-- NIKE -->
+          <div class="p-logo-item" aria-label="Nike">
+           <img src="images/nike.svg" class="partner-logo" alt="nike">
+              <!-- Nike Swoosh wordmark style -->
+              <path d="M8 32C8 32 52 8 88 4C102 2 108 8 104 16C100 24 80 28 60 30C40 32 20 36 8 32Z" fill="currentColor"/>
+              <text x="14" y="40" font-family="Arial Black, sans-serif" font-size="13" font-weight="900" fill="currentColor" letter-spacing="3">NIKE</text>
+            </svg>
+          </div>
+
+          <!-- UNDER ARMOUR -->
+          <div class="p-logo-item" aria-label="Under Armour">
+            <img src="images/Under-Armour-Logo.svg" class="partner-logo" alt="nike">
+              <text x="4" y="28" font-family="Arial Black, sans-serif" font-size="11" font-weight="900" fill="currentColor" letter-spacing="1.5">UNDER ARMOUR</text>
+              <rect x="4" y="32" width="152" height="1.5" fill="currentColor" opacity="0.4"/>
+              <!-- UA shield icon -->
+              <path d="M68 6 L72 6 L74 10 L72 14 L68 14 L66 10 Z" fill="currentColor" opacity="0.6"/>
+            </svg>
+          </div>
+
+          <!-- LULULEMON -->
+          <div class="p-logo-item" aria-label="Lululemon">
+            <img src="images/lululemon.svg" class="partner-logo" alt="nike">
+              <!-- lululemon circle mark -->
+              <circle cx="14" cy="22" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M10 22 Q14 16 18 22 Q14 28 10 22Z" fill="currentColor"/>
+              <text x="28" y="27" font-family="Arial, sans-serif" font-size="11.5" font-weight="700" fill="currentColor" letter-spacing="2">lululemon</text>
+            </svg>
+          </div>
+
+          <!-- MYPROTEIN -->
+          <div class="p-logo-item" aria-label="Myprotein">
+            <img src="images/Myprotein_logo.svg" class="partner-logo" alt="nike">
+              <!-- Dumbbell icon -->
+              <rect x="4" y="19" width="26" height="6" rx="3" fill="currentColor"/>
+              <rect x="2" y="16" width="5" height="12" rx="2.5" fill="currentColor"/>
+              <rect x="23" y="16" width="5" height="12" rx="2.5" fill="currentColor"/>
+              <text x="36" y="27" font-family="Arial Black, sans-serif" font-size="11" font-weight="900" fill="currentColor" letter-spacing="1">MYPROTEIN</text>
+            </svg>
+          </div>
+
+          <!-- GARMIN -->
+          <div class="p-logo-item" aria-label="Garmin">
+           <img src="images/garmin.svg" class="partner-logo" alt="nike">
+              <!-- Garmin watch/compass icon -->
+              <circle cx="18" cy="22" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+              <circle cx="18" cy="22" r="2.5" fill="currentColor"/>
+              <line x1="18" y1="12" x2="18" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="18" y1="28" x2="18" y2="32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="8" y1="22" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="24" y1="22" x2="28" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <text x="34" y="27" font-family="Arial Black, sans-serif" font-size="13" font-weight="900" fill="currentColor" letter-spacing="2">GARMIN</text>
+            </svg>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="footer-top">
+          <div>
+            <span class="footer-logo">Fit<span>Match</span></span>
+            <p class="footer-tagline">
+              가격 불투명성 없이, AI가 연결하는 나만의 PT 파트너
+            </p>
+            <div class="footer-social">
+              <a class="soc-btn" href="#" aria-label="LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a class="soc-btn" href="#" aria-label="Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a class="soc-btn" href="#" aria-label="YouTube">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+              </a>
+              <a class="soc-btn" href="#" aria-label="Twitter / X">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <div class="f-col-title">서비스</div>
+            <ul class="f-links">
+              <li><a href="#">AI 매칭</a></li>
+              <li><a href="#">트레이너 찾기</a></li>
+              <li><a href="#">가격 안내</a></li>
+              <li><a href="#">기업 PT</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="f-col-title">트레이너</div>
+            <ul class="f-links">
+              <li><a href="#">트레이너 등록</a></li>
+              <li><a href="#">수익 계산기</a></li>
+              <li><a href="#">교육 센터</a></li>
+              <li><a href="#">파트너 혜택</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="f-col-title">고객 지원</div>
+            <ul class="f-links">
+              <li><a href="#">자주 묻는 질문</a></li>
+              <li><a href="#">고객센터</a></li>
+              <li><a href="#">개인정보처리방침</a></li>
+              <li><a href="#">이용약관</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="f-copy">© 2026 FitMatch Inc. All rights reserved.</span>
+          <div class="f-badges">
+            <span class="f-badge">🔒 SSL 보안</span
+            ><span class="f-badge">✓ 인증 트레이너</span
+            ><span class="f-badge">0% 수수료</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ══════════════════════
+     AI PAGE
+══════════════════════ -->
+    <div id="page-ai" class="page">
+      <!-- ★ AI 히어로: 스캔 비주얼 + 매칭 스코어 -->
+      <div class="ai-hero" id="ai-hero-section">
+        <div class="ai-hero-bg"></div>
+
+        <!-- AI 분석 레이블 (우상단) -->
+        <div class="ai-analyzing-label">
+          <span class="ai-pulse"></span>
+          AI ANALYZING
+        </div>
+
+        <!-- AI 스캔 카드 패널 (우측) -->
+        <div class="ai-visual-overlay">
+          <div class="ai-scan-panel">
+            <div class="ai-scan-card" id="sc1">
+              <img
+                class="ai-scan-avatar"
+                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=80&q=75"
+                alt=""
+              />
+              <div class="ai-scan-info">
+                <div class="ai-scan-name">이민준</div>
+                <div class="ai-scan-spec">다이어트 전문</div>
+                <div class="ai-scan-bar">
+                  <div class="ai-match-bar-fill" data-width="97%"></div>
+                </div>
+              </div>
+              <div class="ai-scan-score">97%</div>
+            </div>
+            <div class="ai-scan-card" id="sc2">
+              <img
+                class="ai-scan-avatar"
+                src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=80&q=75"
+                alt=""
+              />
+              <div class="ai-scan-info">
+                <div class="ai-scan-name">한소희</div>
+                <div class="ai-scan-spec">바디프로필 전문</div>
+                <div class="ai-scan-bar">
+                  <div class="ai-match-bar-fill" data-width="94%"></div>
+                </div>
+              </div>
+              <div class="ai-scan-score">94%</div>
+            </div>
+            <div class="ai-scan-card" id="sc3">
+              <img
+                class="ai-scan-avatar"
+                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=80&q=75"
+                alt=""
+              />
+              <div class="ai-scan-info">
+                <div class="ai-scan-name">김수아</div>
+                <div class="ai-scan-spec">근력 강화 전문</div>
+                <div class="ai-scan-bar">
+                  <div class="ai-match-bar-fill" data-width="91%"></div>
+                </div>
+              </div>
+              <div class="ai-scan-score">91%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ai-hero-content">
+          <span class="ai-hero-eyebrow">✦ AI-Powered Matching</span>
+          <h1 class="ai-hero-title">
+            FIND THE<br />PERFECT<br /><em>TRAINER</em>
+          </h1>
+          <p class="ai-hero-desc">
+            목표·예산·경험 수준을 입력하면 AI가 247명의 트레이너 중<br />
+            나에게 가장 잘 맞는 트레이너를 즉시 추천해드려요.
+          </p>
+          <div class="ai-hero-trust">
+            <div class="ai-trust-item">
+              <span class="ai-trust-num" data-target="12000" data-suffix="+"
+                >0+</span
+              >
+              <span class="ai-trust-label">누적<br />매칭 수</span>
+            </div>
+            <div class="ai-trust-item">
+              <span
+                class="ai-trust-num"
+                data-target="4.9"
+                data-suffix=""
+                data-decimal="1"
+                >0</span
+              >
+              <span class="ai-trust-label">평균<br />만족도</span>
+            </div>
+            <div class="ai-trust-item">
+              <span class="ai-trust-num" data-target="92" data-suffix="%"
+                >0%</span
+              >
+              <span class="ai-trust-label">목표<br />달성률</span>
+            </div>
+            <div class="ai-trust-item">
+              <span class="ai-trust-num" data-target="350" data-suffix="+"
+                >0+</span
+              >
+              <span class="ai-trust-label">활동<br />트레이너</span>
+            </div>
+          </div>
+          <div class="ai-hero-cta-row">
+            <button
+              class="ai-hero-cta-primary"
+              onclick="
+                document
+                  .getElementById('ai-form-anchor')
+                  .scrollIntoView({ behavior: 'smooth' });
+                animateAIScore();
+              "
+            >
+              지금 AI 매칭 시작하기 ↓
+            </button>
+            <button
+              class="ai-hero-cta-ghost"
+              onclick="
+                showPage('trainers', document.querySelectorAll('.nav-link')[2])
+              "
+            >
+              트레이너 직접 찾기
+            </button>
+          </div>
+        </div>
+        <div class="ai-scroll-hint">
+          <span class="ai-scroll-hint-arrow">↓</span>
+        </div>
+      </div>
+
+      <!-- ── AI 스크롤 위저드 ── -->
+      <div class="ai-wizard-wrap" id="ai-form-anchor">
+        <!-- 스텝 진행 표시바 -->
+        <div class="ai-wizard-progress" id="ai-wizard-progress">
+          <div class="ai-wiz-step active" id="wstep-1" onclick="wizGoTo(1)">
+            <div class="ai-wiz-dot"><span>1</span></div>
+            <div class="ai-wiz-label">목표 & 수준</div>
+          </div>
+          <div class="ai-wiz-line" id="wline-1"></div>
+          <div class="ai-wiz-step" id="wstep-2" onclick="wizGoTo(2)">
+            <div class="ai-wiz-dot"><span>2</span></div>
+            <div class="ai-wiz-label">예산 & 선호</div>
+          </div>
+          <div class="ai-wiz-line" id="wline-2"></div>
+          <div class="ai-wiz-step" id="wstep-3" onclick="wizGoTo(3)">
+            <div class="ai-wiz-dot"><span>3</span></div>
+            <div class="ai-wiz-label">AI 추천 결과</div>
+          </div>
+        </div>
+
+        <!-- ══ STEP 1: 목표 & 경험 수준 ══ -->
+        <div class="ai-wiz-panel active" id="wiz-panel-1">
+          <div class="ai-wiz-panel-header">
+            <div class="ai-wiz-step-tag">STEP 01</div>
+            <h2 class="ai-wiz-panel-title">어떤 목표를 갖고 계신가요?</h2>
+            <p class="ai-wiz-panel-desc">
+              목표와 수준을 알면 AI가 더 정확하게 매칭해드릴 수 있어요
+            </p>
+          </div>
+
+          <div class="form-block">
+            <div class="f-heading">
+              운동 목표 <span class="f-required">*</span>
+            </div>
+            <div class="chip-wrap goal-chips">
+              <button
+                class="chip chip-lg"
+                data-g="goal"
+                data-count="82"
+                data-icon="🔥"
+                data-desc="체지방 감소 & 건강한 몸만들기"
+              >
+                다이어트
+              </button>
+              <button
+                class="chip chip-lg"
+                data-g="goal"
+                data-count="67"
+                data-icon="💪"
+                data-desc="근육량 증가 & 파워 향상"
+              >
+                근력 증가
+              </button>
+              <button
+                class="chip chip-lg"
+                data-g="goal"
+                data-count="54"
+                data-icon="🧘"
+                data-desc="자세 교정 & 체형 밸런스"
+              >
+                체형 교정
+              </button>
+              <button
+                class="chip chip-lg"
+                data-g="goal"
+                data-count="44"
+                data-icon="📸"
+                data-desc="완성도 높은 프로필 촬영 준비"
+              >
+                바디프로필
+              </button>
+              <button
+                class="chip chip-lg"
+                data-g="goal"
+                data-count="38"
+                data-icon="🩹"
+                data-desc="부상 회복 & 재활 운동"
+              >
+                재활·부상
+              </button>
+              <button
+                class="chip chip-lg"
+                data-g="goal"
+                data-count="29"
+                data-icon="🌿"
+                data-desc="스트레스 해소 & 멘탈 관리"
+              >
+                스트레스 해소
+              </button>
+            </div>
+            <!-- 선택 시 나타나는 목표 인사이트 -->
+            <div class="goal-insight" id="goal-insight"></div>
+          </div>
+
+          <div class="form-block">
+            <div class="f-heading">
+              운동 경험 수준 <span class="f-required">*</span>
+            </div>
+            <div class="level-cards" id="level-cards">
+              <button class="level-card" data-g="level" data-val="완전 초보">
+                <span class="level-card-icon">🌱</span>
+                <span class="level-card-name">완전 초보</span>
+                <span class="level-card-desc">헬스장 방문이 처음이에요</span>
+              </button>
+              <button class="level-card" data-g="level" data-val="기초 있음">
+                <span class="level-card-icon">🌿</span>
+                <span class="level-card-name">기초 있음</span>
+                <span class="level-card-desc"
+                  >가끔 운동하지만 체계적이지 않아요</span
+                >
+              </button>
+              <button class="level-card" data-g="level" data-val="중급">
+                <span class="level-card-icon">⚡</span>
+                <span class="level-card-name">중급</span>
+                <span class="level-card-desc"
+                  >규칙적으로 1년 이상 운동해왔어요</span
+                >
+              </button>
+              <button class="level-card" data-g="level" data-val="고급">
+                <span class="level-card-icon">🔥</span>
+                <span class="level-card-name">고급</span>
+                <span class="level-card-desc"
+                  >전문적인 트레이닝이 필요해요</span
+                >
+              </button>
+            </div>
+          </div>
+
+          <!-- 실시간 매칭 인사이트 -->
+          <div class="ai-insight-box" id="ai-insight-box-1">
+            <div class="ai-insight-icon">✦</div>
+            <div class="ai-insight-content">
+              <div class="ai-insight-title">
+                목표를 선택하면 매칭 현황을 보여드려요
+              </div>
+              <div class="ai-insight-sub">
+                247명의 트레이너가 준비되어 있어요
+              </div>
+            </div>
+            <div class="ai-insight-badge" id="ai-match-count-1">247명</div>
+          </div>
+
+          <button
+            class="ai-wiz-next"
+            onclick="wizNext(1)"
+            id="wiz-btn-1"
+            disabled
+          >
+            다음 단계로 — 예산 설정 →
+          </button>
+        </div>
+
+        <!-- ══ STEP 2: 예산 & 선호 ══ -->
+        <div class="ai-wiz-panel" id="wiz-panel-2">
+          <div class="ai-wiz-panel-header">
+            <div class="ai-wiz-step-tag">STEP 02</div>
+            <h2 class="ai-wiz-panel-title">예산과 선호를 알려주세요</h2>
+            <p class="ai-wiz-panel-desc">
+              예산에 맞는 트레이너만 추천해드려요, 숨겨진 수수료 없이요
+            </p>
+          </div>
+
+          <div class="form-block">
+            <div class="f-heading">1회 세션 예산</div>
+            <div class="budget-display-v2">
+              <div class="budget-track-wrap">
+                <input
+                  type="range"
+                  id="bslider"
+                  min="3"
+                  max="20"
+                  value="8"
+                  step="1"
+                  oninput="onBudgetChange(this.value)"
+                />
+                <div class="budget-track-fill" id="budget-track-fill"></div>
+              </div>
+              <div class="budget-info-row">
+                <div class="budget-value-big">
+                  <span class="budget-num" id="bval">8</span
+                  ><span class="budget-unit">만원</span>
+                </div>
+                <div class="budget-range-labels">
+                  <span>3만원</span><span>20만원</span>
+                </div>
+              </div>
+            </div>
+            <!-- 예산별 인사이트 -->
+            <div class="budget-insight" id="budget-insight">
+              <span class="bi-icon">💡</span>
+              <span class="bi-text" id="bi-text"
+                >서울 평균 PT 비용은 8~12만원이에요</span
+              >
+            </div>
+          </div>
+
+          <div class="form-block">
+            <div class="f-heading">트레이너 성별 선호</div>
+            <div class="gender-cards">
+              <button
+                class="gender-card on"
+                data-g="gender"
+                data-val="상관없음"
+              >
+                <span class="gender-card-icon">👥</span>
+                <span class="gender-card-name">상관없음</span>
+              </button>
+              <button class="gender-card" data-g="gender" data-val="남성">
+                <span class="gender-card-icon">👨</span>
+                <span class="gender-card-name">남성 트레이너</span>
+              </button>
+              <button class="gender-card" data-g="gender" data-val="여성">
+                <span class="gender-card-icon">👩</span>
+                <span class="gender-card-name">여성 트레이너</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 선택 요약 카드 -->
+          <div class="selection-summary" id="selection-summary">
+            <div class="ss-title">📋 내 매칭 조건 요약</div>
+            <div class="ss-grid" id="ss-grid">
+              <div class="ss-item">
+                <span class="ss-label">목표</span
+                ><span class="ss-val" id="ss-goal">—</span>
+              </div>
+              <div class="ss-item">
+                <span class="ss-label">수준</span
+                ><span class="ss-val" id="ss-level">—</span>
+              </div>
+              <div class="ss-item">
+                <span class="ss-label">예산</span
+                ><span class="ss-val" id="ss-budget">8만원 이하</span>
+              </div>
+              <div class="ss-item">
+                <span class="ss-label">성별</span
+                ><span class="ss-val" id="ss-gender">상관없음</span>
+              </div>
+            </div>
+            <div class="ss-match-row">
+              <span class="ss-match-label">예상 매칭 트레이너</span>
+              <span class="ss-match-num" id="ss-match-num">—</span>
+            </div>
+          </div>
+
+          <div class="ai-wiz-btn-row">
+            <button class="ai-wiz-back" onclick="wizGoTo(1)">← 이전</button>
+            <button class="ai-wiz-next flex-1" onclick="runAI()">
+              <span>✦</span> AI 추천 받기
+            </button>
+          </div>
+        </div>
+
+        <!-- ══ STEP 3: AI 결과 ══ -->
+        <div class="ai-wiz-panel" id="wiz-panel-3">
+          <div class="ai-wiz-panel-header">
+            <div class="ai-wiz-step-tag ai-wiz-step-tag--coral">AI RESULT</div>
+            <h2 class="ai-wiz-panel-title" id="result-panel-title">
+              분석 중...
+            </h2>
+            <p class="ai-wiz-panel-desc" id="result-panel-desc">
+              잠시만 기다려주세요
+            </p>
+          </div>
+
+          <!-- AI 분석 로딩 화면 (DRAMATIC) -->
+          <div class="ai-loading-screen" id="ai-loading-screen">
+            <!-- 브레인 비주얼 -->
+            <div class="ai-brain-visual">
+              <div class="ai-brain-ring"></div>
+              <div class="ai-brain-ring"></div>
+              <div class="ai-brain-ring"></div>
+              <div class="ai-scan-line-wrap">
+                <div class="ai-scan-line"></div>
+              </div>
+              <div class="ai-brain-center">
+                <div class="ai-brain-pct" id="ai-pct">0%</div>
+                <div class="ai-brain-label">MATCHING</div>
+              </div>
+            </div>
+
+            <!-- 분석 단계 타임라인 -->
+            <ul class="ai-analysis-stages" id="ai-stages">
+              <li class="ai-stage-item" data-step="0">
+                <div class="ai-stage-dot"></div>
+                <div class="ai-stage-text">
+                  <div class="ai-stage-title">프로필 분석</div>
+                  <div class="ai-stage-desc">
+                    목표·수준·예산 조건을 파악하고 있어요
+                  </div>
+                </div>
+                <span class="ai-stage-badge">완료</span>
+              </li>
+              <li class="ai-stage-item" data-step="1">
+                <div class="ai-stage-dot"></div>
+                <div class="ai-stage-text">
+                  <div class="ai-stage-title">트레이너 데이터베이스 검색</div>
+                  <div class="ai-stage-desc">
+                    247명의 트레이너 데이터를 스캔 중이에요
+                  </div>
+                </div>
+                <span class="ai-stage-badge">완료</span>
+              </li>
+              <li class="ai-stage-item" data-step="2">
+                <div class="ai-stage-dot"></div>
+                <div class="ai-stage-text">
+                  <div class="ai-stage-title">AI 매칭 알고리즘 실행</div>
+                  <div class="ai-stage-desc">적합도 점수를 계산하고 있어요</div>
+                </div>
+                <span class="ai-stage-badge">완료</span>
+              </li>
+              <li class="ai-stage-item" data-step="3">
+                <div class="ai-stage-dot"></div>
+                <div class="ai-stage-text">
+                  <div class="ai-stage-title">최적 트레이너 선정</div>
+                  <div class="ai-stage-desc">
+                    가장 잘 맞는 트레이너를 뽑아드릴게요
+                  </div>
+                </div>
+                <span class="ai-stage-badge">완료</span>
+              </li>
+            </ul>
+
+            <!-- 터미널 로그 -->
+            <div class="ai-terminal">
+              <div class="ai-terminal-header">
+                <div class="ai-terminal-dot"></div>
+                <div class="ai-terminal-dot"></div>
+                <div class="ai-terminal-dot"></div>
+              </div>
+              <div class="ai-terminal-lines" id="ai-terminal-lines">
+                <div class="ai-log-line">
+                  <span class="log-time">00:00</span
+                  ><span class="log-loading"
+                    >▶ FITMATCH AI v3.2 initializing...</span
+                  >
+                </div>
+              </div>
+              <span class="ai-terminal-cursor"></span>
+            </div>
+          </div>
+
+          <!-- 결과 박스 -->
+          <div class="ai-result-box" id="ai-box">
+            <div class="ai-result-head"><span>✦</span> AI RECOMMENDATION</div>
+            <div class="ai-result-body" id="ai-body"></div>
+            <div class="ai-result-btns" id="ai-btns"></div>
+          </div>
+
+          <!-- 다시 시작 버튼 -->
+          <button
+            class="ai-wiz-back ai-restart-btn"
+            id="ai-restart-btn"
+            onclick="wizGoTo(1)"
+            style="display: none"
+          >
+            ← 조건 다시 설정하기
+          </button>
+        </div>
+      </div>
+      <!-- /ai-wizard-wrap -->
+
+      <footer>
+        <div class="footer-bottom" style="padding-top: 1.5rem">
+          <span class="f-copy">© 2026 FitMatch Inc.</span>
+          <div class="f-badges">
+            <span class="f-badge">🔒 SSL 보안</span
+            ><span class="f-badge">0% 수수료</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ══════════════════════
+     TRAINERS PAGE
+══════════════════════ -->
+    <div id="page-trainers" class="page">
+      <div style="max-width: 1100px; margin: 0 auto; padding: 2rem var(--px) 0">
+        <div class="label-tag" style="margin-top: 1rem">All Trainers</div>
+        <h2 class="big-title">FIND YOUR<br /><em>MATCH</em></h2>
+        <div class="filter-strip" id="filter-strip">
+          <button class="f-pill active" onclick="filterT('전체', this)">
+            전체
+          </button>
+          <button class="f-pill" onclick="filterT('다이어트', this)">
+            다이어트
+          </button>
+          <button class="f-pill" onclick="filterT('근력', this)">
+            근력 강화
+          </button>
+          <button class="f-pill" onclick="filterT('재활', this)">
+            재활·필라테스
+          </button>
+          <button class="f-pill" onclick="filterT('바디프로필', this)">
+            바디프로필
+          </button>
+        </div>
+      </div>
+      <div style="max-width: 1100px; margin: 0 auto; padding: 0 var(--px) 2rem">
+        <div class="trainer-grid" id="tgrid-main"></div>
+      </div>
+      <footer>
+        <div class="footer-bottom" style="padding-top: 1.5rem">
+          <span class="f-copy">© 2026 FitMatch Inc.</span>
+          <div class="f-badges">
+            <span class="f-badge">247명 트레이너</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ══════════════════════
+     MY PAGE
+══════════════════════ -->
+    <div id="page-mypage" class="page">
+      <div class="level-page-wrap">
+        <!-- 유저 프로필 카드 -->
+        <div class="user-profile-card" id="user-profile-card">
+          <div class="upc-top">
+            <div class="upc-avatar">🏋️</div>
+            <div class="upc-info">
+              <div class="upc-name" id="upc-name">운동 초보자</div>
+              <div class="upc-since">FitMatch 회원 · 2026.04</div>
+            </div>
+            <div class="upc-level-badge" id="upc-level-badge">Lv.2</div>
+          </div>
+          <!-- XP 바 -->
+          <div class="xp-bar-wrap">
+            <div class="xp-bar-labels">
+              <span class="xp-label">경험치 (XP)</span>
+              <span class="xp-val" id="xp-display">320 XP</span>
+            </div>
+            <div class="xp-bar-track">
+              <div class="xp-bar-fill" id="xp-bar-fill" style="width: 0%"></div>
+            </div>
+            <div class="xp-next-hint" id="xp-next-hint">
+              다음 레벨까지 180 XP
+            </div>
+          </div>
+          <!-- 스탯 -->
+          <div class="upc-stats">
+            <div class="upc-stat">
+              <div class="upc-stat-num" id="stat-sessions">3</div>
+              <div class="upc-stat-label">완료 세션</div>
+            </div>
+            <div class="upc-stat">
+              <div class="upc-stat-num" id="stat-streak">5</div>
+              <div class="upc-stat-label">연속 출석</div>
+            </div>
+            <div class="upc-stat">
+              <div class="upc-stat-num" id="stat-badges">2</div>
+              <div class="upc-stat-label">획득 뱃지</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 레벨 로드맵 -->
+        <div class="level-roadmap-card">
+          <div class="lrc-title">🏆 LEVEL ROADMAP</div>
+          <div class="level-road">
+            <div class="level-road-item lri-done">
+              <div class="level-road-dot">✓</div>
+              <div class="level-road-info">
+                <div class="level-road-name">Lv.1 — 첫 걸음</div>
+                <div class="level-road-reward">🎁 AI 매칭 무제한 잠금해제</div>
+              </div>
+              <div class="level-road-xp">0 XP</div>
+            </div>
+            <div class="level-road-item lri-current">
+              <div class="level-road-dot">★</div>
+              <div class="level-road-info">
+                <div class="level-road-name">Lv.2 — 루틴 메이커</div>
+                <div class="level-road-reward">
+                  🔥 세션 5% 포인트 적립 활성화
+                </div>
+              </div>
+              <div class="level-road-xp">200 XP</div>
+            </div>
+            <div class="level-road-item lri-locked">
+              <div class="level-road-dot">3</div>
+              <div class="level-road-info">
+                <div class="level-road-name">Lv.3 — 피트니스 어드벤처</div>
+                <div class="level-road-reward">
+                  💬 전문 영양사 상담 1회 무료
+                </div>
+              </div>
+              <div class="level-road-xp">500 XP</div>
+            </div>
+            <div class="level-road-item lri-locked">
+              <div class="level-road-dot">4</div>
+              <div class="level-road-info">
+                <div class="level-road-name">Lv.4 — 변화의 시작</div>
+                <div class="level-road-reward">
+                  🎯 전용 트레이너 매칭 우선권
+                </div>
+              </div>
+              <div class="level-road-xp">1000 XP</div>
+            </div>
+            <div class="level-road-item lri-locked">
+              <div class="level-road-dot">5</div>
+              <div class="level-road-info">
+                <div class="level-road-name">Lv.5 — FitMatch 마스터</div>
+                <div class="level-road-reward">
+                  👑 VIP 전용 프리미엄 트레이너 접근
+                </div>
+              </div>
+              <div class="level-road-xp">2000 XP</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 오늘의 미션 -->
+        <div class="missions-card">
+          <div class="mc-header">
+            <div class="mc-title">⚡ 오늘의 미션</div>
+            <div class="mc-reset">매일 자정 초기화</div>
+          </div>
+          <div
+            class="mission-item"
+            id="mission-1"
+            onclick="completeMission(1, 50)"
+          >
+            <div class="mission-icon">🤖</div>
+            <div class="mission-info">
+              <div class="mission-title">AI 매칭 실행하기</div>
+              <div class="mission-progress-bar">
+                <div class="mission-progress-fill" style="width: 0%"></div>
+              </div>
+            </div>
+            <div class="mission-xp">+50 XP</div>
+          </div>
+          <div
+            class="mission-item mission-done"
+            id="mission-2"
+            onclick="completeMission(2, 30)"
+          >
+            <div class="mission-icon">👤</div>
+            <div class="mission-info">
+              <div class="mission-title">프로필 완성하기</div>
+              <div class="mission-progress-bar">
+                <div class="mission-progress-fill" style="width: 100%"></div>
+              </div>
+            </div>
+            <div class="mission-xp">+30 XP</div>
+          </div>
+          <div
+            class="mission-item"
+            id="mission-3"
+            onclick="completeMission(3, 100)"
+          >
+            <div class="mission-icon">📅</div>
+            <div class="mission-info">
+              <div class="mission-title">첫 PT 세션 예약하기</div>
+              <div class="mission-progress-bar">
+                <div class="mission-progress-fill" style="width: 0%"></div>
+              </div>
+            </div>
+            <div class="mission-xp">+100 XP</div>
+          </div>
+          <div
+            class="mission-item"
+            id="mission-4"
+            onclick="completeMission(4, 20)"
+          >
+            <div class="mission-icon">🔍</div>
+            <div class="mission-info">
+              <div class="mission-title">트레이너 프로필 3개 살펴보기</div>
+              <div class="mission-progress-bar">
+                <div class="mission-progress-fill" style="width: 67%"></div>
+              </div>
+            </div>
+            <div class="mission-xp">+20 XP</div>
+          </div>
+        </div>
+
+        <!-- 뱃지 -->
+        <div class="badges-card">
+          <div class="mc-title">🎖 획득한 뱃지</div>
+          <div class="badges-grid">
+            <div class="badge-item">
+              <div class="badge-emoji">🚀</div>
+              <div class="badge-name">첫 매칭</div>
+            </div>
+            <div class="badge-item">
+              <div class="badge-emoji">👋</div>
+              <div class="badge-name">신규 회원</div>
+            </div>
+            <div class="badge-item badge-locked">
+              <div class="badge-emoji">🔥</div>
+              <div class="badge-name">5일 연속</div>
+            </div>
+            <div class="badge-item badge-locked">
+              <div class="badge-emoji">💪</div>
+              <div class="badge-name">PT 완료</div>
+            </div>
+            <div class="badge-item badge-locked">
+              <div class="badge-emoji">⭐</div>
+              <div class="badge-name">리뷰 작성</div>
+            </div>
+            <div class="badge-item badge-locked">
+              <div class="badge-emoji">👑</div>
+              <div class="badge-name">VIP</div>
+            </div>
+            <div class="badge-item badge-locked">
+              <div class="badge-emoji">🏆</div>
+              <div class="badge-name">마스터</div>
+            </div>
+            <div class="badge-item badge-locked">
+              <div class="badge-emoji">💎</div>
+              <div class="badge-name">프리미엄</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 예약 내역 -->
+        <div class="missions-card">
+          <div class="mc-header">
+            <div class="mc-title">📋 내 예약 내역</div>
+          </div>
+          <div id="booking-list"></div>
+          <div
+            id="booking-empty"
+            style="
+              text-align: center;
+              padding: 1.5rem 0;
+              color: var(--gray3);
+              font-size: 13px;
+            "
+          >
+            아직 예약이 없어요.<br />
+            <button
+              onclick="
+                showPage('ai', document.querySelectorAll('.nav-link')[1])
+              "
+              style="
+                margin-top: 10px;
+                background: var(--black);
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 10px;
+                font-size: 13px;
+                font-weight: 700;
+                cursor: pointer;
+              "
+            >
+              AI 매칭으로 시작하기 →
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- XP 토스트 -->
+      <div class="xp-toast" id="xp-toast">
+        <span>✦</span>
+        <span id="xp-toast-text">+50 XP 획득!</span>
+        <span class="xp-toast-xp" id="xp-toast-xp">+50</span>
+      </div>
+      <footer>
+        <div class="footer-bottom" style="padding-top: 1.5rem">
+          <span class="f-copy">© 2026 FitMatch Inc.</span>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ══════════════════════
+     BOOKING SHEET (2단계)
+══════════════════════ -->
+    <div class="overlay" id="overlay">
+      <div class="sheet">
+        <div class="sheet-handle"></div>
+        <div class="sheet-head">
+          <div>
+            <div class="sheet-title" id="sh-name">예약하기</div>
+            <div class="sheet-subtitle" id="sh-price"></div>
+          </div>
+          <button class="sheet-close" onclick="closeSheet()">✕</button>
+        </div>
+
+        <div class="sheet-body">
+          <!-- 스텝 인디케이터 (2단계) -->
+          <div class="sheet-steps">
+            <div class="step-item active">
+              <span class="step-dot">1</span><span>정보 & 일정</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step-item">
+              <span class="step-dot">2</span><span>최종 확인</span>
+            </div>
+          </div>
+
+          <!-- ── STEP 1: 예약자 정보 + 날짜/시간 ── -->
+          <div class="step-panel active" id="step-panel-1">
+            <!-- 자동완성 배너 (저장된 정보 있을 때 표시) -->
+            <div class="autofill-banner" id="autofill-banner">
+              <span class="autofill-banner-icon">⚡</span>
+              <span class="autofill-banner-text"
+                >이전 예약 정보가 자동으로 입력되었어요</span
+              >
+              <button class="autofill-clear" onclick="clearSavedInfo()">
+                초기화
+              </button>
+            </div>
+
+            <!-- 이름 / 연락처 -->
+            <div class="sh-row">
+              <div>
+                <label class="sh-label"
+                  >이름 <span style="color: var(--coral)">*</span></label
+                >
+                <input
+                  id="u-name"
+                  class="sh-input"
+                  type="text"
+                  placeholder="홍길동"
+                />
+                <div class="sh-error" id="err-name"></div>
+              </div>
+              <div>
+                <label class="sh-label"
+                  >연락처 <span style="color: var(--coral)">*</span></label
+                >
+                <input
+                  id="u-phone"
+                  class="sh-input"
+                  type="tel"
+                  placeholder="010-0000-0000"
+                  maxlength="13"
+                />
+                <div class="sh-error" id="err-phone"></div>
+              </div>
+            </div>
+
+            <!-- 이메일 -->
+            <label class="sh-label"
+              >이메일 <span style="color: var(--gray2)">선택</span></label
+            >
+            <input
+              id="u-email"
+              class="sh-input"
+              type="email"
+              placeholder="example@email.com"
+            />
+            <div class="sh-error" id="err-email"></div>
+
+            <!-- 전달사항 -->
+            <label class="sh-label"
+              >트레이너에게 전달 사항
+              <span style="color: var(--gray2)">선택</span></label
+            >
+            <textarea
+              id="u-memo"
+              class="sh-input"
+              rows="2"
+              placeholder="부상 이력, 목표, 기타 참고 사항"
+              style="resize: vertical; line-height: 1.6"
+            ></textarea>
+
+            <!-- 정보 저장 체크박스 -->
+            <label class="save-info-row">
+              <input type="checkbox" id="u-save-info" />
+              다음 예약에서도 이 정보를 자동으로 입력해주세요
+            </label>
+
+            <hr class="sh-section-divider" />
+
+            <!-- 날짜 -->
+            <label class="sh-label"
+              >날짜 선택 <span style="color: var(--coral)">*</span></label
+            >
+            <input
+              id="bdate"
+              class="sh-input"
+              type="date"
+              oninput="genSlots()"
+              style="margin-bottom: 0"
+            />
+            <div
+              class="sh-error"
+              id="err-date"
+              style="margin-bottom: 0.75rem"
+            ></div>
+
+            <!-- 시간 -->
+            <label class="sh-label" style="margin-top: 0.75rem"
+              >시간 선택 <span style="color: var(--coral)">*</span></label
+            >
+            <div class="time-grid" id="time-grid">
+              <span
+                style="font-size: 12px; color: var(--gray3); grid-column: 1/-1"
+                >날짜를 먼저 선택해주세요</span
+              >
+            </div>
+
+            <div
+              style="
+                background: var(--off);
+                border-radius: var(--radius);
+                padding: 11px 14px;
+                font-size: 12px;
+                color: var(--gray3);
+                line-height: 1.6;
+                margin-bottom: 1.25rem;
+              "
+            >
+              🔒 입력하신 정보는 예약 확인과 트레이너 연결에만 사용됩니다.
+            </div>
+
+            <div class="sheet-nav">
+              <button
+                class="sheet-btn-next"
+                style="width: 100%"
+                onclick="nextToStep2()"
+              >
+                다음 — 최종 확인 →
+              </button>
+            </div>
+          </div>
+          <!-- /step-panel-1 -->
+
+          <!-- ── STEP 2: 최종 확인 ── -->
+          <div class="step-panel" id="step-panel-2">
+            <div class="confirm-summary">
+              <div class="cs-trainer">
+                <img class="cs-trainer-img" id="cs-img" src="" alt="" />
+                <div>
+                  <div class="cs-trainer-name" id="cs-trainer-name"></div>
+                  <div class="cs-trainer-spec" id="cs-trainer-spec"></div>
+                </div>
+              </div>
+              <div class="cs-row">
+                <span class="cs-label">날짜</span
+                ><span class="cs-val" id="cs-date"></span>
+              </div>
+              <div class="cs-row">
+                <span class="cs-label">시간</span
+                ><span class="cs-val" id="cs-time"></span>
+              </div>
+              <div class="cs-row">
+                <span class="cs-label">세션 요금</span
+                ><span class="cs-val" id="cs-price"></span>
+              </div>
+              <div class="cs-row">
+                <span class="cs-label">수수료</span
+                ><span class="cs-free">0원 (무료)</span>
+              </div>
+              <hr class="cs-divider" />
+              <div class="cs-row">
+                <span class="cs-label" style="font-weight: 800"
+                  >총 결제 금액</span
+                ><span class="cs-val cs-total" id="cs-total"></span>
+              </div>
+            </div>
+
+            <div class="cs-user">
+              <div class="cs-user-label">예약자 정보</div>
+              <div class="cs-user-row">
+                <span class="cs-user-key">이름</span
+                ><span class="cs-user-v" id="cs-u-name"></span>
+              </div>
+              <div class="cs-user-row">
+                <span class="cs-user-key">연락처</span
+                ><span class="cs-user-v" id="cs-u-phone"></span>
+              </div>
+              <div class="cs-user-row">
+                <span class="cs-user-key">이메일</span
+                ><span class="cs-user-v" id="cs-u-email"></span>
+              </div>
+              <div class="cs-user-row">
+                <span class="cs-user-key">전달사항</span
+                ><span
+                  class="cs-user-v"
+                  id="cs-u-memo"
+                  style="word-break: break-all"
+                ></span>
+              </div>
+            </div>
+
+            <div class="sheet-nav">
+              <button class="sheet-btn-back" onclick="goStep(1)">← 이전</button>
+              <button
+                class="confirm-btn"
+                onclick="confirmBook()"
+                style="flex: 1"
+              >
+                예약 확정하기 ✓
+              </button>
+            </div>
+          </div>
+          <!-- /step-panel-2 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════
+     예약 완료 화면
+══════════════════════ -->
+    <div class="booking-complete" id="booking-complete">
+      <div class="bc-icon">✓</div>
+      <div class="bc-title">BOOKING<br />CONFIRMED</div>
+      <p class="bc-sub">예약이 완료되었어요! 예약번호를 저장해두세요.</p>
+
+      <div class="bc-card">
+        <!-- 예약번호 강조 -->
+        <div class="bc-id-box">
+          <div>
+            <span class="bc-id-label">예약번호</span>
+            <span class="bc-id-num" id="bc-id">FM--------</span>
+          </div>
+          <button class="bc-copy-btn" onclick="copyBookingId()">복사</button>
+        </div>
+
+        <!-- 예약 상세 -->
+        <div class="bc-row">
+          <span class="bc-row-label">트레이너</span
+          ><span class="bc-row-val" id="bc-trainer"></span>
+        </div>
+        <div class="bc-row">
+          <span class="bc-row-label">일시</span
+          ><span class="bc-row-val" id="bc-datetime"></span>
+        </div>
+        <div class="bc-row">
+          <span class="bc-row-label">요금</span
+          ><span class="bc-row-val" id="bc-price"></span>
+        </div>
+        <div class="bc-row">
+          <span class="bc-row-label">예약자</span
+          ><span class="bc-row-val" id="bc-user"></span>
+        </div>
+      </div>
+
+      <div class="bc-actions">
+        <button
+          class="bc-btn-home"
+          onclick="
+            closeBookingComplete();
+            goHome();
+          "
+        >
+          홈으로
+        </button>
+        <button class="bc-btn-mypage" onclick="closeBookingComplete()">
+          내 예약 보기 →
+        </button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+     웰컴 프로모션 팝업 (비활성 - 스크롤 섹션으로 대체)
+══════════════════════════════════════ -->
+    <div
+      class="promo-overlay hidden"
+      id="promo-overlay"
+      style="display: none !important"
+    >
+      <div class="promo-modal">
+        <!-- 닫기 버튼 -->
+        <button
+          class="promo-close"
+          onclick="closePromo(false)"
+          aria-label="닫기"
+        >
+          ✕
+        </button>
+
+        <!-- 상단 이미지 -->
+        <div class="promo-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80"
+            alt="프로모션"
+          />
+          <div class="promo-img-text">
+            <span class="promo-badge">🎁 신규 회원 혜택</span>
+            <div class="promo-img-title">첫 PT<br /><em>30% 할인</em></div>
+          </div>
+        </div>
+
+        <!-- 바디 -->
+        <div class="promo-body">
+          <!-- 카운트다운 -->
+          <div class="promo-timer">
+            <span>⏱ 오늘 한정</span>
+            <span class="promo-timer-unit" id="timer-h">23</span>
+            <span class="promo-timer-sep">:</span>
+            <span class="promo-timer-unit" id="timer-m">59</span>
+            <span class="promo-timer-sep">:</span>
+            <span class="promo-timer-unit" id="timer-s">59</span>
+            <span>남음</span>
+          </div>
+
+          <p class="promo-desc">
+            FitMatch 신규 가입 회원에게 드리는 특별 혜택이에요.<br />
+            AI 매칭으로 트레이너를 찾고, 첫 세션 30% 할인을 받아보세요.
+          </p>
+
+          <!-- 혜택 리스트 -->
+          <div class="promo-benefits">
+            <div class="promo-benefit-item">
+              <div class="promo-benefit-icon">%</div>
+              첫 세션 30% 할인 쿠폰 즉시 지급
+            </div>
+            <div class="promo-benefit-item">
+              <div class="promo-benefit-icon">★</div>
+              무료 체형 분석 상담 1회 제공
+            </div>
+            <div class="promo-benefit-item">
+              <div class="promo-benefit-icon">✦</div>
+              AI 맞춤 트레이너 무제한 추천
+            </div>
+          </div>
+
+          <button class="promo-cta" onclick="closePromo(true)">
+            지금 AI 매칭 시작하기 — 30% 할인 받기 →
+          </button>
+          <button class="promo-skip" onclick="closePromo(false)">
+            괜찮아요, 나중에 볼게요
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+     플로팅 혜택 배너 (하단)
+══════════════════════════════════════ -->
+    <div class="float-banner hidden" id="float-banner">
+      <div class="float-banner-icon">🎁</div>
+      <div class="float-banner-text">
+        <div class="float-banner-title">신규 회원 첫 PT 30% 할인 — 오늘만!</div>
+        <div class="float-banner-sub">
+          AI 매칭으로 나에게 맞는 트레이너를 찾아보세요
+        </div>
+      </div>
+      <button
+        class="float-banner-cta"
+        onclick="
+          closeFloatBanner();
+          showPage('ai', document.querySelectorAll('.nav-link')[1]);
+        "
+      >
+        혜택 받기
+      </button>
+      <button
+        class="float-banner-close"
+        onclick="closeFloatBanner()"
+        aria-label="닫기"
+      >
+        ✕
+      </button>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"><span id="toast-msg"></span></div>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/level.js"></script>
+    <script src="js/chatbot.js"></script>
+
+    <!-- ══════════════════════════════════════
+     AI 챗봇 (플로팅)
+══════════════════════════════════════ -->
+    <button
+      class="chatbot-fab"
+      id="chatbot-fab"
+      onclick="toggleChatbot()"
+      aria-label="AI 상담"
+    >
+      <span id="chatbot-fab-icon">💬</span>
+      <div class="chatbot-notif" id="chatbot-notif">1</div>
+    </button>
+
+    <div class="chatbot-panel" id="chatbot-panel">
+      <div class="chatbot-header">
+        <div class="chatbot-header-avatar">✦</div>
+        <div class="chatbot-header-info">
+          <div class="chatbot-header-name">FIT AI</div>
+          <div class="chatbot-header-status">
+            <span class="chatbot-online-dot"></span>
+            온라인 · 트레이너 매칭 전문
+          </div>
+        </div>
+        <button class="chatbot-close-btn" onclick="toggleChatbot()">✕</button>
+      </div>
+
+      <div class="chatbot-messages" id="chatbot-messages">
+        <!-- 초기 메시지는 JS로 삽입 -->
+      </div>
+
+      <div class="chatbot-quick-replies" id="chatbot-quick-replies">
+        <button
+          class="quick-reply-btn"
+          onclick="sendQuickReply('어떤 트레이너가 나한테 맞을까요?')"
+        >
+          트레이너 추천
+        </button>
+        <button
+          class="quick-reply-btn"
+          onclick="sendQuickReply('PT 비용이 궁금해요')"
+        >
+          비용 안내
+        </button>
+        <button
+          class="quick-reply-btn"
+          onclick="sendQuickReply('처음인데 어떻게 시작하나요?')"
+        >
+          시작 방법
+        </button>
+        <button
+          class="quick-reply-btn"
+          onclick="sendQuickReply('다이어트에 좋은 트레이너 알려줘')"
+        >
+          다이어트
+        </button>
+      </div>
+
+      <div class="chatbot-input-wrap">
+        <textarea
+          class="chatbot-input"
+          id="chatbot-input"
+          placeholder="궁금한 걸 물어보세요..."
+          rows="1"
+          onkeydown="
+            if (event.key === 'Enter' && !event.shiftKey) {
+              event.preventDefault();
+              sendChatMessage();
+            }
+          "
+          oninput="
+            this.style.height = 'auto';
+            this.style.height = Math.min(this.scrollHeight, 80) + 'px';
+          "
+        ></textarea>
+        <button
+          class="chatbot-send-btn"
+          id="chatbot-send-btn"
+          onclick="sendChatMessage()"
+        >
+          ↑
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

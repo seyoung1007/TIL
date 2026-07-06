@@ -1,0 +1,25 @@
+/* 리셋 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+img {
+  display: block;
+}
+/* 버튼 */
+button {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: var(--fw-regular);
+  border-radius: 28px;
+  border: none;
+}

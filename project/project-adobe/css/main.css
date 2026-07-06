@@ -1,0 +1,127 @@
+@import url(reset.css);
+@import url(home/home.css);
+@import url(plan/plan.css);
+@import url(sub1/subpage1.css);
+
+/* 스타일 가이드 */
+:root {
+  /* Color styles */
+  --point: rgba(134, 104, 226, 1);
+  /* black */
+  --sub-color-1: rgba(0, 0, 0, 1);
+  /* white */
+  --sub-color-2: rgba(250, 250, 250, 1);
+
+  /* Text-size styles */
+  /* 공통 네비게이션 */
+  --fs-menu: clamp(13px, 1.04vw, 20px);
+  --fs-sub-menu: clamp(12px, 0.94vw, 18px);
+
+  /* 비주얼 / 히어로 영역 */
+  --fs-visual-title: clamp(26px, 3.65vw, 70px);
+  --fs-visual-desc: clamp(16px, 1.3vw, 25px);
+
+  /* 콘텐츠 섹션 공통 */
+  --fs-contents-title: clamp(26px, 2.34vw, 45px);
+  --fs-contents-desc: clamp(14px, 1.04vw, 20px);
+  --fs-section-title: clamp(26px, 2.34vw, 45px);
+  --fs-section-desc: clamp(14px, 1.04vw, 20px);
+
+  /* 카드 공통 */
+  --fs-card-title: clamp(18px, 1.3vw, 25px);
+  --fs-card-desc: clamp(13px, 1.04vw, 20px);
+  --fs-card-caption: clamp(11px, 0.73vw, 14px);
+
+  /* 프로그램 카드 */
+  --fs-program-title: clamp(18px, 1.3vw, 25px);
+  --fs-program-desc: clamp(13px, 1.04vw, 20px);
+  --fs-program-small: clamp(12px, 0.83vw, 16px);
+  --fs-program-price: clamp(22px, 1.56vw, 30px);
+  --fs-program-price-unit: clamp(11px, 0.73vw, 14px);
+  --fs-program-button: clamp(12px, 0.73vw, 14px);
+  --fs-program-link: clamp(13px, 0.83vw, 16px);
+  --fs-badge: clamp(11px, 0.73vw, 14px);
+
+  /* 앱 카드 */
+  --fs-app-title: clamp(13px, 0.78vw, 15px);
+  --fs-app-desc: clamp(11px, 0.63vw, 12px);
+  --fs-app-price: clamp(13px, 0.83vw, 16px);
+  --fs-app-price-unit: clamp(11px, 0.63vw, 12px);
+  --fs-app-badge: clamp(10px, 0.57vw, 11px);
+  --fs-app-icon: clamp(12px, 0.73vw, 14px);
+
+  /* 버튼 / 폼 / 보조 텍스트 */
+  --fs-button: clamp(16px, 1.3vw, 25px);
+  --fs-chip-button: clamp(14px, 1.04vw, 20px);
+  --fs-form: clamp(12px, 0.68vw, 13px);
+  --fs-small: clamp(10px, 0.63vw, 12px);
+  --fs-base: clamp(14px, 0.83vw, 16px);
+
+  /* 기존 스타일 가이드 변수 호환용 */
+  --p-c1920px---menu: var(--fs-menu);
+  --p-c1920px---sub--menu: var(--fs-sub-menu);
+  --p-c1920px---visual-title: var(--fs-visual-title);
+  --p-c1920px---contents-title: var(--fs-contents-title);
+  --p-c1920px---contents--desc: var(--fs-contents-desc);
+  --p-c1920px---card-title: var(--fs-card-title);
+  --p-c1920px---card--desc: var(--fs-card-desc);
+  --p-c1920px--button: var(--fs-button);
+
+  --tablet780px---visual-title--m: var(--fs-visual-title);
+  --tablet780px---visual--desc--m: var(--fs-visual-desc);
+  --tablet780px---sub-title--m: var(--fs-card-title);
+  --tablet780px---contents--title--m: var(--fs-contents-title);
+  --tablet780px---contents--desc--m: var(--fs-contents-desc);
+  --tablet780px---card-title--m: var(--fs-card-title);
+  --tablet780px---card--desc--m: var(--fs-card-desc);
+  --tablet780px---sub--content-title--m: clamp(20px, 1.56vw, 30px);
+  --tablet780px--button--m: var(--fs-chip-button);
+
+  --mobile390px---visual-title--s: var(--fs-visual-title);
+  --mobile390px---desc--s: var(--fs-contents-desc);
+  --mobile390px---sub--title--s: var(--fs-card-title);
+  --mobile390px--button--s: var(--fs-button);
+  --mobile390px---card--desc--s: var(--fs-card-desc);
+  --mobile390px---card-title--s: var(--fs-card-title);
+  --mobile390px---contents-title--s: var(--fs-contents-title);
+
+  /* font-weight */
+  --fw-bold: 700;
+  --fw-regular: 400;
+}
+
+/* 공통영역 */
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 비주얼 영역 타이틀 */
+.visual-title {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: var(--fw-bold);
+}
+/* 비주얼 영역 설명 */
+.visual-desc {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: var(--fw-regular);
+}
+/* 콘텐츠 영역 타이틀 */
+.contents-title {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: var(--fw-bold);
+}
+/* 콘텐츠 영역 설명 */
+.contents-des {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: var(--fw-regular);
+}
+/* 카드 영역 타이틀 */
+.card-title {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: var(--fw-bold);
+}
+/* 카드 영역 설명 */
+.card-des {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: var(--fw-regular);
+}

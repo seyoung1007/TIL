@@ -1,0 +1,1013 @@
+/* plan_responsive.css */
+
+/* ================================================================
+   1080px ~ 769px  |  Tablet
+   ================================================================ */
+@media (max-width: 1080px) and (min-width: 769px) {
+  /* ----------------------------------------------------------
+     HEADER
+  ---------------------------------------------------------- */
+  .header-inner {
+    padding: 0 28px;
+  }
+
+  /* ----------------------------------------------------------
+     PLAN-UPPER : 비주얼 타이틀
+  ---------------------------------------------------------- */
+  .visual-title h1 {
+    font-size: clamp(28px, 3.5vw, 40px);
+    padding: 0 40px;
+  }
+
+  .visual-desc {
+    font-size: clamp(13px, 1.4vw, 15px);
+    padding: 0 40px;
+  }
+
+  /* ----------------------------------------------------------
+     PLAN-UPPER : 사용자 유형 버튼
+  ---------------------------------------------------------- */
+  .user-type {
+    margin: 50px 0 36px;
+    padding: 0 28px 36px;
+  }
+
+  .user-type-btns button {
+    padding: 10px 28px;
+    font-size: clamp(12px, 1.3vw, 14px);
+  }
+
+  /* ----------------------------------------------------------
+     PLAN-UPPER : 추천 플랜 카드
+  ---------------------------------------------------------- */
+  .best-plan-section {
+    padding: 0 28px 40px;
+    overflow: hidden;
+  }
+
+  .cards-grid {
+    display: flex;
+    gap: 20px;
+    padding: 12px 0 24px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .cards-grid::-webkit-scrollbar {
+    height: 8px;
+  }
+  .cards-grid::-webkit-scrollbar-track {
+    background: #e5e5e5;
+    border-radius: 999px;
+  }
+  .cards-grid::-webkit-scrollbar-thumb {
+    background: #8b8b8b;
+    border-radius: 999px;
+  }
+
+  .program-card {
+    flex: 0 0 240px;
+    min-width: 240px;
+    min-height: 360px;
+    height: auto;
+    padding: 16px;
+    scroll-snap-align: start;
+  }
+
+  .program-card.featured {
+    flex: 0 0 310px;
+    min-width: 310px;
+  }
+
+  /* ----------------------------------------------------------
+     PLAN-MAIN : 앱 둘러보기 헤더
+  ---------------------------------------------------------- */
+  .app-header-area {
+    padding: 32px 28px;
+  }
+
+  /* 타이틀과 정렬 메뉴를 같은 계층에 배치 */
+  .app-browse-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .app-browse-header .contents-title {
+    flex: 1 1 auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+
+  .search-bar {
+    flex: 1 1 200px;
+    width: auto;
+    max-width: 320px;
+  }
+
+  .sort-select {
+    flex: 0 0 auto;
+  }
+
+  .all-apps-link {
+    flex: 0 0 auto;
+    margin-left: auto;
+  }
+
+  /* ----------------------------------------------------------
+     PLAN-MAIN : 앱 콘텐츠 영역
+     PC와 동일하게 sidebar는 좌측 벽에 붙도록 padding-left: 0 유지
+  ---------------------------------------------------------- */
+  .app-content-area {
+    grid-template-columns: 160px 1fr;
+    padding: 28px 28px 36px 0; /* padding-left: 0 → 사이드바 좌측 벽 고정 */
+    gap: 20px;
+  }
+
+  /* 사이드바: PC 구조 그대로, 너비만 160px로 축소 */
+  .app-sidebar {
+    height: 100%;
+    min-height: 420px;
+    padding-top: 16px;
+    margin-top: -28px; /* app-header-area padding 값과 맞춤 */
+  }
+
+  .sidebar-item {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  /* 카드 영역 */
+  .app-card-area {
+    min-height: unset;
+  }
+
+  .app-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .app-card {
+    height: auto;
+    min-height: 140px;
+  }
+
+  /* ----------------------------------------------------------
+     FOOTER : 혜택 배너
+  ---------------------------------------------------------- */
+  .benefits-banner {
+    padding: 28px 28px;
+  }
+
+  .benefits-grid {
+    min-width: unset;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .benefit-item {
+    flex: 1 1 48%;
+    align-items: center;
+    justify-content: center;
+    padding: 22px 20px;
+  }
+
+  /* 2×2 구조 시 기존 세로 구분선 제거 후 재정의 */
+  .benefit-item:not(:last-child)::after {
+    display: none;
+  }
+
+  .benefit-item:nth-child(1),
+  .benefit-item:nth-child(2) {
+    border-bottom: 1px solid rgba(140, 120, 170, 0.18);
+  }
+
+  .benefit-item:nth-child(odd) {
+    border-right: 1px solid rgba(140, 120, 170, 0.18);
+  }
+
+  /* ----------------------------------------------------------
+     FOOTER : footer-bottom
+  ---------------------------------------------------------- */
+  .footer-bottom {
+    gap: 40px;
+    padding: 24px 28px;
+  }
+
+  .footer-left {
+    flex: 1;
+  }
+
+  .footer-contact {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .footer-payments {
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .payment-badge {
+    height: 24px;
+    min-width: 38px;
+    padding: 3px 7px;
+  }
+
+  .payment-badge img {
+    height: 13px;
+    max-width: 64px;
+  }
+
+  .security-badge {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* ================================================================
+   768px ~ 391px  |  Mobile
+   ================================================================ */
+@media (max-width: 768px) and (min-width: 391px) {
+  /* ----------------------------------------------------------
+     HEADER
+  ---------------------------------------------------------- */
+  .header-inner {
+    padding: 0 24px;
+  }
+
+  /* ----------------------------------------------------------
+     PLAN-UPPER : 비주얼 타이틀
+  ---------------------------------------------------------- */
+  .visual-title h1 {
+    font-size: clamp(22px, 5vw, 30px);
+    /* margin-top: 60px; */
+    padding: 0 24px;
+    line-height: 1.3;
+  }
+
+  .visual-desc {
+    font-size: clamp(12px, 1.8vw, 14px);
+    padding: 0 24px;
+    margin-top: 16px;
+  }
+
+  /* ----------------------------------------------------------
+     PLAN-UPPER : 사용자 유형 버튼
+  ---------------------------------------------------------- */
+  .user-type {
+    margin: 40px 0 28px;
+    padding: 0 24px 28px;
+  }
+
+  .user-type-btns {
+    gap: 8px;
+  }
+
+  .user-type-btns button {
+    padding: 9px 18px;
+    font-size: 12px;
+    border-radius: 22px;
+  }
+
+  /* ----------------------------------------------------------
+     PLAN-UPPER : 추천 플랜 카드
+  ---------------------------------------------------------- */
+  .best-plan-section {
+    padding: 0 24px 50px;
+    overflow: hidden;
+  }
+
+  .contents-title {
+    font-size: clamp(16px, 3vw, 20px);
+  }
+
+  .cards-grid {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .cards-grid::-webkit-scrollbar {
+    height: 8px;
+  }
+  .cards-grid::-webkit-scrollbar-track {
+    background: #e5e5e5;
+    border-radius: 999px;
+  }
+
+  .cards-grid::-webkit-scrollbar-thumb {
+    background: #8b8b8b;
+    border-radius: 999px;
+  }
+
+  .program-card {
+    flex: 0 0 260px;
+    min-width: 260px;
+    min-height: 340px;
+    height: auto;
+    scroll-snap-align: start;
+  }
+
+  .program-card.featured {
+    flex: 0 0 310px;
+    min-width: 310px;
+  }
+
+  /* ----------------------------------------------------------
+     PLAN-MAIN : 앱 둘러보기 헤더
+  ---------------------------------------------------------- */
+  .app-header-area {
+    padding: 24px 24px;
+  }
+
+  .app-browse-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .app-browse-header .contents-title {
+    flex: 1 1 auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+
+  .search-bar {
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .sort-select {
+    flex: 0 0 auto;
+    width: auto;
+  }
+
+  .all-apps-link {
+    order: 4;
+    margin-left: auto;
+    align-self: auto;
+  }
+
+  /* ----------------------------------------------------------
+     PLAN-MAIN : 앱 콘텐츠 영역
+     grid → block 전환, 사이드바는 브라우저 전체 폭으로 확장
+  ---------------------------------------------------------- */
+  .app-content-area {
+    display: block;
+    padding: 0 24px 32px 24px;
+  }
+
+  /* 사이드바: 768px 구간에서만 참고 이미지처럼 아이콘 + 텍스트가 줄바꿈되는 구조 */
+  .app-sidebar {
+    width: 100%;
+    display: grid;
+    margin-top: 0;
+    grid-template-columns: repeat(4, 1fr);
+
+    column-gap: 12px;
+    row-gap: 20px;
+
+    padding: 24px 0;
+    min-height: auto;
+    height: auto;
+  }
+
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 11px; /* 기존 13px → 11px */
+    white-space: nowrap;
+
+    padding: 0;
+    min-width: 0;
+  }
+
+  .sidebar-item::before {
+    content: "";
+
+    width: 24px; /* 기존 32~40px → 24px */
+    height: 24px;
+
+    flex: 0 0 24px;
+
+    /* background: #d9d9d9; */
+  }
+
+  /* .sidebar-item:hover,
+  .sidebar-item.active {
+    background: transparent;
+    color: #222;
+    border-radius: 0;
+  }
+
+  .sidebar-item.active {
+    background: transparent;
+    color: #222;
+    border-radius: 0;
+  } */
+
+  /* 카드 영역 */
+  .app-card-area {
+    min-height: unset;
+    padding-top: 20px;
+  }
+
+  .app-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .app-card {
+    height: auto;
+    min-height: 130px;
+    padding: 14px;
+  }
+
+  .app-card h4 {
+    font-size: 13px;
+  }
+
+  .app-card .app-desc {
+    font-size: 11px;
+  }
+
+  .app-card-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 7px;
+  }
+
+  .pagination {
+    padding-top: 20px;
+  }
+
+  /* ----------------------------------------------------------
+     FOOTER : 혜택 배너
+  ---------------------------------------------------------- */
+  .benefits-banner {
+    padding: 24px 24px;
+  }
+
+  .benefits-grid {
+    min-width: unset;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+  }
+
+  .benefit-item {
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 20px;
+    gap: 12px;
+  }
+
+  /* 세로 배치 시 가로 구분선으로 전환 */
+  .benefit-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: unset;
+    top: unset;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    width: auto;
+    height: 1px;
+    background: rgba(140, 120, 170, 0.18);
+  }
+
+  .benefit-item h4 {
+    font-size: 14px;
+  }
+
+  .benefit-item p {
+    font-size: 12px;
+  }
+
+  /* ----------------------------------------------------------
+     FOOTER : footer-bottom
+  ---------------------------------------------------------- */
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+
+    padding: 24px 24px;
+  }
+
+  .footer-left {
+    width: 100%;
+  }
+
+  .footer-contact {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .footer-payments {
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .payment-badge {
+    height: 23px;
+    min-width: 36px;
+    padding: 3px 7px;
+  }
+
+  .payment-badge img {
+    height: 12px;
+    max-width: 60px;
+  }
+
+  .security-badge {
+    width: 23px;
+    height: 23px;
+  }
+
+  .security-badge img {
+    height: 12px;
+  }
+
+  .footer__right {
+    align-items: flex-start;
+    /* width: 100%; */
+  }
+}
+
+/* ================================================================
+   390px 이하  |  Small Mobile
+   ================================================================ */
+@media (max-width: 390px) {
+  /* ----------------------------------------------------------
+     HEADER
+  ---------------------------------------------------------- */
+  .header-inner {
+    padding: 0 20px;
+  }
+
+  /* ----------------------------------------------------------
+     PLAN-UPPER : 비주얼 타이틀
+  ---------------------------------------------------------- */
+  .visual-title h1 {
+    margin-top: 100px;
+    font-size: 22px;
+    /* margin-top: 48px; */
+    padding: 0 20px;
+    line-height: 1.35;
+  }
+
+  .visual-desc {
+    font-size: 12px;
+    padding: 0 20px;
+    margin-top: 14px;
+  }
+
+  /* ----------------------------------------------------------
+     PLAN-UPPER : 사용자 유형 버튼
+  ---------------------------------------------------------- */
+  .user-type {
+    margin: 32px 0 20px;
+    padding: 0 20px 24px;
+  }
+
+  .user-type-btns {
+    gap: 6px;
+  }
+
+  .user-type-btns button {
+    padding: 8px 14px;
+    font-size: 11px;
+    border-radius: 20px;
+  }
+
+  /* ----------------------------------------------------------
+     PLAN-UPPER : 추천 플랜 카드
+  ---------------------------------------------------------- */
+  .best-plan-section {
+    padding: 0 20px 40px;
+    overflow: visible !important;
+  }
+
+  .contents-title {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .cards-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px 12px;
+    padding: 0;
+    width: 100%;
+    overflow: visible !important;
+    scroll-snap-type: none !important;
+  }
+
+  .program-card {
+    grid-column: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    flex: none !important;
+    flex-basis: auto !important;
+    height: auto !important;
+    min-height: 190px;
+    padding: 10px;
+    border-radius: 12px;
+    overflow: hidden;
+    scroll-snap-align: unset;
+  }
+
+  .program-card.featured {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 250px;
+  }
+
+  .program-card:not(.featured) {
+    grid-column: span 1;
+  }
+
+  .program-card_thumb {
+    margin-bottom: 10px;
+  }
+
+  .program-card_thumb img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .program-card_info {
+    flex: 0 0 auto !important;
+    margin-top: 6px;
+    margin-bottom: 12px;
+  }
+
+  .program-card_title {
+    font-size: 11px;
+    line-height: 1.2;
+    white-space: normal;
+  }
+
+  .program-card_desc {
+    font-size: 8px;
+    line-height: 1.3;
+    word-break: break-word;
+  }
+
+  .program-card_sale-price strong {
+    font-size: 13px;
+  }
+
+  .program-card_regular-price,
+  .program-card_sale-price span {
+    font-size: 9px;
+  }
+
+  .program-card_price-area {
+    margin-top: auto;
+    margin-bottom: 12px;
+  }
+
+  .program-card_button-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .program-card--bg {
+    min-height: 190px !important;
+  }
+
+  .program-card--bg .program-card_desc {
+    line-height: 1.25;
+  }
+
+  .program-card_button--wide {
+    height: 24px;
+    font-size: 8px;
+    padding: 4px 10px;
+  }
+
+  .program-card_button {
+    height: 24px;
+    padding: 5px 12px;
+    font-size: 8px;
+    border-radius: 999px;
+    letter-spacing: 0;
+  }
+
+  .program-card_link {
+    font-size: 9px;
+  }
+
+  .card-app-row {
+    gap: 4px;
+    margin-top: 10px;
+  }
+
+  .mini-icon {
+    width: 18px;
+    height: 18px;
+    font-size: 7px;
+  }
+
+  /* ----------------------------------------------------------
+     PLAN-MAIN : 앱 둘러보기 헤더
+  ---------------------------------------------------------- */
+  .app-header-area {
+    padding: 20px 20px;
+  }
+
+  .app-browse-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .app-browse-header .contents-title {
+    flex: 1 1 auto;
+    margin-right: auto;
+    font-size: 15px;
+    margin-bottom: 0;
+  }
+
+  .search-bar {
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .search-bar input {
+    font-size: 12px;
+  }
+
+  .sort-select {
+    flex: 0 0 auto;
+    width: auto;
+    border-radius: 999px;
+    font-size: 12px;
+  }
+
+  .all-apps-link {
+    order: 4;
+    margin-left: auto;
+    font-size: 12px;
+    align-self: auto;
+  }
+
+  /* ----------------------------------------------------------
+     PLAN-MAIN : 앱 콘텐츠 영역
+     grid → block 전환, 사이드바는 브라우저 전체 폭으로 확장
+  ---------------------------------------------------------- */
+  .app-content-area {
+    display: block;
+    padding: 0 20px 28px 20px;
+  }
+
+  /* 사이드바: 버튼형 wrap */
+  .app-sidebar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: visible;
+    min-height: unset;
+    height: auto;
+    margin-top: 0;
+    margin-left: 0;
+    width: 100%;
+    padding: 14px 0;
+    gap: 6px;
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .sidebar-item {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border-radius: 18px;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+
+  .sidebar-item::before {
+    content: "";
+    display: inline-block;
+    width: 1.15em;
+    height: 1.15em;
+    flex-shrink: 0;
+  }
+
+  .sidebar-item:hover {
+    background: #eeeeee;
+    color: #111;
+    border-radius: 18px;
+  }
+
+  .sidebar-item.active {
+    background: #8b8b8b;
+    color: #fff;
+    border-radius: 18px;
+  }
+
+  /* 카드 영역 */
+  .app-card-area {
+    min-height: unset;
+    padding-top: 16px;
+  }
+
+  .app-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .app-card {
+    height: auto;
+    min-height: 110px;
+    padding: 12px;
+  }
+
+  .app-card h4 {
+    font-size: 12px;
+  }
+
+  .app-card .app-desc {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .app-card-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    font-size: 10px;
+  }
+
+  .app-price {
+    font-size: 11px;
+  }
+
+  .add-btn {
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+  }
+
+  .pagination {
+    padding-top: 16px;
+    gap: 10px;
+  }
+
+  .pagination button {
+    font-size: 28px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* ----------------------------------------------------------
+     FOOTER : 혜택 배너
+  ---------------------------------------------------------- */
+  .benefits-banner {
+    padding: 20px 20px;
+  }
+
+  .benefits-grid {
+    min-width: unset;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+  }
+
+  .benefit-item {
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 18px;
+    gap: 10px;
+  }
+
+  .benefit-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: unset;
+    top: unset;
+    bottom: 0;
+    left: 18px;
+    right: 18px;
+    width: auto;
+    height: 1px;
+    background: rgba(140, 120, 170, 0.18);
+  }
+
+  .benefit-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .benefit-item h4 {
+    font-size: 13px;
+  }
+
+  .benefit-item p {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .btn-detail {
+    min-width: 80px;
+    height: 22px;
+    font-size: 11px;
+    padding: 0 14px;
+  }
+
+  /* ----------------------------------------------------------
+     FOOTER : footer-bottom
+  ---------------------------------------------------------- */
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+
+    padding: 20px 20px;
+  }
+
+  .footer-left {
+    width: 100%;
+  }
+
+  .footer-contact {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+
+  .footer-payments {
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  .payment-badge {
+    height: 22px;
+    min-width: 34px;
+    padding: 2px 6px;
+  }
+
+  .payment-badge img {
+    height: 11px;
+    max-width: 54px;
+  }
+
+  .footer__right {
+    align-items: flex-start;
+  }
+
+  .security-badge {
+    width: 22px;
+    height: 22px;
+  }
+
+  .security-badge img {
+    height: 11px;
+  }
+
+  .footer-social {
+    gap: 8px;
+  }
+
+  .footer-social a {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+}

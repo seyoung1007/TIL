@@ -1,0 +1,382 @@
+/* 헤더 */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  background-color: black;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 75px;
+  padding: 0 20px;
+  gap: 40px;
+}
+
+/* 햄버거 */
+
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-btn span {
+  width: 24px;
+  height: 2px;
+  background: #fff;
+}
+
+/* 로고 */
+.logo .adobe-logo {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--red);
+  letter-spacing: -0.5px;
+}
+
+/* 네비게이션 */
+
+.gnb ul {
+  display: flex;
+  gap: 28px;
+}
+
+.gnb ul li a {
+  color: white;
+  font-size: var(--fs-program-small);
+  white-space: nowrap;
+}
+
+/* 로그인, 회원가입 버튼
+ */
+.header-btns {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-login {
+  color: white;
+  font-size: var(--fs-app-price-unit);
+  padding: 7px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.btn-login:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+.btn-join {
+  white-space: nowrap;
+  background: var(--red);
+  color: #fff;
+  font-size: var(--fs-app-price-unit);
+  padding: 7px 16px;
+  border-radius: 20px;
+  transition: background 0.2s;
+}
+
+.btn-join:hover {
+  background: #d40000;
+}
+
+/* 히어로(비주얼) */
+
+/* 히어로(비주얼) */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* 배경 비디오 */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 중앙 콘텐츠*/
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-sub {
+  font-size: var(--fs-visual-desc);
+  margin-bottom: 20px;
+  color: white;
+}
+
+.hero-title {
+  font-size: var(--fs-visual-title);
+  margin-bottom: 50px;
+}
+
+.hero-desc {
+  margin-bottom: 20px;
+  font-size: var(--fs-visual-desc);
+  color: white;
+}
+
+/* 중앙 콘텐츠 - 버튼 */
+.hero-btns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #fff;
+  color: #000;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 50px;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.btn-primary:hover {
+  background: #e8e8e8;
+}
+
+.btn-play {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: var(--fs-base);
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.btn-play:hover {
+  opacity: 0.75;
+}
+
+.play-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  font-size: var(--fs-small);
+}
+
+/* Firefly AI 영역 (하단 왼쪽) */
+
+.hero-firefly {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.firefly-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.firefly-label strong {
+  font-size: var(--fs-base);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #fff;
+}
+
+.firefly-label p {
+  font-size: var(--fs-small);
+  color: #dfdfdf;
+}
+
+.firefly-label .arrow {
+  font-size: var(--fs-base);
+  color: #fff;
+  margin-top: 2px;
+}
+
+/* Firefly 이미지 */
+
+.firefly-imgs {
+  display: flex;
+  gap: 8px;
+}
+
+.fi-img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fi-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* 햄버거 */
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menu-btn span {
+  width: 24px;
+  height: 2px;
+  background: #fff;
+}
+
+@media (max-width: 780px) {
+   .header-inner {
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .menu-btn {
+    display: flex;
+  }
+
+  .gnb {
+    position: fixed;
+    top: 0;
+    left: -320px;
+
+    width: 320px;
+    height: 100vh;
+
+    background: #000;
+    z-index: 2001;
+  display: flex;
+  flex-direction: column;
+    transition: 0.4s ease;
+  }
+
+  .gnb.active {
+    left: 0;
+  }
+
+  .gnb ul {
+ width: 100%;
+    margin-top: 100px;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start;
+
+    gap: 30px;
+    padding: 0 30px;
+  }
+  
+
+ .gnb ul li {
+    width: 100%;
+  }
+
+  .gnb ul li a {
+    display: block;
+    width: 100%;
+
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.918);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.4s;
+  z-index: 1999;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 390px) {
+  .gnb {
+    width: 280px;
+    left: -280px;
+  }
+
+  .gnb.active {
+    left: 0;
+  }
+
+  .gnb ul {
+    margin-top: 80px;
+    padding: 0 20px;
+    gap: 24px;
+  }
+
+  .gnb ul li a {
+    font-size: 18px;
+  }
+
+  .header-btns {
+   display: none;
+  }
+
+  .logo .adobe-logo {
+    font-size: 18px;
+  }
+
+  .menu-btn span {
+    width: 22px;
+  }
+}

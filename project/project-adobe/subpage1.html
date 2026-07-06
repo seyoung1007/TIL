@@ -1,0 +1,928 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adobe Creative Cloud — 창작의 새로운 차원으로</title>
+    <!-- favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="asset/favicon/favicon/apple-touch-icon.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="asset/favicon/favicon/favicon.svg"
+    />
+    <link rel="shortcut icon" href="asset/favicon/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="asset/favicon/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="asset/favicon/favicon/site.webmanifest" />
+    <!-- ✅ SEO 메타 태그 -->
+    <meta
+      name="description"
+      content="Adobe Creative Cloud 기반 UI/UX 랜딩페이지 포트폴리오입니다. 사용자 중심 설계와 인터랙션을 고려한 웹 퍼블리싱 프로젝트입니다."
+    />
+    <meta
+      name="keywords"
+      content="UI UX, 웹디자인, 랜딩페이지, 포트폴리오, Adobe Creative Cloud, 프론트엔드, 퍼블리싱, 웹개발"
+    />
+    <meta name="author" content="세영 윤" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- ✅ Canonical (중복 방지) -->
+    <link rel="canonical" href="https://your-portfolio.com" />
+
+    <!-- ✅ Open Graph (카카오톡 / 페북 공유) -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Adobe Creative Cloud 랜딩페이지 | UI/UX 포트폴리오"
+    />
+    <meta
+      property="og:description"
+      content="Creative Cloud 기반 UX 설계와 인터랙션 중심 랜딩페이지 프로젝트"
+    />
+    <meta
+      property="og:image"
+      content="https://your-portfolio.com/asset/og-image.jpg"
+    />
+    <meta property="og:url" content="https://your-portfolio.com" />
+    <meta property="og:site_name" content="세영 포트폴리오" />
+
+    <!-- ✅ Twitter 카드 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Adobe Creative Cloud 랜딩페이지" />
+    <meta
+      name="twitter:description"
+      content="UI/UX 기반 웹 포트폴리오 프로젝트"
+    />
+    <meta
+      name="twitter:image"
+      content="https://your-portfolio.com/asset/og-image.jpg"
+    />
+
+    <!-- ✅ 모바일 테마 색상 -->
+    <meta name="theme-color" content="#000000" />
+
+    <!-- ✅ 구조화 데이터 (SEO 핵심 🔥) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Adobe Creative Cloud 랜딩페이지 포트폴리오",
+        "url": "https://your-portfolio.com",
+        "author": {
+          "@type": "Person",
+          "name": "세영 윤"
+        },
+        "description": "UI/UX 기반 랜딩페이지 디자인 및 퍼블리싱 포트폴리오",
+        "inLanguage": "ko-KR"
+      }
+    </script>
+    <!-- Tabler Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="js/subpage1.js"></script>
+    <link rel="stylesheet" href="css/sub1/subpage1.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- ────────────────────────────
+       NAV
+  ──────────────────────────── -->
+    <nav class="sub-nav" aria-label="글로벌 내비게이션">
+      <div class="nav-logo">
+        <img class="nav-logo-img" src="asset/logo.png" alt="logo" />
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#">제품</a></li>
+        <li><a href="#">플랜 및 가격</a></li>
+        <li><a href="#">리소스</a></li>
+        <li><a href="#">지원</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="#">로그인</a>
+        <button class="btn-buy">구매하기</button>
+      </div>
+    </nav>
+
+    <section class="sub-hero" aria-label="히어로 섹션">
+      <!-- 배경 영상 자리 (실제 영상으로 교체) -->
+      <div class="hero-video-bg" aria-hidden="true">
+        <video class="hero-video" autoplay loop muted playsinline>
+          <source src="asset/mainpage/main-visual.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <!-- 메인 카피 -->
+      <div class="sub-hero-content">
+        <p class="hero-eyebrow">Adobe Creative Cloud</p>
+        <h1 class="sub-hero-title">
+          상상을 넘어<br />
+          <em>창작의 새로운</em><br />
+          차원으로
+        </h1>
+        <p class="sub-hero-sub">
+          모든 도구가 하나로 연결된 Creative Cloud<br />
+          아이디어에서 완성까지, 더 빠르고 강력하게
+        </p>
+        <div class="hero-cta-group">
+          <button class="hero-cta" id="heroCta">무료 체험하기</button>
+          <a href="#" class="hero-video-btn" aria-label="소개 영상 보기">
+            <span class="hero-video-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </span>
+            영상보기
+          </a>
+        </div>
+        <p class="hero-cta-sub">
+          7일 무료 · 언제든 취소 가능 · 신용카드 필요 없음
+        </p>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────
+       WORKFLOW STEPS
+  ──────────────────────────── -->
+    <div class="workflow" role="list" aria-label="창작 워크플로우 단계">
+      <div class="workflow-step" role="listitem">
+        <div class="ws-num">01</div>
+        <div class="ws-title">아이디어 구상</div>
+        <div class="ws-desc">영감에서 시작되는 창작의 흐름</div>
+      </div>
+
+      <div class="workflow-step" role="listitem">
+        <div class="ws-num">02</div>
+        <div class="ws-title">디자인 제작</div>
+        <div class="ws-desc">아이디어를 디자인으로 구현</div>
+      </div>
+
+      <div class="workflow-step" role="listitem">
+        <div class="ws-num">03</div>
+        <div class="ws-title">편집 완성</div>
+        <div class="ws-desc">완성도를 높이는 정교한 편집</div>
+      </div>
+
+      <div class="workflow-step" role="listitem">
+        <div class="ws-num">04</div>
+        <div class="ws-title">공유 및 협업</div>
+        <div class="ws-desc">경계를 넘는 협업과 공유</div>
+      </div>
+    </div>
+
+    <!-- ────────────────────────────
+       APPS STRIP
+  ──────────────────────────── -->
+    <section class="apps-section" aria-label="포함된 앱 목록">
+      <div class="apps-inner">
+        <div class="apps-label">
+          모든 앱을<br />하나의<br />플랜으로
+          <span>20+ 크리에이티브 앱</span>
+        </div>
+
+        <div class="apps-grid" role="list" aria-label="앱 아이콘">
+          <div
+            class="app-chip app-chip-img"
+            role="listitem"
+            title="Photoshop"
+          >
+            <img src="data:image/png;base64,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" alt="Photoshop" />
+          </div>
+          <div
+            class="app-chip app-chip-img"
+            role="listitem"
+            title="Illustrator"
+          >
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAADZQTFRFMwAANAAANAAAMgAAMgAAMgAA/5oA6ooAz3UAs2EAm04AjEMAjEIAgDoAczAAZiYATRMAQAoACTdF7wAAAAZ0Uk5T/wEod6/pc3OGEwAAAUpJREFUeNrt18GSgyAQRdEHYgM6BPj/n50x2KWVMNLgIpucjSnDLbtwI1DFZGYIzWbSJYLaGHQymmM9o9u81eB2pAa3/fUWGwwyChrDlFYYprX60JMDvq7EZXmgLTEcsqM/NqPF0i4AbKGnBQ2RmAOY4zsNnohlMC+LMx3W13ECrgWi2tzBEtkfNDg6STjkjJZEZ8vLbntcWunJ7pe+eK8CFbEnjrxTlueWx/w+V15te2LLuxx5bnkcjvdrebk45qmPnzZL40RFOraOgjQOp13K+9xOGrt9Sdw4KrIsTlSzymJPNU4WW6pKkjhS3SKJPdVZQZzpP7EdByrWwDzP3Y4dD/k2i23Gid7/dzx3K155YeWeb8WLL3CS/Q6Pcv1+DXzOfCc1GGYwYdg0YdzNj3WlRo8J+s4B5fbRaKsNOhk+0W10x3Ewm6lE6hfMlBZhMPY8KAAAAABJRU5ErkJggg==" alt="Illustrator" />
+          </div>
+          <div
+            class="app-chip app-chip-img"
+            role="listitem"
+            title="Lightroom"
+          >
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAEVQTFRFAAAAAB42AA4YABkrABIgABwyAAkXAB01AB43AB43AB42Man/ABUqM7D/AiVACDZZIHq9JYnSG2unLqDzFFiMNrj/EE177V7W4wAAAAp0Uk5TAPAmbj+DB8P75rKzlzoAAAE8SURBVHjazZfBjoQgDEBxFCkIVRD4/09dljAryezBlkziOxnIy+tNKirrIpUGcwvQSi6r+OM1Kz2BuQlMWs0v8c4qMERAtfisDR3Uc51ZGRaqTL5KwwPkKhZlmKhFSM2VtRRq4sqTEhq4MmgBhguAMAM8RbYNlrw3kC5bDGfl2C1DPlJyLiXPk91WcE+S7QVVLgbuOecYY96pMuZweH+eW7kOaCmyxXi6N8kT5d0ntzXSQZWP5tYyS24+t+xDjCGzZHdGY0294MjZDsjRNLhjm6Hys8fuoJbz3kErb6fviBYJ5YK7SIdFSrmnyNRyb98vJ3dxje3T78f2zXIOn2SDMVT2z3IP/sN1fPMX23MdP+xlwJeB74KYgO3qoefj0MN17Mm8SuS5KNehNaGwKObQFfpqBKiW0aVsaB38ATEVlBDy2FkUAAAAAElFTkSuQmCC" alt="Lightroom" />
+          </div>
+          <div
+            class="app-chip app-chip-img"
+            role="listitem"
+            title="Lightroom Classic"
+          >
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAFRQTFRFR3BMABsxABwsAB42AA8cAAkXABswACA5AB42AB01Man/M67/ABcsAiVBNLL/ABsyABIkHXCtBS1MJYjRCTpfIn3BGmmjEEx5FVqOKpfnNrf/LqDy5w7FIwAAAAp0Uk5TAHpY/zMHhv3pw8rpiLgAAAJpSURBVHjaxdcNj6IwEIBhzqqFdjpT+gnl///Po6Uiu5tl15rcvTHRqE8mBYmlK92uf4aes1/F++HP9dbtZZrtb3Xmld4uA2evxflw2YZfevZ6vL9kex0Yb9HDtetu90xb9P2WBze2jr73rbi/d0M7Hrqet2Led5w1Y96xN/qXmABAaw30xKBL8BMFDVwpY4wiTQ9sXMkwOqfMxDCO3vsxGk4FgwrzMq+PoODMggt2EUKuCWGdrnhMpfEEk+aTFYhFCplk3HF+R4oTTGDCgigeofgRUy3bcQXPcDnBBcKaXgMCFh5WltL55BUq4+K0FpmOC24UxWytnVGeYCpnxc+LlJi84r5aYafonIvBnmBQYZHl2BacBxfrHei8GOYMfYcJjE1SbKE3AWW20hsNlAMg9v1k4/cDlLzz8nGIYV/XOa5Woo92w9ZotvczXqwfxxhnKeoXXsBonTKK4rLhwF/CnmvQugXXVRLsWDXgtjVX7DIuJ1y/juuhx9lpOsFUO2IGfMS6aKb3a+6A60dQ00dMMAm5jY6goVyr9Hmyd3vqI3YWxaYnQ1qDcpMjeuK12e5FdcAMKEi56cWGaQrjLCY44BzKrYTTE9eLDKXISSwl+QWL/ekjLqc6PT7MofiKxTeYAVVdO2JEeQzlihNKTAVXbSXiwyf5+8n1D2MuS04pIS5xw6TiOIZjY3A8jvnFdPjRae4mb+28ZsdoqP7RcfU5Xt/jVVZOxricUQCsYoLPEYMt9iECvbX/wtr6z5i3W/7WJu6t7eNbG9f2LTMfru2bdXW/deto3jq4K7rZdrfXNVfZvndT9tbt4F+x7GdEbsvZ3gAAAABJRU5ErkJggg==" alt="Lightroom Classic" />
+          </div>
+          <div
+            class="app-chip app-chip-img"
+            role="listitem"
+            title="Premiere Pro"
+          >
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAEhQTFRFHjEBBAgAqR8HEB0AFCIAHC4AHjEBrPxJo/NEnu9Bmeg/luE9kNo6hcs1cK0qaKAmXI0gUHsaPF4RLEUKJDsCFiYBEh8AChQAVzbRdgAAAAd0Uk5T/wEUFWm+7oRbWcQAAAFhSURBVHja7dfbkoMgDIDhtBUDCHioJO//plsR63TW1Q3c9r9z9HOcwYsEbmuNauGftarJCG5LagZRs3rjR6JC/kg4W7lOOFuxXrCCwtQN7nMpnu/QQHENqHKsoC3HLXwrL+4RM0eJZYN72rr+ufs59zfu7EcGzciQooApT5d4T3ecsUmvCwL8CrkCW8cyrM2rDeMExNyvuGdmOsXdOAxD0Bv3HJzfbnnvhniKOR20z1qz/ziDns7xeok2hVSCXcZQg2MBJsyYPaLJEhHDKXa8FO0WS47K+lcO988U/mHGvsNY8W+P5RgDQyE2ODBIcZYYIoEUuyXfT0QAUuw4FSG3Y+v5Cne/n4j9inFinsV41DaFGgMJMTzR5owcs63A8MQLbE3qENOE+gxTnyM4igenUVs3RjgqUlwiOC5yKn4ngvLaClo1PlYNrlUjc82wXrMmVC0oNatR/VKWesjWwfuqfgCU8i+tBQ3L1gAAAABJRU5ErkJggg==" alt="Premiere Pro" />
+          </div>
+          <div
+            class="app-chip app-chip-img"
+            role="listitem"
+            title="Substance 3D Sampler"
+          >
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAEtQTFRFHjEBBAgAEB0AFCIAHC4AHjEBHTABsP9KqfpHoPFCmek/mOY+kNg6hco0d7UtaJ8mWYkeSXIWO10QN1YOLUcKJDsDFycBDRgABw8ARWGQ8QAAAAd0Uk5T/wEVab7u/S4RUG8AAAJBSURBVHja5ZfdbqQwDEZdhiF2nBACxM77P+kWwk+nhVUH7nbPBUJER7bFFymBj8KjfsLvaJ71Y5FgftYJ3iLVm1ylBt6kSVWRi3vBnuTJvWJPct3AJbmpP6BKULjQODzgMg+o4TI1POEyT2jgMg38I4johAi8TYYYWu98GyJkeU+NbJDsBKHhTt9wlZEt2wJbSy7DrzFsX/H6656R7VVZAtm/ySICp2QqhZmQHaOhXZYsaYgx9unsByRjZ6jTiRS9oSKPwaFBJERD4bh+j6UwZpgRleAmWXGfh8lEPZCHIlvst940zU/7FTbxoPa4yIwuyubv8m4fyLr/KTLcie7RmQOHtOSHgvyUW7vBlowf8yob8l2MXWu4zJ0PSn8LmHEiJQApq3yiYMoCHJBebWYzFhtAVQEgl+ZwPNzJDl/1pUbuW4vGGCxT4wBH5N4Z4q+zZwBJFuf3FezhmJwCG9rnHkGGfZpzWWFGMsStfepEV5eI+ExWpwKrv8aNgnZUouO7Llh7MrOS6VShkL0ttNkXN2aRHOisMjFhO6qqiOpWObtSTUuOTuV5AV0bgkdeO1S/CAqggU7bXqJhifYdmKUIbEI/RGfP5e8wRllzx/PWOG/7h0ttngalNTH2XPbG8mu0Q4ZP8h7agumPwuURad/TbtRloaPtOyH6XuAA1SH4MlwbIQPsoQnesWXfdoMqnCG6cPJd4L+nuaHeOsTdOj7eO7hWCS6SqsuHdWjqO9eE2xeUK3YzubcvZTPVe9fBqlh/ADG4NNQRtOBnAAAAAElFTkSuQmCC" alt="Substance 3D Sampler" />
+          </div>
+          <div
+            class="app-chip app-chip-img"
+            role="listitem"
+            title="Substance 3D Stager"
+          >
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAE5QTFRFHjEBBAgAEB0AFCIAHTAAGywAGiwAHC8AIzkCHTABsP5Kq/tHpPREnu5Bmeg/lN48itE3fb8wbqgpYZUiT3saQWUSL0sLFSQBDRgACBAAMjOFVQAAAAp0Uk5T/wEVabHJzc/7/bDq9k0AAAJKSURBVHja3ZfRlqMgDIYzttNFICAoJHn/F92tOrF2jq3au/0uPF748ecIIoGvicvNwD5ac7vMEozXq4G23Su3AOaqcmMWcXd8M8rqHsM0o6zuwey7fFX3oH39gsbASUwDFzjNBb7hNN9wuuq2NdDCeRv+E4hZhIngMEylz6nrUh4q8zHVJOcQwz/QO5/gAJJtWGFpvxt9WON2y5x9OC0bG97Jm1NAGWfFhhi9dbiSmaGWYSgVmAmekTATSZgZSvZeZanJW+e9d85iN/yy2c+l1p8SpViab6MLD3grGzIm0YHJjNdqwxrPz3KYQeyNMCyo+0JOQXWLuWo+W63W4YYM1YUFdGGQ1Sz4WGrt/YYsHa5r84WXd4FJAMA4ld8tT5dFC7Ks1an8+sPwPdMwjdi9k4Eh2VW6Beox3EnbssI0dM6pjFl63JNMuguVpOVHmcv28kqmXEXzeVkOZXreFXol9zaB6sX/yDRXYYswg91KxmC7QsJELAnDBOvK85jS5vLMOC7BmHKf0YeJxED6AsYBN5MnEPUpVwGoqB1eJj8TBQB4eLZxO3nB8TyJncX1mM/yYP1a9UEDBPoOvfNxCs4ETxD3uPjo/CAPeyYJM8s8aoHfkJghxXsCdv2yG5QMfEcg4usfCc8QKMVajF1K0S7zt5vi1rNsGQ7L6hY6LdvhSDA9yi6aVW4L7+g775yz1mGqslbNnlMKQa2GhGGF+eD42H5/dHD96Mj82WH9fJugDcoJtznbGrWjuzRlh9CmbKS5/DG7Q2+XZrL+AnPCR2eHJiJvAAAAAElFTkSuQmCC" alt="Substance 3D Stager" />
+          </div>
+          <div
+            class="app-chip app-chip-img"
+            role="listitem"
+            title="Dimension"
+          >
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAEhQTFRFHjEBBAgAEB0AFCIAHTAAGywAHjEBrf1JqflHoPFDnOxAmeg/lN08h8w1e7svaKAmWIgeR24VNVQNJj0EHjIBGisBFCMBDBYAXhDymgAAAAd0Uk5T/wEVabHL7kkAhmsAAAH2SURBVHja7ZfRkqsgEAUniQkgCirDnP//07uUAtZNZXXxcbef6WqmsFTotvJ4vugkr+djk+iW6AL9iNAV+V7V8/o9ycllarKT3OQShyR3TG10N8oDt2ycHtQKP+hJzTzpRa0ktR2mXwxHqQCQyHQajEpXzOBnwVmd4Xq7o++1cnRWL3KlVx7cUN4wA7ihXHaPvR2PyiZR2w55AWj5goDIn8pm+sKPKu9DLasanEnHoZQZpviprCESBTLm+gAihle2oJZPZQ1KMMa8NBDDGVvRy8dynlG2lpliXLS1p8uJkh6BIR+80n2Sj8oUp7xViFpdF5bZD+pEOc56dQ3iKqsoFAXij8uUB9W5bLUPEGaJx+WllFGfduMDmI7Lc5k5TZAxaojHZbit5sBw2lZUiAdlRj1nYkzK7GzhgyfMm21lZCIW8X3xjZdvyyhjjiBGZBaEyW76gE9lABLG7Cpmgp6RWlKecbyXVzuhbNkhiNBr44MAZRacepMM4CSnI9J20CaPcuYdZsG0ynv0Qsdl5ZBcgvl/O3RU1v2yugRtd5ge/FY2O7TS4wLakMnUM1a+unWBr0xzAKjA6YxHa0w/uEmkunXBnrevPkesRKY/2nldUC/9Pl76cb32y3zrWsPdlWtC+wWFw/3y1SjRBW69lKX4z66D99X6B5qiPXNhjyirAAAAAElFTkSuQmCC" alt="Dimension" />
+          </div>
+          <div
+            class="app-chip app-chip-img"
+            role="listitem"
+            title="Stock"
+          >
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAEhQTFRFAAAEAAoaAAocAAsdAAYSAAocAAkaAw0fAAcQAAsd////AAAEAQYT7e7v+/v7293ganF7WV9sHiMtPUNQm6CnycrOr7K4fYKMUVCWIQAAAAp0Uk5TAc3P/2mxyf4V7iIeIekAAAHCSURBVHja1dfLcqswDIBhekQrIsnyBQzv/6YHKGAgHW7etP8iiyTfJAIPYxdT5ccLroWvj7JY94lwK/xcaIUIN0OsHtukk72nt/Pen7tCeBhWRQmPK4uv5/ireD3HrwKfYywgo9+FRXhI5C5G4eCbGK1tO488exk7w+wMjSn1Gcc40Pq7cIglKK1TahkA2NBYJwdYatpimrClMXeAEd4sNVcxR6XHGJZJ1RgzY2SesWdm2eE0MaUvsQRnB8zGGKUxNUa9/IzdZC3DmDDGtse07gxTmP8ccoCL2C8zRw+zv4gBaZV1wHcwW6V1MTACpAumBxcMINBGK0UG2N+qq8tTlRCuLhKEYGiTkuAZTpz9jkc+xykOzcbjNYyMwysKh84u09dyCUNMjx12NOWuYSHy7wuru4qVqAncJxxoyifc8hEeU9s2TVxmDrBgqiWEA7xPDfe4TU9UJxuc+gnX0FfT1B2s1DD0seoZFvtmHSMM1aQnGLne8hiWG+dpqtvhlLDUjTVKqqb1yLj6xEVjjG3D8dqeg22S3k04o7+K8bnFrE1c1vYxa+OatWXO2aznHBOyDig5R6OsQ1mqKv/dOQ5OP/sfM5VKaUp06zkAAAAASUVORK5CYII=" alt="Stock" />
+          </div>
+          <div
+            class="app-chip app-chip-img"
+            role="listitem"
+            title="Aurora"
+          >
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAEtQTFRFAABbAAAAAAA5AAAqAABIAABMAABaAABbAABcAABbp6f/o6P/oKD/nJz/mZn/jY3yf3/kb2/SW1u9UlKzPz+fKCiGHBx5CQllAABP9x7swgAAAAp0Uk5T/wAHJj9ug8Pm9U6X1aIAAAJYSURBVHja5ZfrjqMwDEZdSgmQODdy8fs/6eIkQqjsamj6b+eMZoSsOc2nOLUIPJhhnMQMN5nFNA5FA/7zfIl5WeAmyzKL17PJwygyfEgW41Dk1wyfk+cXy08BXYjnA4YJ+sjTAKOATsQI0wydzBOIBTpZBMz98gzs9trwX0AHHXJOjdwhR2v4xxiX6NPQ2a8NDB/Lya66oJTP9JkLQcsqo7TpQzk7ibqidDjk8/b/sxcUOXUFS+5zB/K5G/maetOKPWRbmtjkYK1z1oZMQMmVZ5/omnrlwMZo3GUdWtXLValVepaj3p/laiK9uRSN5HWd5wCoXKaaR0lEiVU2KyJKe5HBK+SFQzTynHtDtZcPmT+3ytcmrzYlVz4FNyAAuiMTBcNppQPyqj4lurkybwzW/lLQqua+vXK0sqSORMkqbP9/S+YmY8maqYXQ0qZ7cmuyNIF2Ysm9mnBTrv1RZosxJt67dkRvyHwUUDOmoBlu2y05tS8UynWnPNcjekfmoBd4+36WCXh/L3DjqsxCIqL0NznZIqM6wDoSNqDAskbtU4Zg5EVuZ0rjCc1w7sgC29Z5q7HJ70cT0YYDp9pIaMOJHSm5+C5Ho+rm0kHQWKJwbr1Wu+VR52FAsPGwqDWqJYqWS5JbnTe9Sqw+Ly+1S/TW5DI73iepNAEoB6tVOQCc27iQznu9+W3bfyOciL4UfQQiSMFbY3gSbiFmIDiRKwCXYq0SHQM4X6Y27fxQJGrAL2eGXpb5q9fHr15cv3tlHiboZBq+uyY8HqPoC13vVX1Xo68vZd9cB/8AJGVRMuwhx8AAAAAASUVORK5CYII=" alt="Aurora" />
+          </div>
+          <div
+            class="app-chip app-chip-img"
+            role="listitem"
+            title="Acrobat"
+          >
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAA8CAMAAAAJ1/l9AAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAGBQTFRFswsAR3BMJQAATAQAhAUAegYAtQoAuQsAzQwAsAsD/////vr6+u3s9uDf8c/N7MG/5q+r4qGd3ZKN1nt10GhhyE9Iwjw2vCsmtx8Z3g0A0wwAsRQPsggBrQUBpwAAoQEATrW42wAAAAp0Uk5T/wAEEjN5xu71/cpdbPUAAAHwSURBVHjapZfdkqQgDIWj3esMJ6DifyuE93/LhbL2Ymuqetr43X/mlBAgVGXq6tl87xf4bp5ZylCRH81OlzBmbx7lA1RK72ToKuZVAlCV7SKr/IrqxyvbOr+uqWpIi2kqepTo2vIP+kN6styQnix/kZ7wVhaRSGpksG4Utd2CgU7pxwU4VmCOyujoRCxa0ek9fNH5hm4YbLThe9kAHKQhTnBpBjiSihWcBsBqV45xtECr1KVDbwGvrT6jMEdSp88c+pYB4EStWwCjNntYkZlEW9wDYBxanYvNLumyz8h4YBDlYQPY5BhLVBTfkBnlAOPIfggxxnCl3TMHxaX4YrZ1WZbViNBHGGS6JJJGMCzjxA0xfrrjYNahxal1vR987wCsH/gRGeuQ4W50cClJJnkw/64nD5zqtEmmBYYogcL2ew+GtHkwwH4ROf+2TAD8cmwOjDW8ldcWYDBKuX+IDIyTXt7YshXZApj+zyhx9s7adpJ3pT2AYQPwc69Hkfd3bowW8CYxM45AFwmRYTdJHVjT5+LQJpIJjC5prmSX7QUMTZPHEZOkGay7WcKCbu1LbdGfzMrjpSCL78ZDSEu4/BT7IjVFbkhPaG4+ie8+yKsb6ZuK6vreMFI9XzdGoaouvrksm/2ZVc0YWNi/zjHw3hD6F+UcMwcZrWqdAAAAAElFTkSuQmCC" alt="Acrobat" />
+          </div>
+        </div>
+
+        <button class="more-btn" aria-label="모든 앱 보기">더 보기 →</button>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────
+       BEFORE / AFTER  (드래그 슬라이더)
+  ──────────────────────────── -->
+    <section class="ba-section" aria-label="사용 전후 비교">
+      <div class="ba-section-inner">
+        <div class="section-label">사용 결과</div>
+        <h2 class="section-title">Before &amp; After</h2>
+        <p class="section-sub">
+          Creative Cloud 툴로 달라진 결과물을 직접 확인하세요
+        </p>
+
+        <div class="ba-grid">
+
+          <!-- ── 카드 1 : Photoshop ── -->
+          <div class="ba-card">
+            <div class="ba-card-header">
+              <div class="ba-card-header-left">
+                <span class="ba-app-badge ba-badge-ps">Ps</span>
+                <span class="ba-app-name">PHOTOSHOP</span>
+              </div>
+              <span class="ba-tag">AI 신경망 보정</span>
+            </div>
+            <div class="ba-slider-wrap" aria-label="Photoshop 보정 전후 비교">
+
+              <!-- AFTER layer (full width, behind) -->
+              <div class="ba-layer ba-layer-after ba-ps-after">
+                <div class="ba-ps-after-inner">
+                  <div class="ps-toolbar">
+                    <span class="ps-tool active">선택</span>
+                    <span class="ps-tool">브러시</span>
+                    <span class="ps-tool">지우개</span>
+                  </div>
+                  <div class="ps-canvas">
+                    <div class="ps-subject"></div>
+                    <div class="ps-bg-dots"></div>
+                    <div class="ps-light-beam"></div>
+                  </div>
+                  <div class="ps-status-bar">
+                    <span class="ps-badge ps">Ps</span>
+                    <span class="ps-status-text">AI 배경 제거 완료 · 라이팅 보정</span>
+                  </div>
+                </div>
+                <div class="ba-label-after">After</div>
+              </div>
+
+              <!-- BEFORE layer (clipped, on top) -->
+              <div class="ba-layer ba-layer-before ba-ps-before">
+                <div class="ba-ps-before-inner">
+                  <div class="ps-canvas raw">
+                    <div class="ps-subject raw-subject"></div>
+                    <div class="ps-raw-bg"></div>
+                  </div>
+                  <div class="ps-status-bar dark">
+                    <span class="ps-badge ps">Ps</span>
+                    <span class="ps-status-text">원본 RAW · 배경 포함</span>
+                  </div>
+                </div>
+                <div class="ba-label-before">Before</div>
+              </div>
+
+              <!-- Slider handle -->
+              <div class="ba-handle" role="slider" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="슬라이더">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5l-7 7 7 7M16 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="ba-info">
+              <div class="ba-desc-main">AI 배경 제거 + 라이팅 보정</div>
+              <div class="ba-tools">Generative Fill · Neural Filters · Sky Replacement</div>
+              <div class="ba-time-row">
+                <span class="ba-time-before">작업 45분</span>
+                <span class="ba-arrow">→</span>
+                <span class="ba-time-after">3분</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── 카드 2 : Illustrator ── -->
+          <div class="ba-card">
+            <div class="ba-card-header">
+              <div class="ba-card-header-left">
+                <span class="ba-app-badge ba-badge-ai">Ai</span>
+                <span class="ba-app-name">ILLUSTRATOR</span>
+              </div>
+              <span class="ba-tag">벡터 변환</span>
+            </div>
+            <div class="ba-slider-wrap" aria-label="Illustrator 브랜딩 전후 비교">
+
+              <div class="ba-layer ba-layer-after ba-ai-after">
+                <div class="ba-ai-after-inner">
+                  <div class="ai-artboard">
+                    <div class="ai-logo-shape">
+                      <div class="ai-hex"></div>
+                      <div class="ai-wordmark">BRAND</div>
+                    </div>
+                    <div class="ai-color-swatches">
+                      <div class="ai-sw sw1"></div>
+                      <div class="ai-sw sw2"></div>
+                      <div class="ai-sw sw3"></div>
+                      <div class="ai-sw sw4"></div>
+                    </div>
+                  </div>
+                  <div class="ps-status-bar">
+                    <span class="ps-badge ai">Ai</span>
+                    <span class="ps-status-text">벡터 완성 · 브랜드 가이드</span>
+                  </div>
+                </div>
+                <div class="ba-label-after">After</div>
+              </div>
+
+              <div class="ba-layer ba-layer-before ba-ai-before">
+                <div class="ba-ai-before-inner">
+                  <div class="ai-artboard dark">
+                    <div class="ai-blank-logo">
+                      <div class="ai-blank-box">?</div>
+                      <div class="ai-blank-text">로고 없음</div>
+                    </div>
+                  </div>
+                  <div class="ps-status-bar dark">
+                    <span class="ps-badge ai">Ai</span>
+                    <span class="ps-status-text">새 문서 · 빈 아트보드</span>
+                  </div>
+                </div>
+                <div class="ba-label-before">Before</div>
+              </div>
+
+              <div class="ba-handle" role="slider" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="슬라이더">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5l-7 7 7 7M16 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="ba-info">
+              <div class="ba-desc-main">벡터 로고 + 브랜드 가이드</div>
+              <div class="ba-tools">Image Trace · Pen Tool · 컬러 팔레트 시스템</div>
+              <div class="ba-time-row">
+                <span class="ba-time-before">외주 80만원</span>
+                <span class="ba-arrow">→</span>
+                <span class="ba-time-after">직접 제작</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── 카드 3 : Premiere Pro ── -->
+          <div class="ba-card">
+            <div class="ba-card-header">
+              <div class="ba-card-header-left">
+                <span class="ba-app-badge ba-badge-pr">Pr</span>
+                <span class="ba-app-name">PREMIERE PRO</span>
+              </div>
+              <span class="ba-tag">Lumetri Color</span>
+            </div>
+            <div class="ba-slider-wrap" aria-label="Premiere Pro 컬러그레이딩 전후 비교">
+
+              <div class="ba-layer ba-layer-after ba-pr-after">
+                <div class="ba-pr-after-inner">
+                  <div class="pr-timeline">
+                    <div class="pr-track">
+                      <div class="pr-clip graded c1"></div>
+                      <div class="pr-clip graded c2"></div>
+                      <div class="pr-clip graded c3"></div>
+                    </div>
+                    <div class="pr-lumetri">
+                      <div class="pr-scope"></div>
+                      <div class="pr-wheels">
+                        <div class="pr-wheel w-shadow"></div>
+                        <div class="pr-wheel w-mid"></div>
+                        <div class="pr-wheel w-high"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ps-status-bar">
+                    <span class="ps-badge pr">Pr</span>
+                    <span class="ps-status-text">시네마 컬러그레이딩 완료</span>
+                  </div>
+                </div>
+                <div class="ba-label-after">After</div>
+              </div>
+
+              <div class="ba-layer ba-layer-before ba-pr-before">
+                <div class="ba-pr-before-inner">
+                  <div class="pr-timeline dark">
+                    <div class="pr-track">
+                      <div class="pr-clip raw c1"></div>
+                      <div class="pr-clip raw c2"></div>
+                      <div class="pr-clip raw c3"></div>
+                    </div>
+                    <div class="pr-raw-label">RAW 원본 · 컬러 보정 전</div>
+                  </div>
+                  <div class="ps-status-bar dark">
+                    <span class="ps-badge pr">Pr</span>
+                    <span class="ps-status-text">RAW 임포트 · 편집 전</span>
+                  </div>
+                </div>
+                <div class="ba-label-before">Before</div>
+              </div>
+
+              <div class="ba-handle" role="slider" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="슬라이더">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5l-7 7 7 7M16 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="ba-info">
+              <div class="ba-desc-main">컬러그레이딩 + 노이즈 제거</div>
+              <div class="ba-tools">Lumetri Color · Denoise · LUT 적용</div>
+              <div class="ba-time-row">
+                <span class="ba-time-before">렌더 2시간</span>
+                <span class="ba-arrow">→</span>
+                <span class="ba-time-after">20분</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.ba-grid -->
+      </div>
+    </section>
+
+    <!-- ────────────────────────────
+       PLANS
+  ──────────────────────────── -->
+    <section class="plans-section" aria-label="플랜 비교">
+      <div class="plans-inner">
+        <div class="plans-header">
+          <div class="section-label">플랜 비교</div>
+          <h2 class="section-title">나에게 맞는 플랜을 선택하세요</h2>
+          <p class="section-sub">
+            모든 플랜 7일 무료 체험 · 언제든지 취소 가능
+          </p>
+        </div>
+
+        <div class="plans-grid">
+          <!-- 개인 -->
+          <div class="plan-card">
+            <div class="plan-badge">개인</div>
+            <div class="sub-plan-type">Creative Cloud 전체</div>
+            <div class="plan-who">개인 사용자를 위한 사용료</div>
+            <div class="plan-price-old">₩ 48,000 / 월</div>
+            <div class="plan-price">₩ 30,000 <span>/ 월</span></div>
+            <div class="plan-vat">부가세 포함</div>
+            <hr class="plan-divider" />
+            <ul class="plan-features" aria-label="개인 플랜 포함 항목">
+              <li>
+                <i class="ti ti-check" aria-hidden="true"></i>모든 Creative
+                Cloud 앱 사용
+              </li>
+              <li>
+                <i class="ti ti-check" aria-hidden="true"></i>100GB 클라우드
+                스토리지
+              </li>
+              <li>
+                <i class="ti ti-check" aria-hidden="true"></i>Adobe Fonts 포함
+              </li>
+              <li>
+                <i class="ti ti-check" aria-hidden="true"></i>Adobe Express 포함
+              </li>
+            </ul>
+            <button class="sub-plan-btn">구매하기</button>
+          </div>
+
+          <!-- 학생 (featured) -->
+          <div class="plan-card featured" aria-label="추천 플랜">
+            <div class="plan-badge student">🎓 학생 · 교사 최저가</div>
+            <div class="sub-plan-type">Creative Cloud 전체</div>
+            <div class="plan-who">학생임을 고지하시면</div>
+            <div class="plan-price-old">₩ 99,000 / 월</div>
+            <div class="plan-price">₩ 29,800 <span>/ 월</span></div>
+            <div class="plan-vat">부가세 포함</div>
+            <hr class="plan-divider" />
+            <ul class="plan-features" aria-label="학생 플랜 포함 항목">
+              <li>
+                <i class="ti ti-check green" aria-hidden="true"></i>모든
+                Creative Cloud 앱 사용
+              </li>
+              <li>
+                <i class="ti ti-check green" aria-hidden="true"></i>100GB
+                클라우드 스토리지
+              </li>
+              <li>
+                <i class="ti ti-check green" aria-hidden="true"></i>Adobe Fonts
+                포함
+              </li>
+              <li>
+                <i class="ti ti-check green" aria-hidden="true"></i>Adobe
+                Portfolio 포함
+              </li>
+              <li>
+                <i class="ti ti-check green" aria-hidden="true"></i
+                ><strong>70% 할인 혜택</strong>
+              </li>
+            </ul>
+            <button class="sub-plan-btn featured-btn">구매하기</button>
+          </div>
+
+          <!-- 기업 -->
+          <div class="plan-card">
+            <div class="plan-badge biz">기업</div>
+            <div class="sub-plan-type">Creative Cloud for Teams</div>
+            <div class="plan-who">2인 이상 비즈니스 환경</div>
+            <div class="plan-price-old">₩ 99,000 / 월</div>
+            <div class="plan-price">₩ 29,800 <span>/ 월 / 사용자</span></div>
+            <div class="plan-vat">부가세 포함</div>
+            <hr class="plan-divider" />
+            <ul class="plan-features" aria-label="기업 플랜 포함 항목">
+              <li>
+                <i class="ti ti-check purple" aria-hidden="true"></i>모든
+                Creative Cloud 앱 사용
+              </li>
+              <li>
+                <i class="ti ti-check purple" aria-hidden="true"></i>1TB
+                클라우드 스토리지
+              </li>
+              <li>
+                <i class="ti ti-check purple" aria-hidden="true"></i>Adobe Fonts
+                포함
+              </li>
+              <li>
+                <i class="ti ti-check purple" aria-hidden="true"></i>팀 라이선스
+                관리
+              </li>
+              <li>
+                <i class="ti ti-check purple" aria-hidden="true"></i>24/7 전담
+                지원
+              </li>
+            </ul>
+            <button class="sub-plan-btn purple-btn">구매하기</button>
+          </div>
+        </div>
+        <!-- /.plans-grid -->
+      </div>
+    </section>
+
+    <!-- ────────────────────────────
+       FAQ
+  ──────────────────────────── -->
+    <section class="faq-section" aria-label="자주 묻는 질문">
+      <div class="faq-section-inner">
+        <div class="section-label">도움말</div>
+        <h2 class="section-title">자주 묻는 질문</h2>
+        <p class="section-sub">궁금한 점을 빠르게 확인하세요</p>
+
+        <div class="faq-layout">
+          <!-- 카테고리 탭 -->
+          <div class="faq-cats" role="tablist" aria-label="FAQ 카테고리">
+            <button
+              class="faq-cat sub-active"
+              data-cat="all"
+              role="tab"
+              aria-selected="true"
+            >
+              <i class="ti ti-list" aria-hidden="true"></i> 전체
+            </button>
+            <button
+              class="faq-cat"
+              data-cat="payment"
+              role="tab"
+              aria-selected="false"
+            >
+              <i class="ti ti-credit-card" aria-hidden="true"></i> 결제 / 환불
+            </button>
+            <button
+              class="faq-cat"
+              data-cat="usage"
+              role="tab"
+              aria-selected="false"
+            >
+              <i class="ti ti-tool" aria-hidden="true"></i> 사용 방법
+            </button>
+            <button
+              class="faq-cat"
+              data-cat="ai"
+              role="tab"
+              aria-selected="false"
+            >
+              <i class="ti ti-robot" aria-hidden="true"></i> AI 기능
+            </button>
+            <button
+              class="faq-cat"
+              data-cat="account"
+              role="tab"
+              aria-selected="false"
+            >
+              <i class="ti ti-shield-lock" aria-hidden="true"></i> 계정 / 보안
+            </button>
+          </div>
+
+          <!-- 아코디언 목록 -->
+          <div class="faq-list" id="faqList" role="list">
+            <div class="faq-item" data-cat="payment" role="listitem">
+              <button class="faq-q" aria-expanded="false">
+                결제는 어떤 방식으로 이루어지나요?
+                <i class="ti ti-chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="faq-a" role="region">
+                신용카드, 체크카드, 계좌이체 등이 가능합니다. 월 단위 또는 연
+                단위로 선택하실 수 있으며, 연간 결제 시 추가 할인 혜택이
+                제공됩니다.
+              </div>
+            </div>
+
+            <div class="faq-item" data-cat="payment" role="listitem">
+              <button class="faq-q" aria-expanded="false">
+                무료 체험 후 자동 결제가 되나요?
+                <i class="ti ti-chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="faq-a" role="region">
+                7일 무료 체험 종료 후 자동으로 유료 플랜으로 전환됩니다. 원하지
+                않으시면 체험 기간 내 언제든지 취소하실 수 있으며, 취소 시
+                요금이 청구되지 않습니다.
+              </div>
+            </div>
+
+            <div class="faq-item" data-cat="payment" role="listitem">
+              <button class="faq-q" aria-expanded="false">
+                환불 정책은 어떻게 되나요?
+                <i class="ti ti-chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="faq-a" role="region">
+                월 플랜은 결제일로부터 14일 이내 환불 가능합니다. 연간 플랜은 첫
+                14일 이내 환불 가능하며, 이후에는 위약금이 발생할 수 있습니다.
+              </div>
+            </div>
+
+            <div class="faq-item" data-cat="usage" role="listitem">
+              <button class="faq-q" aria-expanded="false">
+                몇 대의 기기에서 사용할 수 있나요?
+                <i class="ti ti-chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="faq-a" role="region">
+                Creative Cloud 앱은 최대 2대의 기기에서 동시에 설치 및 사용
+                가능합니다. Mac, Windows, iOS, Android를 모두 지원합니다.
+              </div>
+            </div>
+
+            <div class="faq-item" data-cat="usage" role="listitem">
+              <button class="faq-q" aria-expanded="false">
+                오프라인에서도 사용 가능한가요?
+                <i class="ti ti-chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="faq-a" role="region">
+                네, 대부분의 Creative Cloud 앱은 오프라인에서도 사용 가능합니다.
+                단, 최소 30일마다 인터넷 연결로 라이선스 확인이 필요합니다.
+              </div>
+            </div>
+
+            <div class="faq-item" data-cat="ai" role="listitem">
+              <button class="faq-q" aria-expanded="false">
+                Firefly AI 기능은 모든 플랜에 포함되나요?
+                <i class="ti ti-chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="faq-a" role="region">
+                Adobe Firefly 기본 기능은 Creative Cloud 모든 플랜에 포함되어
+                있습니다. 월별 생성 크레딧이 제공되며, 추가 크레딧은 별도 구매
+                가능합니다.
+              </div>
+            </div>
+
+            <div class="faq-item" data-cat="ai" role="listitem">
+              <button class="faq-q" aria-expanded="false">
+                AI로 만든 결과물의 저작권은 누구에게 있나요?
+                <i class="ti ti-chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="faq-a" role="region">
+                Adobe Firefly로 생성된 결과물은 상업적 목적으로도 안전하게 사용
+                가능합니다. Adobe는 저작권 보호가 완료된 학습 데이터만을 사용해
+                Firefly를 개발했습니다.
+              </div>
+            </div>
+
+            <div class="faq-item" data-cat="account" role="listitem">
+              <button class="faq-q" aria-expanded="false">
+                학생 할인을 받으려면 어떻게 인증하나요?
+                <i class="ti ti-chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="faq-a" role="region">
+                구매 과정에서 학교 이메일(.ac.kr, .edu 등)로 인증하거나,
+                재학증명서를 제출하여 학생 인증을 완료하실 수 있습니다. 인증 후
+                즉시 할인이 적용됩니다.
+              </div>
+            </div>
+          </div>
+          <!-- /#faqList -->
+        </div>
+        <!-- /.faq-layout -->
+      </div>
+    </section>
+
+    <!-- ────────────────────────────
+       FOOTER
+  ──────────────────────────── -->
+    <footer class="sub-footer" role="contentinfo">
+      <div class="footer-main">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>제품</h4>
+            <a href="#">Photoshop</a>
+            <a href="#">Illustrator</a>
+            <a href="#">Premiere Pro</a>
+            <a href="#">After Effects</a>
+            <a href="#">모든 제품 보기</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>리소스</h4>
+            <a href="#">튜토리얼</a>
+            <a href="#">블로그</a>
+            <a href="#">커뮤니티</a>
+            <a href="#">다운로드</a>
+            <a href="#">교육 및 이벤트</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>지원</h4>
+            <a href="#">도움말 센터</a>
+            <a href="#">계정 관리</a>
+            <a href="#">청구 및 결제</a>
+            <a href="#">뉴스룸</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>회사</h4>
+            <a href="#">Adobe 소개</a>
+            <a href="#">채용 정정복</a>
+            <a href="#">뉴스룸</a>
+            <a href="#">투자자 정보</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>구매</h4>
+            <a href="#">플랜 및 가격</a>
+            <a href="#">기업용 솔루션</a>
+            <a href="#">학생 할인</a>
+            <a href="#">공공기관용</a>
+          </div>
+        </div>
+
+        <!-- 우측: Adobe 로고 + SNS -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon" aria-hidden="true"></div>
+            <span class="footer-logo-text">Adobe</span>
+          </div>
+          <div class="footer-sns" aria-label="소셜 미디어">
+            <a href="#" aria-label="Facebook">
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                />
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="#" aria-label="X (Twitter)">
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                />
+              </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"
+                />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                />
+                <polygon
+                  points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"
+                  fill="#f5f5f5"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-footer-bottom">
+        <div class="footer-legal">
+          <a href="#">개인정보 보호</a>
+          <span class="legal-divider">|</span>
+          <a href="#">사용 약관</a>
+          <span class="legal-divider">|</span>
+          <a href="#">쿠키 환경 설정</a>
+          <span class="legal-divider">|</span>
+          <a href="#">회사 약관</a>
+        </div>
+        <p class="footer-copyright">
+          Copyright © 2026 Adobe. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

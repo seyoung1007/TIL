@@ -1,0 +1,273 @@
+/* ── 공통 inner 래퍼 ── */
+.inner {
+  width: 85%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* =============================================
+   1. 상단 배너
+   ============================================= */
+.footer__banner {
+  margin: 50px auto;
+  width: 90%;
+  border-radius: 30px;
+  background-color: #1a1a1a;
+  padding: 28px 0;
+  /* margin: 0 auto; */
+  border-bottom: 1px solid #333;
+}
+
+.footer__banner-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer__banner-logo img {
+  width: 160px;
+  display: block;
+}
+
+.footer__banner-title {
+  display: block;
+  font-size: var(--p-c1920px---contents-title, 45px); /* 가이드 변수 */
+  font-weight: var(--fw-bold, 700);
+  color: var(--sub-color-2, #fafafa);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.footer__banner-desc {
+  font-size: var(--p-c1920px---contents--desc, 16px);
+  font-weight: var(--fw-regular, 400);
+  color: #ccc;
+  margin: 0;
+}
+
+/* =============================================
+   2. 하단 영역
+   ============================================= */
+.footer__bottom {
+  background-color: #f5f5f5;
+  padding: 48px 0 36px;
+}
+
+.footer__bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* =============================================
+   3. 네비게이션 그룹
+   ============================================= */
+.footer__nav {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.footer__nav-group {
+  min-width: 90px;
+}
+
+.footer__nav-title {
+  font-size: var(--p-c1920px---card-title, 25px);
+  font-weight: var(--fw-bold, 700);
+  color: var(--sub-color-1, #000);
+  margin: 0 0 14px 0;
+}
+
+.footer__nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__nav-link {
+  font-size: var(--p-c1920px---card--desc, 16px);
+  font-weight: var(--fw-regular, 400);
+  color: #444;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__nav-link:hover {
+  color: var(--sub-color-1, #000);
+  text-decoration: underline;
+}
+.footer__nav-link.card-des{
+  font-size: 16px;
+}
+/* =============================================
+   4. 우측: 브랜드 / SNS / 법적고지
+   ============================================= */
+.footer__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+/* 브랜드 로고 */
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer__brand-name {
+  font-size: var(--p-c1920px---card-title, 25px);
+  font-weight: var(--fw-bold, 700);
+  color: var(--sub-color-1, #000);
+}
+
+/* SNS 아이콘 */
+.footer__sns {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 12px;
+}
+
+.footer__sns-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 4px;
+  color: #555;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.footer__sns-link:hover {
+  color: var(--sub-color-1, #000);
+  background-color: #e0e0e0;
+}
+
+/* 법적고지 & 저작권 */
+.footer__legal {
+  text-align: right;
+}
+
+.footer__legal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px 0;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.footer__legal-link {
+  font-size: 13px;
+  font-weight: var(--fw-regular, 400);
+  color: #555;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__legal-link:hover {
+  color: var(--sub-color-1, #000);
+  text-decoration: underline;
+}
+
+.footer__copyright {
+  font-size: 12px;
+  font-weight: var(--fw-regular, 400);
+  color: #888;
+  margin: 0;
+}
+
+/* =============================================
+   5. 태블릿 반응형 (780px)
+   ============================================= */
+@media (max-width: 780px) {
+  .inner {
+    width: 90%;
+  }
+
+  /* 배너 */
+  .footer__banner-title {
+    font-size: var(--tablet780px---contents--title--m, 45px);
+  }
+  .footer__banner-desc {
+    font-size: var(--tablet780px---contents--desc--m, 20px);
+  }
+
+  /* 하단 레이아웃 세로 전환 */
+  .footer__bottom-inner {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer__nav {
+    gap: 28px;
+  }
+
+  .footer__nav-title {
+    font-size: var(--tablet780px---card-title--m, 20px);
+  }
+
+  .footer__nav-link {
+    font-size: var(--tablet780px---card--desc--m, 13px);
+  }
+
+  .footer__right {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .footer__legal {
+    text-align: left;
+  }
+
+  .footer__legal-list {
+    justify-content: flex-start;
+  }
+}
+
+/* =============================================
+   6. 모바일 반응형 (390px)
+   ============================================= */
+@media (max-width: 390px) {
+  /* 배너 */
+  .footer__banner-logo img {
+    width: 100px;
+  }
+
+  .footer__banner-title {
+    font-size: var(--mobile390px---contents-title--s, 26px);
+  }
+
+  .footer__banner-desc {
+    font-size: var(--mobile390px---desc--s, 16px);
+  }
+
+  /* 네비게이션 2열 그리드 */
+  .footer__nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 16px;
+    width: 100%;
+  }
+
+  .footer__nav-title {
+    font-size: var(--mobile390px---card-title--s, 18px);
+  }
+
+  .footer__nav-link {
+    font-size: var(--mobile390px---card--desc--s, 13px);
+  }
+}

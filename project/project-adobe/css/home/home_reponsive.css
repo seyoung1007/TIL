@@ -1,0 +1,477 @@
+@media (max-width: 1024px) {
+  /* 툴 소개  */
+  .solution .h-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .solution-title {
+    width: 100%;
+  }
+  .solution-title h2 {
+    font-size: var(--tablet780px---visual-title--m);
+  }
+  .solution-title p {
+    font-size: var(--tablet780px---visual--desc--m);
+    margin: 0;
+    position: relative;
+    padding-bottom: 80px;
+  }
+
+  .solution-btn {
+    margin-left: auto;
+    position: absolute;
+    right: 18px;
+    top: 295px;
+    z-index: 999;
+  }
+  .solution-btn a {
+    font-size: var(--tablet780px--button--m);
+  }
+  .solution-category {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-bottom: 4px;
+    order: 2;
+    justify-content: center;
+    overflow-x: unset;
+    scrollbar-width: none;
+  }
+
+  .solution-category::-webkit-scrollbar {
+    display: none;
+  }
+
+  .solution-category a {
+    flex-shrink: 0;
+    height: 36px;
+    font-size: var(--tablet780px--button--m);
+    padding: 0 14px;
+    white-space: nowrap;
+  }
+
+  .solution-cards {
+    width: 100%;
+    min-width: unset;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    order: 3;
+  }
+
+  .sol-card {
+    min-height: 140px;
+  }
+  .sol-card:nth-child(1) {
+    transform: rotate(-1.5deg);
+  }
+  .sol-card:nth-child(2) {
+    transform: rotate(1deg);
+  }
+  .sol-card:nth-child(3) {
+    transform: rotate(-1deg);
+  }
+  .sol-card:nth-child(4) {
+    transform: rotate(1deg);
+  }
+  .sol-card:nth-child(5) {
+    transform: rotate(-1deg);
+  }
+  .sol-card:nth-child(6) {
+    transform: rotate(1.5deg);
+  }
+
+  .sol-card h3 {
+    font-size: var(--tablet780px---card-title--m);
+  }
+
+  .sol-card p {
+    font-size: var(--tablet780px---card--desc--m);
+  }
+
+  /*  플랜 */
+
+  .plan .h-inner {
+    flex-wrap: wrap;
+  }
+
+  .plan-title {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .plan .plans-grid {
+    width: 100%;
+  }
+
+  .plan-more {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .plan-card {
+    flex: 1 1 calc(50% - 12px);
+  }
+}
+
+@media (max-width: 780px) {
+  .header-inner {
+    height: 60px;
+    padding: 0 12px;
+    gap: 0;
+  }
+
+  .menu-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    margin: 0 25px;
+  }
+  .menu-btn span {
+    width: 18px;
+    height: 2px;
+    background: #fff;
+  }
+  .logo {
+    margin-right: auto;
+  }
+  .header-btns {
+    margin-left: auto;
+    gap: 6px;
+  }
+
+  /* ===== Hero ===== */
+
+  .hero {
+    min-height: 100dvh;
+    justify-content: flex-start;
+    padding-top: 185px;
+    overflow: visible; /* firefly 잘림 방지 */
+  }
+  .hero-content {
+    gap: 12px;
+    padding: 0 20px;
+  }
+  .hero-sub {
+    font-size: 20px;
+  }
+  .hero-title {
+    font-size: clamp(40px, 2vw, 50px);
+    line-height: 1.25;
+    margin-bottom: 12px;
+    word-break: keep-all;
+  }
+  .hero-desc {
+    font-size: clamp(20px, 2vw, 12px);
+    line-height: 1.6;
+    margin-bottom: 10px;
+    word-break: keep-all;
+  }
+  .hero-btns {
+    flex-direction: column;
+    margin-top: 4px;
+    gap: 5px;
+    width: 100%;
+    align-items: center;
+  }
+  .btn-primary {
+    width: 100%;
+    max-width: 180px;
+    text-align: center;
+    font-size: 14px;
+    padding: 13px 28px;
+  }
+  .btn-play {
+    font-size: 13px;
+  }
+
+  .hero-firefly {
+    bottom: 140px;
+    padding: 0 16px;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .firefly-label {
+    min-width: unset;
+    width: 100px;
+    flex-shrink: 0;
+  }
+
+  .firefly-label strong {
+    font-size: 14px;
+    word-break: keep-all;
+  }
+
+  .firefly-label p {
+    font-size: 12px;
+    word-break: keep-all;
+  }
+
+  .firefly-imgs {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .fi-img {
+    width: clamp(60px, 4vw, 70px);
+    height: clamp(60px, 4vw, 70px);
+    flex-shrink: 0;
+  }
+
+  /* firefly  */
+  .firefly .h-inner {
+    display: block;
+  }
+
+  /* ===== LEFT ===== */
+
+  .firefly-left {
+    min-height: 300px;
+    border-radius: 12px;
+  }
+
+  .firefly-content {
+    padding: 30px 0;
+  }
+
+  .firefly-content h2 {
+    font-size: var(--tablet780px---visual-title--m);
+    margin-bottom: 16px;
+  }
+
+  .firefly-content p {
+    font-size: var(--tablet780px---visual--desc--m);
+    margin-bottom: 24px;
+  }
+
+  .detail-btn {
+    font-size: var(--tablet780px--button--m);
+    padding: 10px 22px;
+  }
+
+  /* ===== RIGHT ===== */
+  .firefly-right {
+    padding: 30px 0;
+    min-height: unset;
+    gap: 24px;
+  }
+
+  .right-top h3 {
+    font-size: var(--tablet780px---visual-title--m);
+    margin: 0;
+  }
+
+  .right-top p {
+    font-size: var(--tablet780px---contents--desc);
+  }
+
+  /* 카드 3열 유지, 넘치면 1열 */
+  .firefly-card-wrap {
+    gap: 12px;
+  }
+
+  .firefly-card img {
+    width: 100%;
+    height: 90px;
+  }
+
+  .firefly-card h4 {
+    font-size: var(--tablet780px---contents--des);
+    padding: 10px 10px 6px;
+  }
+
+  .firefly-card p {
+    font-size: var(--fs-app-desc);
+    padding: 0 10px 14px;
+  }
+
+  .firefly-btn {
+    font-size: var(--tablet780px--button--m);
+    padding: 10px 22px;
+    margin-left: auto; /* 오른쪽 정렬 */
+    display: flex;
+  }
+
+  /* 플랜 */
+.plan{
+  padding-top: 50px;
+}
+  .plan .h-inner {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .plan-title {
+    width: 100%;
+    max-width: 100%;
+    font-size: var(--tablet780px---visual-title--m);
+  }
+
+  .plan-title h2 {
+    font-size: var(--tablet780px---visual-title--m);
+  }
+
+  .plan-title p {
+    font-size: var(--tablet780px---visual--desc--m);
+  }
+
+
+  /* 더보기 타이틀 아래 오른쪽 */
+  .plan-more {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: -10px;
+  }
+
+  .plan-more a {
+    flex-direction: row;
+    font-size: 14px;
+    gap: 4px;
+  }
+
+  /* 카드 3열 유지 */
+  .plan-container {
+    width: 100%;
+    flex-wrap: column;
+    gap: 16px;
+  }
+
+  .plan-list {
+    width: 100%;
+    padding: 20px 14px;
+  }
+
+  .plan-type {
+    font-size: 13px;
+  }
+  .plan-list h3 {
+    font-size: 12px;
+  }
+  .price-w {
+    font-size: 18px;
+  }
+  .plan-listP {
+    font-size: 11px;
+  }
+  .plan-btn {
+    font-size: 12px;
+    padding: 8px 0;
+  }
+}
+
+
+@media (max-width: 390px) {
+  /* hero  */
+
+  .hero {
+    padding-top: 160px;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-title {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+
+  .hero-desc {
+    font-size: 14px;
+    margin-bottom: 50px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    max-width: 100%;
+    font-size: 14px;
+    padding: 14px 0;
+  }
+
+  .btn-play {
+    width: 100%;
+
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    padding: 8px 0;
+    font-size: 15px;
+  }
+
+  /* ===== Firefly AI (하단) ===== */
+  .hero-firefly {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    width: calc(100% - 32px);
+    position: absolute;
+    bottom: 130px;
+  }
+  .solution-title p {
+    font-size: 12px;
+  }
+
+  .solution-btn a {
+    font-size: 10px;
+  }
+
+  .fi-img {
+    width: 60px;
+    height: 60px;
+  }
+  /* firefly */
+
+  .bg-video {
+    width: 100%;
+    height: 80%;
+  }
+
+  .firefly-content h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  .firefly-content p {
+    font-size: 10px;
+  }
+  .detail-btn {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+  .firefly-right {
+    padding: 0;
+    padding-bottom: 20px;
+  }
+  .right-top h3 {
+    font-size: 20px;
+    margin: 0;
+  }
+  .right-top p {
+    font-size: 10px;
+  }
+  .firefly-card h4 {
+    font-size: 12px;
+    padding: 5px 5px;
+  }
+  .firefly-card p {
+    font-size: 8px;
+    padding: 0px 5px 5px;
+  }
+  .firefly-btn {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  /* plan */
+  .plan-title h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  .plan-title p {
+    font-size: 10px;
+  }
+}
