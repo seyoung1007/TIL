@@ -1,0 +1,54 @@
+.about {
+  position: relative;
+  margin-bottom: 240px;
+  overflow: hidden;
+}
+.about .inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.about-title {
+  font-size: 44px;
+  line-height: 1.35;
+}
+.about-title span {
+  color: #3a68b2;
+  font-family: "Godo", "notokr";
+}
+
+.about-txt-desc {
+  font-size: 16px;
+  margin-bottom: 45px;
+}
+.about-txt-main {
+  margin-bottom: 45px;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.about-txt-main span {
+  color: #3a68b2;
+  font-weight: 700;
+}
+.about-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 140px;
+  height: 50px;
+  padding: 0 10px;
+  margin-top: 90px;
+  font-size: 15px;
+  font-weight: 600;
+  border-bottom: 2px solid #222;
+}
+.about-link i {
+  position: absolute;
+  right: 10px;
+  transition: all 0.3s;
+}
+.about-link:hover i{
+right: 5px;
+}

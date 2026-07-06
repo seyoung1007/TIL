@@ -1,0 +1,125 @@
+.service {
+  position: relative;
+  height: auto;
+  /* background-color: aqua; */
+  /* min-height: 800px; */
+  padding: 180px 0 210px;
+}
+.service .inner {
+  width: 95%;
+  height: 100%;
+}
+.service-title {
+  font-size: 38px;
+  text-align: center;
+  margin-bottom: 38px;
+}
+.service-title span {
+  color: #3a68b2;
+  font-family: "Godo", "notokr";
+}
+.service-wrap {
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(100px, auto);
+  gap: 20px;
+  background-color: azure;
+}
+.service-box-1 {
+  position: relative;
+  grid-row: 1/3;
+  /* 700 / 1420 * 100 = 49.2957vw */
+  /* height: 49.29vw; */
+  aspect-ratio: 35/34;
+  /* max-height: 680px; */
+
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.service-box-1:hover .service-bg {
+  transform: rotate(2deg) scale(1.1);
+  opacity: 0.9;
+}
+.service-bg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s;
+}
+.service-bg-1 {
+  width: 100%;
+  height: 100%;
+  background: url("../images/main_service_img1.jpg") no-repeat center;
+  background-size: cover;
+}
+.service-box-2 {
+  position: relative;
+  overflow: hidden;
+}
+.service-box-2:hover .service-bg {
+  transform: rotate(2deg) scale(1.1);
+  opacity: 0.9;
+}
+.service-bg-2 {
+  width: 100%;
+  height: 100%;
+  background: url("../images/main_service_img2.jpg") no-repeat center;
+  background-size: cover;
+}
+.service-box-3 {
+  position: relative;
+  overflow: hidden;
+}
+.service-box-3:hover .service-bg {
+  transform: rotate(2deg) scale(1.1);
+  opacity: 0.9;
+}
+.service-bg-3 {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("../images/main_service_img3.jpg") no-repeat center;
+  background-size: cover;
+}
+.service-wrap a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-content: end;
+  padding: 30px;
+}
+.service-box-wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  color: #fff;
+}
+.service-box-title {
+  font-size: 26px;
+  margin-bottom: 3px;
+}
+.service-box-desc {
+  font-size: 17px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+.no-br {
+  display: none;
+}
+.service-box-bt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 140px;
+  padding: 7px 15px;
+  margin-top: 20px;
+  background: none;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}

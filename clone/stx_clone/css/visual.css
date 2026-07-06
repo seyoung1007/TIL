@@ -1,0 +1,47 @@
+.visual {
+  position: relative;
+  width: 100%;
+  height: 910px;
+  background: url("../images/img_visual01.png") no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 80px;
+}
+.visual-inner {
+
+  padding-top: 245px;
+}
+.visual-slogan {
+  position: relative;
+  color: #fff;
+  font-size: 70px;
+  font-family: "NotoSansMedium";
+  line-height: 1.1;
+}
+.visual-slogan::after {
+  position: absolute;
+  left: 0px;
+  top: -48px;
+  width: 60px;
+  height: 5px;
+  background-color: #ed1c24;
+  content: "";
+}
+.visual-txt {
+  color: #fff;
+  font-size: 21px;
+  margin-top: 42px;
+}
+.visual-btn {
+  /* 기본 버튼의 스타일을 초기화 (테우리 배경색 클릭x...) */
+  all: unset;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translatex(-50%);
+  width: 33px;
+  height: 33px;
+  background: url("../images/bg_common.png") no-repeat;
+  background-position: -122px 0px;
+  /* font-size: 0; */
+}

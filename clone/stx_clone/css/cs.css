@@ -1,0 +1,28 @@
+.cs {
+  background-color: #f8f8f8;
+  padding: 100px 0;
+}
+.cs-list {
+  width: 100%;
+  display: flex;
+  /* gap: 100px; */
+  gap: 5px;
+  justify-content: center;
+}
+.cs-list li {
+  width: 50%;
+  padding: 40px 56px;
+  background-color: #fff;
+}
+.faq {
+  display: flex;
+  justify-content: space-between;
+}
+.faq h3 {
+  font-size: 30px;
+  color: #000;
+}
+.faq p {
+  margin-top: 15px;
+  font-size: 15px;
+}

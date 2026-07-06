@@ -1,0 +1,41 @@
+/* 폰트적용 */
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double+Ink:wght@100..900&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Poiret+One&display=swap");
+/* css연결 링크 */
+@import url("header.css");
+@import url("visual.css");
+@import url("business.css");
+@import url("news.css");
+@import url("cs.css");
+@import url("about.css");
+@import url("footer.css");
+@import url("modal.css");
+/* css초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+/* 공통영역 */
+.inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* background-color: rgb(255, 196, 196); */
+}
+.wrap {
+  position: relative;
+}

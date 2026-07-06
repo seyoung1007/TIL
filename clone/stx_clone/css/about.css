@@ -1,0 +1,76 @@
+.about {
+  padding-bottom: 100px;
+}
+.about-top {
+  padding: 100px 0;
+  width: 100%;
+  background-color: #fff;
+}
+/* 상단 */
+.about-top {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.text_sub_box {
+  position: relative;
+  padding-left: 100px;
+}
+.about h3 {
+  font-size: 44px;
+  color: #111;
+  padding-top: 25px;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 21px;
+  color: #111;
+  margin-bottom: 20px;
+}
+.text_sub {
+  font-size: 15px;
+}
+.text_sub_box::after {
+  position: absolute;
+  left: 0px;
+  top: 18px;
+  width: 37px;
+  height: 5px;
+  background: #ed1c24;
+  content: "";
+}
+/* 하단 */
+.about-bottom {
+  padding-top: 100px;
+}
+.about-icon {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  gap: 200px;
+}
+.about-icon li a {
+  display: block;
+  width: 103px;
+  height: 108px;
+  background: url("../images/bg_icon.png") no-repeat;
+}
+.about-icon li:nth-child(1) a {
+  background-position: 0px 0px;
+}
+.about-icon li:nth-child(2) a {
+  background-position: -116px 0px;
+}
+.about-icon li:nth-child(3) a {
+  background-position: -232px 0px;
+}
+.about span {
+  display: block;
+  padding-top: 130px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+}
